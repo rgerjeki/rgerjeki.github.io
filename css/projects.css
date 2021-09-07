@@ -78,7 +78,7 @@ section {
   display: inline-block;
 }
 
-.shoutout {
+.shoutout .container {
   background: #00274C;
 }
 
