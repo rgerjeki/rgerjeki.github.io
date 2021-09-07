@@ -78,6 +78,21 @@ section {
   display: inline-block;
 }
 
+.shoutout {
+  background: #00274C;
+}
+
+.shoutout h1 {
+  color: #FFCB05;
+  font-size: 4em;
+}
+
+.shoutout img {
+  position: relative;
+  right: -40%;
+  top: 0%;
+}
+
 .hero-img {
   width: 70%;
   margin-top: 3em;
@@ -567,7 +582,7 @@ nav li a:hover {
     font-weight: bold;
     position: absolute;
     width: 220px;
-    height: 1.1em;
+    height: 1em;
     background: #00274C;
     right: 45%;
     top: .9em;
