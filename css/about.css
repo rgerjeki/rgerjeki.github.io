@@ -149,33 +149,6 @@ ul {
       grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
 }
 
-ul li.features-list-NFT {
-  font-size: 1.1em;
-  margin-bottom: 1em;
-  margin-left: 2em;
-  position: relative;
-}
-
-ul li.features-list-NFT:before {
-  content: '';
-  left: -2em;
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background-image: url("../images/icons8-ethereum.svg");
-  background-size: contain;
-  margin-right: .5em;
-  overflow: hidden;
-}
-
-ul {
-  margin: 0;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(19rem, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
-}
-
 ul li.features-list-facebook {
   font-size: 1.1em;
   margin-bottom: 1em;
@@ -397,17 +370,6 @@ nav li a:hover {
     font-size: 1.4em;
   }
   ul li.features-list-github:before {
-    width: 30px;
-    height: 30px;
-  }
-  ul {
-    display: block;
-    margin-left: 5em;
-  }
-  ul li.features-list-NFT {
-    font-size: 1.4em;
-  }
-  ul li.features-list-NFT:before {
     width: 30px;
     height: 30px;
   }
