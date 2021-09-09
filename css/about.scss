@@ -147,6 +147,31 @@ ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
 
+    li.features-list-NFT {
+        font-size: 1.1em;
+        margin-bottom: 1em;
+        margin-left: 2em;
+        position: relative;
+
+        &:before {
+            content: '';
+            left: -2em;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-image: url('../images/icons8-ethereum.svg');
+            background-size: contain;
+            margin-right: .5em;
+            overflow: hidden;
+        }
+    }
+}
+
+ul {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+
     li.features-list-facebook {
         font-size: 1.1em;
         margin-bottom: 1em;
@@ -191,6 +216,7 @@ ul {
         }
     }
 }
+
 
 
 .testimonials-section {
@@ -387,6 +413,20 @@ nav {
         display: block;
         margin-left: 5em;
 
+        li.features-list-NFT {
+            font-size: 1.4em;
+
+            &:before {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+
+    ul {
+        display: block;
+        margin-left: 5em;
+
         li.features-list-facebook {
             font-size: 1.4em;
 
@@ -410,6 +450,8 @@ nav {
             }
         }
     }
+
+    
 }
 
 @media only screen and (min-width: 1080px) {

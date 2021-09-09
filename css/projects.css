@@ -82,12 +82,12 @@ section {
   background: #00274C;
 }
 
-.shoutout h1 {
+.shoutout .container h1 {
   color: #FFCB05;
   font-size: 4em;
 }
 
-.shoutout img {
+.shoutout .container img {
   position: relative;
   right: -40%;
   top: 0%;
