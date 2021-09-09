@@ -147,7 +147,7 @@ ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
 
-    li.features-list-NFT {
+    li.features-list-nft {
         font-size: 1.1em;
         margin-bottom: 1em;
         margin-left: 2em;
@@ -413,7 +413,7 @@ nav {
         display: block;
         margin-left: 5em;
 
-        li.features-list-NFT {
+        li.features-list-nft {
             font-size: 1.4em;
 
             &:before {
