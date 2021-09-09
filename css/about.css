@@ -149,14 +149,14 @@ ul {
       grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
 }
 
-ul li.features-list-nft {
+ul li.features-list- {
   font-size: 1.1em;
   margin-bottom: 1em;
   margin-left: 2em;
   position: relative;
 }
 
-ul li.features-list-nft:before {
+ul li.features-list-:before {
   content: '';
   left: -2em;
   position: absolute;
@@ -404,10 +404,10 @@ nav li a:hover {
     display: block;
     margin-left: 5em;
   }
-  ul li.features-list-nft {
+  ul li.features-list- {
     font-size: 1.4em;
   }
-  ul li.features-list-nft:before {
+  ul li.features-list-:before {
     width: 30px;
     height: 30px;
   }
