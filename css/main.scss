@@ -24,7 +24,7 @@ body {
     nav {
         display: none;
     }
-    
+
     .container {
         display: flex;
         place-content: space-between;
@@ -118,33 +118,20 @@ ul.features-list {
     }
 }
 
-blockquote {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-}
 
 .testimonials-section {
     background: #00274C;
     color: #00274C;
-    width: fit-content;
-
-    div {
-        display: inline-block;
-        
-      }
 
     ul {
-        width: 100%;
 
         li{
             background: var(--primary-color);
-            
-            blockquote {
-                text-align: center;
-            }
+            text-align: center;
+            padding: 2em 1em;
+            width: 80%;
+            margin: 0 auto 5em auto;
+            border-radius: 1em;
 
             img {
                 width: 5em;
@@ -241,7 +228,7 @@ nav {
 }
 
 @media only screen and (min-width: 768px) {
-    
+
     .mobile-menu, .mobile-menu-exit {
         display: none;
     }
@@ -292,8 +279,6 @@ nav {
         }
     }
 }
-
-
 
 @media only screen and (min-width: 1080px) {
     .container {
@@ -358,12 +343,13 @@ nav {
         bottom: -2em;
     }
 
-
     .testimonials-section ul {
         display: flex;
 
+        li {
+            margin: 0 1em;
+        }
     }
-
 
     .contact-section {
         position: relative;
@@ -384,7 +370,7 @@ nav {
             height: 100%;
         }
     }
-    
+
 }
 
 @media only screen and (min-width: 1450px) {
@@ -401,4 +387,3 @@ nav {
         }
     }
 }
-
