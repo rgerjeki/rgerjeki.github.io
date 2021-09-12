@@ -115,18 +115,40 @@ ul.features-list li:before {
   overflow: hidden;
 }
 
+blockquote {
+  display: block;
+  -webkit-margin-before: 1em;
+          margin-block-start: 1em;
+  -webkit-margin-after: 1em;
+          margin-block-end: 1em;
+  -webkit-margin-start: 0;
+          margin-inline-start: 0;
+  -webkit-margin-end: 0;
+          margin-inline-end: 0;
+}
+
 .testimonials-section {
   background: #00274C;
   color: #00274C;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.testimonials-section div {
+  display: inline-block;
+}
+
+.testimonials-section ul {
+  width: 100%;
 }
 
 .testimonials-section ul li {
   background: var(--primary-color);
+}
+
+.testimonials-section ul li blockquote {
   text-align: center;
-  padding: 2em 1em;
-  width: 80%;
-  margin: 0 auto 5em auto;
-  border-radius: 1em;
 }
 
 .testimonials-section ul li img {
@@ -331,9 +353,6 @@ nav li a:hover {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-  }
-  .testimonials-section ul li {
-    margin: 0 1em;
   }
   .contact-section {
     position: relative;
