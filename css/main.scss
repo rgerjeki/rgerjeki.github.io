@@ -118,10 +118,19 @@ ul.features-list {
     }
 }
 
+blockquote {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+
 
 .testimonials-section {
     background: #00274C;
     color: #00274C;
+    width: fit-content;
 
     ul {
 

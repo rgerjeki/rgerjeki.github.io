@@ -115,9 +115,24 @@ ul.features-list li:before {
   overflow: hidden;
 }
 
+blockquote {
+  display: block;
+  -webkit-margin-before: 1em;
+          margin-block-start: 1em;
+  -webkit-margin-after: 1em;
+          margin-block-end: 1em;
+  -webkit-margin-start: 0;
+          margin-inline-start: 0;
+  -webkit-margin-end: 0;
+          margin-inline-end: 0;
+}
+
 .testimonials-section {
   background: #00274C;
   color: #00274C;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .testimonials-section ul li {
