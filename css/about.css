@@ -404,45 +404,45 @@ nav li a:hover {
     display: block;
     margin-left: 5em;
   }
-  ul .features-list-linked {
-    font-size: 4em;
+  ul li.features-list-linked {
+    font-size: 1.4em;
   }
-  ul .features-list-linked:before {
-    width: 500px;
-    height: 500px;
-  }
-  ul {
-    display: block;
-    margin-left: 5em;
-  }
-  ul .features-list-github {
-    font-size: 4em;
-  }
-  ul .features-list-github:before {
-    width: 500px;
-    height: 500px;
+  ul li.features-list-linked:before {
+    width: 50px;
+    height: 50px;
   }
   ul {
     display: block;
     margin-left: 5em;
   }
-  ul .features-list-facebook {
-    font-size: 4em;
+  ul li.features-list-github {
+    font-size: 1.4em;
   }
-  ul .features-list-facebook:before {
-    width: 500px;
-    height: 500px;
+  ul li.features-list-github:before {
+    width: 50px;
+    height: 50px;
   }
   ul {
     display: block;
     margin-left: 5em;
   }
-  ul .features-list-insta {
-    font-size: 4em;
+  ul li.features-list-facebook {
+    font-size: 1.4em;
   }
-  ul .features-list-insta:before {
-    width: 500px;
-    height: 500px;
+  ul li.features-list-facebook:before {
+    width: 50px;
+    height: 50px;
+  }
+  ul {
+    display: block;
+    margin-left: 5em;
+  }
+  ul li.features-list-insta {
+    font-size: 1.4em;
+  }
+  ul li.features-list-insta:before {
+    width: 50px;
+    height: 50px;
   }
 }
 

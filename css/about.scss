@@ -386,12 +386,12 @@ nav {
         display: block;
         margin-left: 5em;
 
-        .features-list-linked {
-            font-size: 4em;
+        li.features-list-linked {
+            font-size: 1.4em;
 
             &:before {
-                width: 500px;
-                height: 500px;
+                width: 50px;
+                height: 50px;
             }
         }
     }
@@ -400,12 +400,12 @@ nav {
         display: block;
         margin-left: 5em;
 
-        .features-list-github {
-            font-size: 4em;
+        li.features-list-github {
+            font-size: 1.4em;
 
             &:before {
-                width: 500px;
-                height: 500px;
+                width: 50px;
+                height: 50px;
             }
         }
     }
@@ -414,12 +414,12 @@ nav {
         display: block;
         margin-left: 5em;
 
-        .features-list-facebook {
-            font-size: 4em;
+        li.features-list-facebook {
+            font-size: 1.4em;
 
             &:before {
-                width: 500px;
-                height: 500px;
+                width: 50px;
+                height: 50px;
             }
         }
     }
@@ -428,12 +428,12 @@ nav {
         display: block;
         margin-left: 5em;
 
-        .features-list-insta {
-            font-size: 4em;
+        li.features-list-insta {
+            font-size: 1.4em;
 
             &:before {
-                width: 500px;
-                height: 500px;
+                width: 50px;
+                height: 50px;
             }
         }
     }
