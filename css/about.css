@@ -241,6 +241,55 @@ input, textarea {
   color: #00274C;
 }
 
+.contact-section {
+  position: relative;
+  -webkit-animation: mymove2 2s;
+          animation: mymove2 2s;
+}
+
+.contact-section #div2 {
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+@-webkit-keyframes mymove2 {
+  from {
+    left: -1500px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+@keyframes mymove2 {
+  from {
+    left: -1500px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+.container {
+  position: relative;
+  -webkit-animation: mymove2 2s;
+          animation: mymove2 2s;
+}
+
+.container #div2 {
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+@keyframes mymove2 {
+  from {
+    left: -1500px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
 input[type="submit"] {
   background-color: var(--primary-color);
   color: #00274C;
@@ -355,50 +404,54 @@ nav li a:hover {
     display: block;
     margin-left: 5em;
   }
-  ul li.features-list-linked {
-    font-size: 1.4em;
+  ul .features-list-linked {
+    font-size: 4em;
   }
-  ul li.features-list-linked:before {
-    width: 30px;
-    height: 30px;
-  }
-  ul {
-    display: block;
-    margin-left: 5em;
-  }
-  ul li.features-list-github {
-    font-size: 1.4em;
-  }
-  ul li.features-list-github:before {
-    width: 30px;
-    height: 30px;
+  ul .features-list-linked:before {
+    width: 500px;
+    height: 500px;
   }
   ul {
     display: block;
     margin-left: 5em;
   }
-  ul li.features-list-facebook {
-    font-size: 1.4em;
+  ul .features-list-github {
+    font-size: 4em;
   }
-  ul li.features-list-facebook:before {
-    width: 30px;
-    height: 30px;
+  ul .features-list-github:before {
+    width: 500px;
+    height: 500px;
   }
   ul {
     display: block;
     margin-left: 5em;
   }
-  ul li.features-list-insta {
-    font-size: 1.4em;
+  ul .features-list-facebook {
+    font-size: 4em;
   }
-  ul li.features-list-insta:before {
-    width: 30px;
-    height: 30px;
+  ul .features-list-facebook:before {
+    width: 500px;
+    height: 500px;
+  }
+  ul {
+    display: block;
+    margin-left: 5em;
+  }
+  ul .features-list-insta {
+    font-size: 4em;
+  }
+  ul .features-list-insta:before {
+    width: 500px;
+    height: 500px;
   }
 }
 
 @media only screen and (min-width: 1080px) {
   .container {
+    width: 1080px;
+    margin: 0 auto;
+  }
+  .container1 {
     width: 1080px;
     margin: 0 auto;
   }
@@ -454,7 +507,7 @@ nav li a:hover {
   .contact-section {
     position: relative;
   }
-  .contact-section .container {
+  .contact-section .container1 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -489,6 +542,26 @@ nav li a:hover {
     background: #00274C;
     right: 45%;
     top: .9em;
+    -webkit-animation-name: example;
+            animation-name: example;
+    -webkit-animation-duration: 3s;
+            animation-duration: 3s;
+  }
+  @-webkit-keyframes example {
+    from {
+      background-color: #FFCB05;
+    }
+    to {
+      background-color: #00274C;
+    }
+  }
+  @keyframes example {
+    from {
+      background-color: #FFCB05;
+    }
+    to {
+      background-color: #00274C;
+    }
   }
 }
 /*# sourceMappingURL=about.css.map */

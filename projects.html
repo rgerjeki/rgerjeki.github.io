@@ -1,12 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script data-ad-client="ca-pub-6572980678192264" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <title>Python3 Projects | Reese Gerjekian</title>
 <meta charset="UTF-8">
-<meta name="description" content="Reese Gerjekian's Projects">
-<meta name="keywords" content="Reese Gerjekian, Projects, Python">
-<meta name="author" content="Reese Gerjekian">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/png" href="images/My Post.jpg">
 <link rel="stylesheet" href="css/projects.css">
@@ -15,7 +11,7 @@
 </style>
 </head>
 <body>
-<a href="google32d1bb13022fbff3.html"></a>
+
 <div class="navbar">
   <div class="container">
     <a class="logo" href="index.html"> Reese Gerjekian</a>
@@ -28,7 +24,7 @@
         <li class="current"><a href="index.html"> Home</a></li>
         <li><a href="about.html"> Links</a></li>
         <li><a href="projects.html"> Python3 Projects</a></li>
-        <li><a href="gallary.html"> Gallery</a></li>
+        <li><a href="gallery.html"> Gallery</a></li>
       </ul>
     </nav>
   </div>
@@ -45,13 +41,13 @@
           <body>
 
             <h1>Python3 - User input</h1>
-            <pre><code class="python8">hrs = input("Enter Hours:")
+            <pre><code class="python3">hrs = input("Enter Hours:")
 rate = input("Enter Rate:")
 pay = float(hrs) * float(rate)
 print("Pay:", pay)</code></pre>
 
             <h1>Python3 - If statements #1</h1>
-            <pre><code class="python6">pay = 0
+            <pre><code class="python3">pay = 0
 def computepay(h, r):
     return pay
 
@@ -70,7 +66,7 @@ p = computepay(h, r)
 print("Pay", p)</code></pre>
 
             <h1>Python3 - If statements #2</h1>
-            <pre><code class="python7">hrs = input("Enter Hours:")
+            <pre><code class="python3">hrs = input("Enter Hours:")
 h = float(hrs)
 rate = input("Enter Rate:")
 r = float(rate)
@@ -89,7 +85,7 @@ else:
 print(pay)</code></pre>
 
             <h1>Python3 - For loops / Lists</h1>
-            <pre><code class="python7">fname = input("Enter file name: ")
+            <pre><code class="python3">fname = input("Enter file name: ")
 fh = open(fname)
 lst = list()
 for line in fh:
@@ -98,7 +94,7 @@ for line in fh:
     print(list())</code></pre>
 
             <h1>Python3 - Try &amp; Except</h1>
-            <pre><code class="python7">hrs = input("Enter Hours:")
+            <pre><code class="python3">hrs = input("Enter Hours:")
 rate = input("Enter Rate:")
 try:
     h = float(hrs)
@@ -122,7 +118,7 @@ else:
 print(pay)</code></pre>
 
             <h1>Python3 - Reading through files #1</h1>
-            <pre><code class="python2"># Enter any .txt file of your choice!
+            <pre><code class="python3"># Enter any .txt file of your choice!
 fname = input("Enter file name: ")
 fh = open(fname)
 fread = fh.read()
@@ -151,7 +147,7 @@ average = total / lcount
 print("Average spam confidence:", average)</code></pre>
 
 <h1>Python3 - Reading through files #3</h1>
-<pre><code class="python4">fname = input("Enter file name: ")
+<pre><code class="python3">fname = input("Enter file name: ")
 fh = open(fname)
 lst = list()
 newlist = list() #create new list to get rid of duplicates
@@ -166,7 +162,7 @@ for word in lst:
 print(newlist)</code></pre>
 
 <h1>Python3 - Reading through files #4</h1>
-<pre><code class="python5">fname = input("Enter file name: ")
+<pre><code class="python3">fname = input("Enter file name: ")
 if len(fname) < 1:
     fname = "mbox-short.txt"
 
@@ -183,13 +179,13 @@ for line in fh: #reads through each line in .txt file
 print("There were", count, "lines in the file with From as the first word")</code></pre>
 
 <h1>Python3 - Find &amp; Extract</h1>
-<pre><code class="python5">text = "X-DSPAM-Confidence:    0.8475"
+<pre><code class="python3">text = "X-DSPAM-Confidence:    0.8475"
 x = text.find('0')
 y = text[23:]
 print(float(y))</code></pre>
 
 <h1>Python3 - Dictionaries</h1>
-<pre><code class="python5">name = input("Enter file:")
+<pre><code class="python3">name = input("Enter file:")
 if len(name) < 1:
     name = "mbox-short.txt"
 handle = open(name)
@@ -212,7 +208,7 @@ max_value = max(all_values) #gets the max value
 print(max_key, max_value)</code></pre>
 
 <h1>Python3 - Tuples</h1>
-<pre><code class="python5">name = input("Enter file:")
+<pre><code class="python3">name = input("Enter file:")
 if len(name) < 1:
     name = "mbox-short.txt"
 handle = open(name)
@@ -246,7 +242,7 @@ for key, value in lst: #reads through our list
     print(key, value) #prints out each line in our list (key value)</code></pre>
 
     <h1>Python3 - Regular Expressions</h1>
-<pre><code class="python5">import re
+<pre><code class="python3">import re
 lst = list() #new list
 
 name = input("Enter File:")
@@ -265,11 +261,11 @@ for line in open_text:
 print(sum(lst)) #returns sum of all int values in list</code></pre>
 
 <h1>Python3 - Regular Expressions (Shortened version)</h1>
-<pre><code class="python5">import re
+<pre><code class="python3">import re
 print( sum( [ int(i) for i in re.findall('[0-9]+',open("actual.txt").read()) ] ) )</code></pre>
 
 <h1>Python3 - Networks and Sockets</h1>
-<pre><code class="python5">import socket
+<pre><code class="python3">import socket
 
 mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 mysock.connect(('data.pr4e.org', 80))
@@ -285,7 +281,7 @@ while True:
 mysock.close()</code></pre>
 
 <h1>Python3 - Retrieving Web Pages</h1>
-<pre><code class="python5">#add .py file in bs4 folder
+<pre><code class="python3">#add .py file in bs4 folder
 import urllib.request, urllib.parse, urllib.error
 from bs4 import BeautifulSoup
 import ssl
@@ -321,7 +317,7 @@ while curr_c < int_c:
 print('Last Url: ', url)</code></pre>
 
 <h1>Python3 - Extracting XML Data</h1>
-<pre><code class="python5">from urllib.request import urlopen
+<pre><code class="python3">from urllib.request import urlopen
 import urllib
 import xml.etree.ElementTree as ET
 
@@ -346,7 +342,7 @@ for count in counts:
 print("Sum:" + str(x))</code></pre>
 
 <h1>Python3 - Extracting JSON Data #1</h1>
-<pre><code class="python5">import json
+<pre><code class="python3">import json
 import js
 import urllib
 counts = list()
@@ -363,7 +359,7 @@ except:
 print('Sum:' , sum(nested_dict['count'] for nested_dict in js['comments']))</code></pre>
 
 <h1>Python3 - Extracting JSON Data #2</h1>
-<pre><code class="python5">import urllib.request, urllib.parse, urllib.error
+<pre><code class="python3">import urllib.request, urllib.parse, urllib.error
 import json
 import ssl
 
@@ -418,8 +414,9 @@ while True:
 </section>
 
 <section class="shoutout">
-  <div class="container">
-    <h1><a href="https://www.py4e.com">Shoutout to Dr. Charles Severance</a></h1>
+  <div class="container2">
+    <h1><a href="https://www.py4e.com">Dr. Charles Severance</a></h1>
+    <img src="https://images-na.ssl-images-amazon.com/images/I/71h-CDz3-nL.jpg" alt="Dr.C">
     <img src="images/severance_charles_03.jpg" alt="Dr.C">
   </div>
 
@@ -427,7 +424,7 @@ while True:
 
 
 <section class="contact-section">
-    <div class="container">
+    <div class="container1">
         <div class="contact-left">
             <h2>Contact</h2>
 

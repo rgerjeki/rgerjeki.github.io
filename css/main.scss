@@ -88,9 +88,35 @@ section {
     margin-top: 3em;
 }
 
+.container {
+    position: relative;
+    animation: mymove2 2s;
+      
+    #div2 {animation-timing-function: ease;}
+      
+    @keyframes mymove2 {
+        from {left: -1500px;}
+        to {left: 0px;}
+    }
+}
+
+.contact-section {
+    position: relative;
+    animation: mymove2 2s;
+      
+    #div2 {animation-timing-function: ease;}
+      
+    @keyframes mymove2 {
+        from {left: -1500px;}
+        to {left: 0px;}
+    }
+}
+
 .features-section {
     background: var(--primary-color);
 }
+
+
 
 ul.features-list {
     margin: 0;
@@ -295,6 +321,11 @@ nav {
         margin: 0 auto;
     }
 
+    .container1 {
+        width: 1080px;
+        margin: 0 auto;
+    }
+
     section {
         padding: 10em 4em;
     }
@@ -363,7 +394,7 @@ nav {
     .contact-section {
         position: relative;
 
-        .container {
+        .container1 {
             display: flex;
         }
     }

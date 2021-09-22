@@ -69,6 +69,75 @@ section {
   text-align: center;
 }
 
+.container {
+  position: relative;
+  -webkit-animation: mymove2 2s;
+          animation: mymove2 2s;
+}
+
+.container #div2 {
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+@-webkit-keyframes mymove2 {
+  from {
+    left: -1500px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+@keyframes mymove2 {
+  from {
+    left: -1500px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+.contact-section {
+  position: relative;
+  -webkit-animation: mymove2 2s;
+          animation: mymove2 2s;
+}
+
+.contact-section #div2 {
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+@keyframes mymove2 {
+  from {
+    left: -1500px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+section {
+  position: relative;
+  -webkit-animation: mymove2 2s;
+          animation: mymove2 2s;
+}
+
+section #div2 {
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+@keyframes mymove2 {
+  from {
+    left: -1500px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
 .left-col .subhead {
   text-transform: uppercase;
   font-weight: bold;
@@ -258,6 +327,10 @@ nav li a:hover {
     width: 1080px;
     margin: 0 auto;
   }
+  .container1 {
+    width: 1080px;
+    margin: 0 auto;
+  }
   section {
     padding: 10em 4em;
   }
@@ -300,7 +373,7 @@ nav li a:hover {
   .contact-section {
     position: relative;
   }
-  .contact-section .container {
+  .contact-section .container1 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

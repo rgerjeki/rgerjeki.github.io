@@ -47,54 +47,61 @@ ul {
     padding: 0;
 }
 
-section {
-    padding: 5em 2em;
+
+
+.container {
+    position: relative;
+    animation: mymove2 2s;
+      
+    #div2 {animation-timing-function: ease;}
+      
+    @keyframes mymove2 {
+        from {left: -1500px;}
+        to {left: 0px;}
+    }
 }
 
-.hero {
-    text-align: center;
+.contact-section {
+    position: relative;
+    animation: mymove2 2s;
+      
+    #div2 {animation-timing-function: ease;}
+      
+    @keyframes mymove2 {
+        from {left: -1500px;}
+        to {left: 0px;}
+    }
 }
 
-.left-col {
 
-    .subhead{
-        text-transform: uppercase;
-        font-weight: bold;
-        color: grey;
-        letter-spacing: .3em;
-    }
-
-    h1 {
-        font-size: 2.5em;
-        line-height: 1.3em;
-        margin-top: .2em;
-    }
-
-    .primary-cta {
-        background: var(--primary-color);
-        color: #00274C;
-        text-decoration: none;
-        padding: .6em 1.3em;
-        font-size: 1.4em;
-        border-radius: 5em;
-        font-weight: bold;
-        display: inline-block;
-    }
-
-}
-
-.shoutout .container {
-    background: #00274C;
+.shoutout {
+    display: block;
+    background-color: #00274C;
     h1 {
         color: #FFCB05;
         font-size: 4em;
     }
     img {
         position: relative;
+        width: 300px;
+        height: 400px;
         right: -40%;
         top: 0%;
     }
+    .container2 {
+        position: relative;
+        animation: mymove2 2s;
+          
+        #div2 {animation-timing-function: ease;}
+          
+        @keyframes mymove2 {
+            from {left: -1500px;}
+            to {left: 0px;}
+        }
+    }
+
 }
+
 
 .hero-img {
     width: 70%;
@@ -113,167 +120,6 @@ section {
     margin-bottom: 1em;
     margin-left: 2em;
     position: relative;
-}
-
-.python2 {
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
-    font-size: 1.1em;
-    margin-bottom: 1em;
-    margin-left: 2em;
-    position: relative;
-}
-
-.python4 {
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
-    font-size: 1.1em;
-    margin-bottom: 1em;
-    margin-left: 2em;
-    position: relative;
-}
-
-.python5 {
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
-    font-size: 1.1em;
-    margin-bottom: 1em;
-    margin-left: 2em;
-    position: relative;
-}
-
-.python6 {
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
-    font-size: 1.1em;
-    margin-bottom: 1em;
-    margin-left: 2em;
-    position: relative;
-}
-
-.python7 {
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
-    font-size: 1.1em;
-    margin-bottom: 1em;
-    margin-left: 2em;
-    position: relative;
-}
-
-.python8 {
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
-    font-size: 1.1em;
-    margin-bottom: 1em;
-    margin-left: 2em;
-    position: relative;
-}
-
-ul {
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
-
-    li.features-list-github {
-        font-size: 1.1em;
-        margin-bottom: 1em;
-        margin-left: 2em;
-        position: relative;
-
-        &:before {
-            content: '';
-            left: -2em;
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background-image: url('../images/icons8-github.svg');
-            background-size: contain;
-            margin-right: .5em;
-            overflow: hidden;
-        }
-    }
-}
-
-ul {
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
-
-    li.features-list-facebook {
-        font-size: 1.1em;
-        margin-bottom: 1em;
-        margin-left: 2em;
-        position: relative;
-
-        &:before {
-            content: '';
-            left: -2em;
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background-image: url('../images/icons8-facebook-circled.svg');
-            background-size: contain;
-            margin-right: .5em;
-            overflow: hidden;
-        }
-    }
-}
-
-ul {
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
-
-    li.features-list-insta {
-        font-size: 1.1em;
-        margin-bottom: 1em;
-        margin-left: 2em;
-        position: relative;
-
-        &:before {
-            content: '';
-            left: -2em;
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background-image: url('../images/icons8-instagram-logo.svg');
-            background-size: contain;
-            margin-right: .5em;
-            overflow: hidden;
-        }
-    }
-}
-
-
-.testimonials-section {
-    background: #00274C;
-    color: #00274C;
-
-    ul {
-
-        li{
-            background: var(--primary-color);
-            text-align: center;
-            padding: 2em 1em;
-            width: 80%;
-            margin: 0 auto 5em auto;
-            border-radius: 1em;
-
-            img {
-                width: 5em;
-                height: 5em;
-                border: 5px solid #00274C;
-                border-radius: 50%;
-                margin-top: -4.5em;
-            }
-        }
-    }
 }
 
 h2 {
@@ -418,84 +264,6 @@ nav {
         margin-left: 10em;
         font-size: 1.4em;
     }
-
-    .python2 {
-        display: block;
-        margin-left: 10em;
-        font-size: 1.4em;
-    }
-
-    .python4 {
-        display: block;
-        margin-left: 10em;
-        font-size: 1.4em;
-    }
-
-    .python5 {
-        display: block;
-        margin-left: 10em;
-        font-size: 1.4em;
-    }
-
-    .python6 {
-        display: block;
-        margin-left: 10em;
-        font-size: 1.4em;
-    }
-
-    .python7 {
-        display: block;
-        margin-left: 10em;
-        font-size: 1.4em;
-    }
-
-    .python8 {
-        display: block;
-        margin-left: 10em;
-        font-size: 1.4em;
-    }
-
-    ul {
-        display: block;
-        margin-left: 5em;
-
-        li.features-list-github {
-            font-size: 1.4em;
-
-            &:before {
-                width: 30px;
-                height: 30px;
-            }
-        }
-    }
-
-    ul {
-        display: block;
-        margin-left: 5em;
-
-        li.features-list-facebook {
-            font-size: 1.4em;
-
-            &:before {
-                width: 30px;
-                height: 30px;
-            }
-        }
-    }
-
-    ul {
-        display: block;
-        margin-left: 5em;
-
-        li.features-list-insta {
-            font-size: 1.4em;
-
-            &:before {
-                width: 30px;
-                height: 30px;
-            }
-        }
-    }
 }
 
 @media only screen and (min-width: 1080px) {
@@ -504,37 +272,14 @@ nav {
         margin: 0 auto;
     }
 
+    .container1 {
+        width: 1080px;
+        margin: 0 auto;
+    }
+
     section {
         padding: 10em 4em;
     }
-
-    .hero .container {
-        display: flex;
-        justify-content: space-between;
-        text-align: left;
-
-        .left-col {
-            margin: 3em 3em 0 5em;
-
-            h1 {
-                font-size: 3em;
-                width: 90%;
-            }
-        }
-    }
-
-    .hero-img {
-        width: 30%;
-        margin-right: 8em;
-    }
-
-    .hero-cta {
-        display: flex;
-    }
-    .primary-cta {
-        margin-right: 1em;
-    }
-
 
     .features-section {
         position: relative;
@@ -548,18 +293,10 @@ nav {
         bottom: -2em;
     }
 
-    .testimonials-section ul {
-        display: flex;
-
-        li {
-            margin: 0 1em;
-        }
-    }
-
     .contact-section {
         position: relative;
 
-        .container {
+        .container1 {
             display: flex;
         }
     }
@@ -601,6 +338,13 @@ nav {
             background: #00274C;
             right: 45%;
             top: .9em;
+            animation-name: example;
+            animation-duration: 3s;
+              
+            @keyframes example {
+                from {background-color: #FFCB05;}
+                to {background-color: #00274C;}
+            }
         }
     }
 }

@@ -243,6 +243,31 @@ input, textarea {
     color: #00274C;
 }
 
+
+.contact-section {
+    position: relative;
+    animation: mymove2 2s;
+      
+    #div2 {animation-timing-function: ease;}
+      
+    @keyframes mymove2 {
+        from {left: -1500px;}
+        to {left: 0px;}
+    }
+}
+
+.container {
+    position: relative;
+    animation: mymove2 2s;
+      
+    #div2 {animation-timing-function: ease;}
+      
+    @keyframes mymove2 {
+        from {left: -1500px;}
+        to {left: 0px;}
+    }
+}
+
 input[type="submit"] {
     background-color: var(--primary-color);
     color: #00274C;
@@ -361,12 +386,12 @@ nav {
         display: block;
         margin-left: 5em;
 
-        li.features-list-linked {
-            font-size: 1.4em;
+        .features-list-linked {
+            font-size: 4em;
 
             &:before {
-                width: 30px;
-                height: 30px;
+                width: 500px;
+                height: 500px;
             }
         }
     }
@@ -375,12 +400,12 @@ nav {
         display: block;
         margin-left: 5em;
 
-        li.features-list-github {
-            font-size: 1.4em;
+        .features-list-github {
+            font-size: 4em;
 
             &:before {
-                width: 30px;
-                height: 30px;
+                width: 500px;
+                height: 500px;
             }
         }
     }
@@ -389,12 +414,12 @@ nav {
         display: block;
         margin-left: 5em;
 
-        li.features-list-facebook {
-            font-size: 1.4em;
+        .features-list-facebook {
+            font-size: 4em;
 
             &:before {
-                width: 30px;
-                height: 30px;
+                width: 500px;
+                height: 500px;
             }
         }
     }
@@ -403,12 +428,12 @@ nav {
         display: block;
         margin-left: 5em;
 
-        li.features-list-insta {
-            font-size: 1.4em;
+        .features-list-insta {
+            font-size: 4em;
 
             &:before {
-                width: 30px;
-                height: 30px;
+                width: 500px;
+                height: 500px;
             }
         }
     }
@@ -418,6 +443,11 @@ nav {
 
 @media only screen and (min-width: 1080px) {
     .container {
+        width: 1080px;
+        margin: 0 auto;
+    }
+
+    .container1 {
         width: 1080px;
         margin: 0 auto;
     }
@@ -477,7 +507,7 @@ nav {
     .contact-section {
         position: relative;
 
-        .container {
+        .container1 {
             display: flex;
         }
     }
@@ -518,6 +548,14 @@ nav {
             background: #00274C;
             right: 45%;
             top: .9em;
+            animation-name: example;
+            animation-duration: 3s;
+              
+            @keyframes example {
+                from {background-color: #FFCB05;}
+                to {background-color: #00274C;}
+            }
+
         }
     }
 }
