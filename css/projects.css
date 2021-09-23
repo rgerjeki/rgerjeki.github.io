@@ -102,7 +102,7 @@ ul {
 
 .shoutout h1 {
   color: #FFCB05;
-  font-size: 4em;
+  font-size: 3em;
 }
 
 .shoutout img {
@@ -312,7 +312,7 @@ nav li a:hover {
   }
   .features-section img {
     display: block;
-    position: absolute;
+    position: relative;
     right: 0;
     width: 350px;
     bottom: -2em;
@@ -340,6 +340,8 @@ nav li a:hover {
 @media only screen and (min-width: 200px) {
   .features-section a, .features-section h1 {
     color: #00274C;
+    -webkit-margin-before: 1.8em;
+            margin-block-start: 1.8em;
     font-size: 2em;
     font-weight: bold;
     text-decoration: none;
