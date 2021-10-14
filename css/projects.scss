@@ -206,7 +206,7 @@ nav {
     cursor: pointer;
 }
 
-@media only screen and (min-width: 0px) {
+@media only screen and (min-width: 700px) {
     
     .mobile-menu, .mobile-menu-exit {
         display: none;
@@ -264,7 +264,7 @@ nav {
         display: block;
         position: relative;
         max-block-size: 5em;
-        max-width: 5em;
+        max-width: 2.5em;
         font-size: 1.4em;
     }
 }
