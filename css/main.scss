@@ -157,9 +157,10 @@ blockquote {
     background: #00274C;
     color: #00274C;
     width: fit-content;
+    margin: 0 auto 0 auto;
 
     ul {
-
+        
         li{
             background: var(--primary-color);
             text-align: center;
