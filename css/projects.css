@@ -235,7 +235,7 @@ nav li a:hover {
   cursor: pointer;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 0px) {
   .mobile-menu, .mobile-menu-exit {
     display: none;
   }
@@ -287,17 +287,39 @@ nav li a:hover {
   }
 }
 
-@media only screen and (min-width: 0px) {
+@media only screen and (min-width: 500px) {
   .python3 {
     display: block;
-    margin-left: 10em;
+    position: relative;
+    max-block-size: 5em;
+    max-width: 12em;
+    font-size: 1.4em;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .python3 {
+    display: block;
+    position: relative;
+    max-block-size: 7em;
+    max-width: 25em;
+    font-size: 1.4em;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .python3 {
+    display: block;
+    position: relative;
+    max-block-size: 15em;
+    max-width: 50em;
     font-size: 1.4em;
   }
 }
 
 @media only screen and (min-width: 1080px) {
   .container {
-    width: 1080px;
+    max-width: 100%;
     margin: 0 auto;
   }
   .container1 {
@@ -345,6 +367,14 @@ nav li a:hover {
     font-size: 2em;
     font-weight: bold;
     text-decoration: none;
+  }
+  .features-section pre {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    position: relative;
+    top: 40px;
+    left: 0px;
   }
   .features-section:after {
     content: 'Python3';
