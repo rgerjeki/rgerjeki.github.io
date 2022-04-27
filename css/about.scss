@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Glory:wght@200&display=swap');
 
 :root {
-    --primary-color: #ab0520;
+    --primary-color: #0C234B;
 }
 
 body {
@@ -11,7 +11,7 @@ body {
 }
 
 .navbar {
-    background: #0C234B;
+    background: #ab0520;
     padding: 1em;
 
     .logo {
@@ -72,7 +72,7 @@ section {
 
     .primary-cta {
         background: var(--primary-color);
-        color: #0C234B;
+        color: #ab0520;
         text-decoration: none;
         padding: .6em 1.3em;
         font-size: 1.4em;
@@ -196,8 +196,8 @@ ul {
 
 
 .testimonials-section {
-    background: #0C234B;
-    color: #0C234B;
+    background: #ab0520;
+    color: #ab0520;
 
     ul {
 
@@ -212,7 +212,7 @@ ul {
             img {
                 width: 5em;
                 height: 5em;
-                border: 5px solid #0C234B;
+                border: 5px solid #ab0520;
                 border-radius: 50%;
                 margin-top: -4.5em;
             }
@@ -240,7 +240,7 @@ input, textarea {
 }
 
 .contact-left {
-    color: #0C234B;
+    color: #ab0520;
 }
 
 
@@ -270,7 +270,7 @@ input, textarea {
 
 input[type="submit"] {
     background-color: var(--primary-color);
-    color: #0C234B;
+    color: #ab0520;
     font-weight: bold;
     font-size: 1.3em;
     border: none;
@@ -297,7 +297,7 @@ nav {
     width: 66%;
     right: 0;
     top: 0;
-    background: #0C234B;
+    background: #ab0520;
     height: 100vh;
     padding: 1em;
 
@@ -308,7 +308,7 @@ nav {
     li {
 
         a{
-            color: #ab0520;
+            color: #0C234B;
             text-decoration: none;
             display: block;
             padding: .5em;
@@ -353,7 +353,7 @@ nav {
         }
 
         a{
-            color: #ab0520;
+            color: #0C234B;
             font-size: 1em;
             padding: .1em 1em;
         }
@@ -530,7 +530,7 @@ nav {
     .features-section {
 
         a {
-            color: #0C234B;
+            color: #ab0520;
             font-size: 2em;
             text-decoration: none;
         }
@@ -538,22 +538,22 @@ nav {
 
         &:after {
             content: 'Links';
-            color: #ab0520;
+            color: #0C234B;
             text-align: center;
             font-size: 4em;
             font-weight: bold;
             position: absolute;
             width: 200px;
             height: 1em;
-            background: #0C234B;
+            background: #ab0520;
             right: 45%;
             top: .9em;
             animation-name: example;
             animation-duration: 3s;
               
             @keyframes example {
-                from {background-color: #ab0520;}
-                to {background-color: #0C234B;}
+                from {background-color: #0C234B;}
+                to {background-color: #ab0520;}
             }
 
         }

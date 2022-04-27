@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Glory:wght@200&display=swap");
 :root {
-  --primary-color: #ab0520;
+  --primary-color: #0C234B;
 }
 
 body {
@@ -10,7 +10,7 @@ body {
 }
 
 .navbar {
-  background: #0C234B;
+  background: #ab0520;
   padding: 1em;
   font-family: 'Glory';
 }
@@ -153,7 +153,7 @@ section #div2 {
 
 .left-col .primary-cta {
   background: var(--primary-color);
-  color: #0C234B;
+  color: #ab0520;
   text-decoration: none;
   padding: .6em 1.3em;
   font-size: 1.4em;
@@ -168,8 +168,8 @@ section #div2 {
 }
 
 .testimonials-section {
-  background: #0C234B;
-  color: #0C234B;
+  background: #ab0520;
+  color: #ab0520;
 }
 
 .testimonials-section ul li {
@@ -210,12 +210,12 @@ input, textarea {
 }
 
 .contact-left {
-  color: #0C234B;
+  color: #ab0520;
 }
 
 input[type="submit"] {
   background-color: var(--primary-color);
-  color: #0C234B;
+  color: #ab0520;
   font-weight: bold;
   font-size: 1.3em;
   border: none;
@@ -242,7 +242,7 @@ nav {
   width: 66%;
   right: 0;
   top: 0;
-  background: #0C234B;
+  background: #ab0520;
   height: 100vh;
   padding: 1em;
 }
@@ -252,7 +252,7 @@ nav ul.primary-nav {
 }
 
 nav li a {
-  color: #ab0520;
+  color: #0C234B;
   text-decoration: none;
   display: block;
   padding: .5em;
@@ -299,7 +299,7 @@ nav li a:hover {
     display: flex;
   }
   .navbar nav a {
-    color: #ab0520;
+    color: #0C234B;
     font-size: 1em;
     padding: .1em 1em;
   }
@@ -395,20 +395,20 @@ nav li a:hover {
     width: auto;
   }
   .features-section a {
-    color: #0C234B;
+    color: #ab0520;
     font-size: 2em;
     text-decoration: none;
   }
   .features-section:after {
     content: 'Gallary';
-    color: #ab0520;
+    color: #0C234B;
     text-align: center;
     font-size: 4em;
     font-weight: bold;
     position: absolute;
     width: 200px;
     height: 1.1em;
-    background: #0C234B;
+    background: #ab0520;
     right: 45%;
     top: 2.5em;
   }
