@@ -15,10 +15,7 @@ body {
 }
 
 .navbar .logo {
-  text-decoration: none;
-  font-weight: 700;
-  color: var(--primary-color);
-  font-size: 1.2em;
+  position: relative;
 }
 
 .navbar nav {
