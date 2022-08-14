@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Glory:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap");
 :root {
   --primary-color: #0C234B;
 }
@@ -6,29 +6,23 @@
 body {
   background: #f2f2f2;
   margin: 0;
-  font-family: 'Glory';
+  font-family: "Glory";
 }
 
 .navbar {
   background: #ab0520;
   padding: 1em;
 }
-
 .navbar .logo {
   position: relative;
 }
-
 .navbar nav {
   display: none;
 }
-
 .navbar .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   place-content: space-between;
 }
-
 .navbar .mobile-menu {
   cursor: pointer;
 }
@@ -49,26 +43,25 @@ section {
 
 .hero {
   text-align: center;
+  padding: auto;
 }
 
 .left-col .subhead {
   text-transform: uppercase;
   font-weight: bold;
   color: grey;
-  letter-spacing: .3em;
+  letter-spacing: 0.3em;
 }
-
 .left-col h1 {
   font-size: 2.5em;
   line-height: 1.3em;
-  margin-top: .2em;
+  margin-top: 0.2em;
 }
-
 .left-col .primary-cta {
   background: var(--primary-color);
   color: #ab0520;
   text-decoration: none;
-  padding: .6em 1.3em;
+  padding: 0.6em 1.3em;
   font-size: 1.4em;
   border-radius: 5em;
   font-weight: bold;
@@ -80,92 +73,37 @@ section {
   margin-top: 3em;
 }
 
-.container {
-  position: relative;
-  -webkit-animation: mymove2 2s;
-          animation: mymove2 2s;
-}
-
-.container #div2 {
-  -webkit-animation-timing-function: ease;
-          animation-timing-function: ease;
-}
-
-@-webkit-keyframes mymove2 {
-  from {
-    left: -1500px;
-  }
-  to {
-    left: 0px;
-  }
-}
-
-@keyframes mymove2 {
-  from {
-    left: -1500px;
-  }
-  to {
-    left: 0px;
-  }
-}
-
-.contact-section {
-  position: relative;
-  -webkit-animation: mymove2 2s;
-          animation: mymove2 2s;
-}
-
-.contact-section #div2 {
-  -webkit-animation-timing-function: ease;
-          animation-timing-function: ease;
-}
-
-@keyframes mymove2 {
-  from {
-    left: -1500px;
-  }
-  to {
-    left: 0px;
-  }
-}
-
 .features-section {
   background: var(--primary-color);
 }
-
 .features-section h1 {
   color: #ab0520;
 }
-
-.features-section li {
+.features-section s li {
   color: #ab0520;
 }
 
 ul.features-list {
   margin: 0;
-  padding-left: .1em;
-  display: -ms-grid;
+  padding-left: 0.1em;
   display: grid;
-  -ms-grid-columns: (minmax(19rem, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
 }
-
 ul.features-list li {
   font-size: 1.1em;
   margin-bottom: 1em;
   margin-left: 2em;
   position: relative;
 }
-
 ul.features-list li:before {
-  content: '';
+  content: "";
   left: -2em;
   position: absolute;
   width: 20px;
   height: 20px;
   background-image: url("../images/bullet.svg");
   background-size: contain;
-  margin-right: .5em;
+  margin-right: 0.5em;
   overflow: hidden;
 }
 
@@ -189,7 +127,6 @@ blockquote {
   width: fit-content;
   margin: 0 auto 0 auto;
 }
-
 .testimonials-section ul li {
   background: var(--primary-color);
   text-align: center;
@@ -198,7 +135,6 @@ blockquote {
   margin: 0 auto 5em auto;
   border-radius: 1em;
 }
-
 .testimonials-section ul li img {
   width: 5em;
   height: 5em;
@@ -214,24 +150,23 @@ h2 {
 label {
   display: block;
   font-size: 1.2em;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
 }
 
 input, textarea {
   width: 100%;
-  padding: .8em;
+  padding: 0.8em;
   margin-bottom: 1em;
-  border-radius: .3em;
+  border-radius: 0.3em;
   border: 1px solid grey;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .contact-left {
   color: #ab0520;
 }
 
-input[type="submit"] {
+input[type=submit] {
   background-color: var(--primary-color);
   color: #ab0520;
   font-weight: bold;
@@ -240,7 +175,7 @@ input[type="submit"] {
   margin-bottom: 5em;
   border-radius: 5em;
   display: inline-block;
-  padding: .8em 2em;
+  padding: 0.8em 2em;
   width: unset;
   cursor: pointer;
 }
@@ -264,27 +199,24 @@ nav {
   height: 100vh;
   padding: 1em;
 }
-
 nav ul.primary-nav {
   margin-top: 5em;
 }
-
 nav li a {
   color: #0C234B;
   text-decoration: none;
   display: block;
-  padding: .5em;
+  padding: 0.5em;
   font-size: 1.3em;
   text-align: right;
 }
-
 nav li a:hover {
   font-weight: bold;
 }
 
 .mobile-menu-exit {
   float: right;
-  margin: .5em;
+  margin: 0.5em;
   cursor: pointer;
 }
 
@@ -293,18 +225,12 @@ nav li a:hover {
     display: none;
   }
   .navbar, .container {
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 180px auto;
-        grid-template-columns: 180px auto;
+    grid-template-columns: 180px auto;
   }
   .navbar nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
     background: none;
     position: unset;
     height: auto;
@@ -312,14 +238,12 @@ nav li a:hover {
     padding: 0;
   }
   .navbar nav ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
   .navbar nav a {
     color: #0C234B;
     font-size: 1em;
-    padding: .1em 1em;
+    padding: 0.1em 1em;
   }
   .navbar nav ul.primary-nav {
     margin: 0;
@@ -332,14 +256,13 @@ nav li a:hover {
     border: 3px solid var(--primary-color);
     font-weight: bold;
     border-radius: 5em;
-    margin-top: -.2em;
+    margin-top: -0.2em;
   }
   .navbar nav li.go-premium-cta a:hover {
     background: var(--primary-color);
     color: white;
   }
 }
-
 @media only screen and (min-width: 1080px) {
   .container {
     width: 1080px;
@@ -353,12 +276,8 @@ nav li a:hover {
     padding: 10em 4em;
   }
   .hero .container {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
     text-align: left;
   }
   .hero .container .left-col {
@@ -373,8 +292,6 @@ nav li a:hover {
     margin-right: 8em;
   }
   .hero-cta {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
   .primary-cta {
@@ -402,8 +319,6 @@ nav li a:hover {
     bottom: -2em;
   }
   .testimonials-section ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
   .testimonials-section ul li {
@@ -413,8 +328,6 @@ nav li a:hover {
     position: relative;
   }
   .contact-section .container1 {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
   .contact-right {
@@ -428,10 +341,9 @@ nav li a:hover {
     height: 100%;
   }
 }
-
 @media only screen and (min-width: 1450px) {
   .features-section:after {
-    content: '';
+    content: "";
     position: absolute;
     width: 200px;
     height: 20em;
@@ -439,5 +351,4 @@ nav li a:hover {
     left: 0;
     top: -4em;
   }
-}
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

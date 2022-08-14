@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Glory:wght@200&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
 :root {
     --primary-color: #0C234B;
 }
@@ -51,6 +50,7 @@ section {
 
 .hero {
     text-align: center;
+    padding: auto;
 }
 
 .left-col {
@@ -86,36 +86,13 @@ section {
     margin-top: 3em;
 }
 
-.container {
-    position: relative;
-    animation: mymove2 2s;
-      
-    #div2 {animation-timing-function: ease;}
-      
-    @keyframes mymove2 {
-        from {left: -1500px;}
-        to {left: 0px;}
-    }
-}
-
-.contact-section {
-    position: relative;
-    animation: mymove2 2s;
-      
-    #div2 {animation-timing-function: ease;}
-      
-    @keyframes mymove2 {
-        from {left: -1500px;}
-        to {left: 0px;}
-    }
-}
 
 .features-section {
     background: var(--primary-color);
 
     h1 {
         color: #ab0520;
-    }
+    }s
 
     li {
         color: #ab0520;

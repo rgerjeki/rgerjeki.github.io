@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Glory:wght@200&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
 :root {
     --primary-color: #0C234B;
 }
@@ -90,6 +89,9 @@ section {
 
 .features-section {
     background: var(--primary-color);
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding: auto;
 }
 
 ul {
@@ -243,30 +245,6 @@ input, textarea {
     color: #ab0520;
 }
 
-
-.contact-section {
-    position: relative;
-    animation: mymove2 2s;
-      
-    #div2 {animation-timing-function: ease;}
-      
-    @keyframes mymove2 {
-        from {left: -1500px;}
-        to {left: 0px;}
-    }
-}
-
-.container {
-    position: relative;
-    animation: mymove2 2s;
-      
-    #div2 {animation-timing-function: ease;}
-      
-    @keyframes mymove2 {
-        from {left: -1500px;}
-        to {left: 0px;}
-    }
-}
 
 input[type="submit"] {
     background-color: var(--primary-color);
@@ -535,28 +513,6 @@ nav {
             text-decoration: none;
         }
 
-
-        &:after {
-            content: 'Links';
-            color: #0C234B;
-            text-align: center;
-            font-size: 4em;
-            font-weight: bold;
-            position: absolute;
-            width: 200px;
-            height: 1em;
-            background: #ab0520;
-            right: 45%;
-            top: .9em;
-            animation-name: example;
-            animation-duration: 3s;
-              
-            @keyframes example {
-                from {background-color: #0C234B;}
-                to {background-color: #ab0520;}
-            }
-
-        }
     }
 }
 
