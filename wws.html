@@ -17,27 +17,182 @@
 <link rel="stylesheet" href="css/wws.css">
 <style>
 
+.container {
+    margin: 0 auto;
+    max-width: 80em;
+}
+
+main .container {
+    padding: 1em;
+}
+
+nav {
+    background: #ab0520;
+    color: #f2f2f2;
+    left: 0;
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+img {
+  margin-top: 1.5em;
+}
+
+/*** INPUT ***/
+nav input {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+/*** LABEL ***/
+nav label {
+    cursor: pointer;
+    display: block;
+    padding: 0.5em;
+}
+
+/* Hamburger Icon */
+#menu-icon,
+#menu-icon:before,
+#menu-icon:after {
+    background: #f2f2f2;
+    border-radius: 0.0em;
+    height: 0.2em;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+}
+
+#menu-icon {
+    display: inline-block;
+    max-width: 1em;
+    position: relative;
+    top: -1.5em;
+}
+
+nav label #menu-icon {
+    float: right;
+}
+
+#menu-icon:before,
+#menu-icon:after {
+    content: '';
+    left: 0;
+    position: absolute;
+}
+
+#menu-icon:before {
+    top: -0.4em;
+}
+
+#menu-icon:after {
+    bottom: -0.4em;
+}
+
+/* Close Icon */
+nav input[type=checkbox]:checked + label #menu-icon {
+    background: transparent;
+}
+
+nav input[type=checkbox]:checked + label #menu-icon:before {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+nav input[type=checkbox]:checked + label #menu-icon:after {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+
+
+/*** MENU ***/
+/* Overlay */
+nav input:checked ~ #overlay {
+    background: #0C234B;
+    bottom: 0;
+    left: 0;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    z-index: -1;
+}
+
+/* List */
+nav ul {
+    font-size: 1.5em;
+    list-style: none;
+    margin: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+    text-align: center;
+}
+
+nav input:checked ~ ul {
+    margin: 1em;
+    max-height: inherit;
+    opacity: 1;
+}
+
+nav ul > li {
+    margin: 0.5em 0;
+}
+
+nav ul a {
+    color: #f2f2f2!important;
+    text-decoration: none;
+}
+
+nav ul a:hover {
+    text-decoration: underline;
+}
+
+/* Social Media */
+nav ul#social-media > li {
+    display: inline-block;
+    font-size: 1.5em;
+    margin: 0.5em;
+}
 </style>
 </head>
 <body>
 
-<div class="navbar">
+<nav>
   <div class="container">
-    
-    <img id="mobile-cta" class="mobile-menu" src="images/icons8-menu.svg" alt="Open Navigation">
-    
-    <nav>
-      <img id="mobile-exit" class="mobile-menu-exit" src="images/exit.svg" alt="Close Navigation">
-      <ul class="primary-nav">
-        <li><a class="logo" href="index.html"> <img src="images/My Post.jpg" width="35" height="35"> </a></li>
-        <li><a style="color:white;" href="index.html"> Home</a></li>
-        <li><a style="color:white;" href="about.html"> Links</a></li>
-        <li><a style="color:white;" href="gallery.html"> Gallery</a></li>
-        <li class="current"><a style="color:white;" href="wws.html"> WoW&S</a></li>   
+    <a class="logo" href="index.html"> <img src="images/My Post.jpg" width="35" height="35"> </a>
+      <input id="responsive-menu" type="checkbox">
+      <label for="responsive-menu"><span id="menu-icon"></span></label>
+      <div id="overlay"></div>
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li class="current"><a href="wws.html">WoW&S</a></li>
       </ul>
-    </nav>
+      <ul id="social-media">
+          <li>
+            <a class="u-social-url" target="_blank" data-type="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/in/reese-gerjekian-b82610199/"><span class="u-icon u-social-icon u-social-linkedin u-icon-1"><img src="images/icons8-linkedin-circled.svg" alt=""></span>
+            </a>
+          </li>
+          <li>
+            <a class="u-social-url" target="_blank" data-type="Github" title="Github" href="https://github.com/rgerjeki"><span class="u-file-icon u-icon u-social-github u-social-icon u-icon-2"><img src="images/icons8-github.svg" alt=""></span>
+            </a>
+          </li>
+          <li>
+            <a class="u-social-url" title="facebook" target="_blank" href="https://www.facebook.com/rgerjekian"><span class="u-file-icon u-icon u-social-facebook u-social-icon u-icon-3"><img src="images/icons8-facebook-circled.svg" alt=""></span>
+            </a>
+          </li>
+          <li>
+            <a class="u-social-url" title="instagram" target="_blank" href="https://www.instagram.com/rgerjeki/"><span class="u-file-icon u-icon u-social-icon u-social-instagram u-icon-4"><img src="images/icons8-instagram-logo.svg" alt=""></span>
+            </a>
+          </li>
+      </ul>
   </div>
-</div>
+</nav>
 
 <div class="wws">
     <video autoplay loop muted>
