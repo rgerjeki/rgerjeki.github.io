@@ -70,6 +70,21 @@ label {
   font-size: 1em;
 }
 
+.photos_2 {
+  background: var(--primary-color);
+  padding-top: 0%;
+}
+.photos_2 h1 {
+  font-family: "Glory";
+  font-size: 5em;
+  text-shadow: 0 0 10px #ab0520;
+  color: #f2f2f2;
+}
+.photos_2 p {
+  font-family: "Glory";
+  font-size: 1em;
+}
+
 a {
   color: var(--primary-color);
 }
@@ -420,4 +435,34 @@ iframe {
 
 .leaderboard_2 {
   box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.4);
+}
+
+.row_2 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  perspective: none;
+}
+.row_2 .column_2 {
+  position: relative;
+  padding: 20% 15%;
+  cursor: pointer;
+  transition: 1s ease-in-out;
+  transform-style: preserve-3d;
+}
+.row_2 .column_2:hover {
+  transform: rotateY(0.5turn);
+}
+.row_2 .column_2 .card__face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transition: 1s ease-in-out;
+}
+.row_2 .column_2 .card__face--back {
+  transform: rotateY(0.5turn);
 }/*# sourceMappingURL=wws.css.map */

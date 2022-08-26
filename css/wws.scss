@@ -73,6 +73,23 @@ label {
         font-size: 1em;
     }
 }
+.photos_2 {
+    background: var(--primary-color);
+    //controls padding below nav bar
+    padding-top: 0%;
+
+    h1 {
+        font-family: 'Glory';
+        //controlls font size to 'wow&s' text
+        font-size: 5em;
+        text-shadow: 0 0 10px #ab0520;
+        color: #f2f2f2;
+    }
+    p {
+        font-family: 'Glory';
+        font-size: 1em;
+    }
+}
 
 
 a {
@@ -479,6 +496,40 @@ header {
 .leaderboard_2 {
 box-shadow: 0 0 40px -10px rgba(0, 0, 0, .4);
 }
+
+.row_2 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    perspective: none;
+  
+    .column_2 {
+      position: relative;
+      padding: 20% 15%;
+      cursor: pointer;
+      transition: 1s ease-in-out;
+      transform-style: preserve-3d;
+
+  
+      &:hover {
+        transform: rotateY(0.5turn);
+      }
+  
+      .card__face {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        transition: 1s ease-in-out;
+  
+        &--back {
+          transform: rotateY(0.5turn);
+        }
+      }
+    }
+  }
 
 
 
