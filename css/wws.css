@@ -56,7 +56,7 @@ label {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 5000em;
+  font-size: 4000em;
   font-weight: bolder;
   mix-blend-mode: multiply;
 }
@@ -149,12 +149,6 @@ section {
 }
 .features-section s li {
   color: #ab0520;
-}
-.features-section code {
-  background-color: #eee;
-  border: 1px solid #999;
-  display: block;
-  padding: 20px;
 }
 
 ul.features-list {
