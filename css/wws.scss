@@ -18,6 +18,18 @@ body {
     font-family: 'Glory';
 }
 
+.collatz{
+    padding: 5em 20em;
+    background-color: #0C234B;
+    p {
+        color: #f2f2f2;
+        font-size: 2.5em;
+        line-height: 1.3em;
+        margin-top: .2em;
+    }
+}
+
+
 label {
     display: block;
     font-size: 1.2em;
@@ -47,7 +59,7 @@ label {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 4000em;
+    font-size: 5000em;
     font-weight: bolder;
     mix-blend-mode: multiply;
     h1 {
@@ -152,6 +164,12 @@ section {
 
     li {
         color: #ab0520;
+    }
+    code {
+        background-color: #eee;
+        border: 1px solid #999;
+        display: block;
+        padding: 20px;
     }
 }
 
