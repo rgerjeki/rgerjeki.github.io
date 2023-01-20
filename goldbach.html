@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Goldbach Conjecture | Reese Gerjekian</title>
+<meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script data-ad-client="ca-pub-6572980678192264" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<meta name="google-site-verification" content="sW_vSiYwh1-o2V62_7lY8maBcIc4yxSXjbXfIgsAEC8" />
+<meta name="description" content="Reese Gerjekian's Goldbach Conjecture Python Program Page">
+<meta name="keywords" content="Reese Gerjekian, Rgerjeki, Goldbach Conjecture, 3(x)+1">
+<meta name="author" content="Reese Gerjekian">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:image" content="images/My Post.jpg">
+<meta property="og:image:type" content="image/jpg">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="1024">
+<link rel="icon" type="image/png" href="images/My Post.jpg">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="css/wws.css">
+<style>
+
+    .container {
+        margin: 0 auto;
+        max-width: 80em;
+    }
+    
+    main .container {
+        padding: 1em;
+    }
+    
+    nav {
+        background: #ab0520;
+        color: #f2f2f2;
+        left: 0;
+        position: relative;
+        top: 0;
+        width: 100%;
+        z-index: 9999;
+    }
+    
+    img {
+      margin-top: 1.5em;
+    }
+    
+    /*** INPUT ***/
+    nav input {
+        opacity: 0;
+        position: absolute;
+        z-index: -1;
+    }
+    
+    /*** LABEL ***/
+    nav label {
+        cursor: pointer;
+        display: block;
+        padding: 0.5em;
+    }
+    
+    /* Hamburger Icon */
+    #menu-icon,
+    #menu-icon:before,
+    #menu-icon:after {
+        background: #f2f2f2;
+        border-radius: 0.0em;
+        height: 0.2em;
+        transition: all 0.2s ease-in-out;
+        width: 100%;
+    }
+    
+    #menu-icon {
+        display: inline-block;
+        max-width: 1em;
+        position: relative;
+        top: -1.5em;
+    }
+    
+    nav label #menu-icon {
+        float: right;
+    }
+    
+    #menu-icon:before,
+    #menu-icon:after {
+        content: '';
+        left: 0;
+        position: absolute;
+    }
+    
+    #menu-icon:before {
+        top: -0.4em;
+    }
+    
+    #menu-icon:after {
+        bottom: -0.4em;
+    }
+    
+    /* Close Icon */
+    nav input[type=checkbox]:checked + label #menu-icon {
+        background: transparent;
+    }
+    
+    nav input[type=checkbox]:checked + label #menu-icon:before {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+    
+    nav input[type=checkbox]:checked + label #menu-icon:after {
+        bottom: 0;
+        transform: rotate(45deg);
+    }
+    
+    
+    /*** MENU ***/
+    /* Overlay */
+    nav input:checked ~ #overlay {
+        background: #0C234B;
+        bottom: 0;
+        left: 0;
+        height: 100vh;
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 100vw;
+        z-index: -1;
+    }
+    
+    /* List */
+    nav ul {
+        font-size: 1.5em;
+        list-style: none;
+        margin: 0;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        padding: 0;
+        text-align: center;
+    }
+    
+    nav input:checked ~ ul {
+        margin: 1em;
+        max-height: inherit;
+        opacity: 1;
+    }
+    
+    nav ul > li {
+        margin: 0.5em 0;
+    }
+    
+    nav ul a {
+        color: #f2f2f2!important;
+        text-decoration: none;
+    }
+    
+    nav ul a:hover {
+        text-decoration: underline;
+    }
+    
+    /* Social Media */
+    nav ul#social-media > li {
+        display: inline-block;
+        font-size: 1.5em;
+        margin: 0.5em;
+    }
+</style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <a class="logo" href="index.html"> <img src="images/My Post.jpg" width="35" height="35"> </a>
+            <input id="responsive-menu" type="checkbox">
+            <label for="responsive-menu"><span id="menu-icon"></span></label>
+            <div id="overlay"></div>
+            <ul>
+                <li class="current"><a href="index.html">Home</a></li>
+                <div class="dropdown">
+                    <button class="dropbtn">Books</button>
+                    <div class="dropdown-content">
+                        <a href="https://drive.google.com/file/d/12NJtAUmOR0_QLt_7vBHxGWbjjl1DixBM/view?usp=sharing">Words of Wisdom & Stupidity</a>
+                        <a href="https://drive.google.com/file/d/1f8PZgK7f_CgTZ1bJKgMzHP9X7O1AWxrA/view?usp=sharing">Roatzo</a>
+                        <a href="https://drive.google.com/file/d/1eSYfT4yjNc--8upb2B_jGslu2GkkhEMD/view?usp=sharing">Fimalu</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Python Programs</button>
+                    <div class="dropdown-content">
+                        <a href="collatz.html">3(x)+1 | Collatz Conjecture Python Program</a>
+                        <a href="/goldbach.html">Goldbach Conjecture Python Program</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Games</button>
+                    <div class="dropdown-content">
+                        <a href="Snake.html">UofA vs ASU Snake Game</a>
+                    </div>
+                </div>
+    
+            </ul>
+            <ul id="social-media">
+                <li>
+                    <a class="u-social-url" target="_blank" data-type="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/in/reese-gerjekian-b82610199/"><span class="u-icon u-social-icon u-social-linkedin u-icon-1"><img src="images/icons8-linkedin-circled.svg" alt=""></span>
+                    </a>
+                </li>
+                <li>
+                    <a class="u-social-url" target="_blank" data-type="Github" title="Github" href="https://github.com/rgerjeki"><span class="u-file-icon u-icon u-social-github u-social-icon u-icon-2"><img src="images/icons8-github.svg" alt=""></span>
+                    </a>
+                </li>
+                <li>
+                    <a class="u-social-url" title="facebook" target="_blank" href="https://www.facebook.com/rgerjekian"><span class="u-file-icon u-icon u-social-facebook u-social-icon u-icon-3"><img src="images/icons8-facebook-circled.svg" alt=""></span>
+                    </a>
+                </li>
+                <li>
+                    <a class="u-social-url" title="instagram" target="_blank" href="https://www.instagram.com/rgerjeki/"><span class="u-file-icon u-icon u-social-icon u-social-instagram u-icon-4"><img src="images/icons8-instagram-logo.svg" alt=""></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+<div class="wws" style="text-align: center;">
+    <img src="/images/red.png">
+    <div class="header-text">
+        <h1>Goldbach Conjecture</h1>
+    </div>
+</div>
+<div class="collatz">
+    <p style="font-size: 2vw;">The Goldbach Conjecture is a famous unsolved problem in number theory that dates back to 1742. It was first proposed by the German mathematician Christian Goldbach, who wrote a letter to the famous mathematician Leonhard Euler in which he stated that "every positive even integer greater than 2 can be expressed as the sum of two prime numbers."</p>
+    <p style="font-size: 2vw;">The conjecture has been tested extensively for even numbers up to 4 x 10^18 and found to be true. However, a general proof or counterexample has yet to be found.</p>
+    <p style="font-size: 2vw;">The conjecture has been proven for some special cases, such as showing that all sufficiently large even integers can be expressed as the sum of a prime and a semiprime (a number with exactly two prime factors). However, this is not a full proof of the conjecture, as it does not cover all even integers.</p>
+    <p style="font-size: 2vw;">Efforts to prove or disprove the conjecture have led to many important developments in number theory, such as the creation of the sieve of Eratosthenes and the development of the Selberg trace formula.</p>
+    <p style="font-size: 2vw;">Despite the lack of a proof or counterexample, the conjecture remains a topic of active research and continues to fascinate mathematicians. Many famous mathematicians have worked on the conjecture, and it is still considered one of the most important unsolved problems in number theory.</p>
+    <p style="font-size: 2vw;">In recent years, some researchers have proposed variations of the conjecture, such as the "ternary Goldbach Conjecture" which states that every odd integer greater than 5 can be written as the sum of three prime numbers.</p>
+    <p style="font-size: 2vw;">In general, the Goldbach Conjecture is considered one of the oldest and most famous unsolved problems in number theory, and it continues to challenge mathematicians today.</p>
+</div>
+
+<section class="features-section">
+    <div class="leaderboard">
+        <iframe src="https://trinket.io/embed/python3/a85b4399a9?outputOnly=true" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+    </div>
+    <div style="width: 100%; margin: 0 auto; background-color: #f2f2f2; padding: 20px;">
+        <pre>
+            <img src="images/My Post.jpg" style="height: 4em; width: 4em;">
+            <button onclick="copyCode()">Copy Code</button>
+            <code id="code-block" class="python">
+                # Program to check if a number is prime or not
+                num = 3
+                prime = []
+                
+                # To take input from the user
+                # num = int(input("Enter a number: "))
+                
+                while num != 100:
+                    if num > 1:
+                        # check for factors
+                        for i in range(2, num):
+                            if (num % i) == 0:
+                                num = num + 1
+                                break
+                        else:
+                            print(num, " is prime!")
+                            prime.append(num)
+                            num = num + 1
+                
+                    # Check for 1, but this program starts at 3 so no need for this.
+                    else:
+                        num = num + 1
+                
+                
+                end = False
+                
+                while end == False:
+                    # get first number in list
+                    first = prime[0]
+                
+                    # print list of prime numbers
+                    print(prime)
+                
+                    # Iterate through the list of prime numbers
+                    for x in prime:
+                        # calculate and print sum of x numbers in list and first number in list
+                        sum = x + first
+                        print(str(x), ' + ',  str(first),  ' = ',  x + first)
+                
+                        # if the sum is even, continue with the program
+                        if sum % 2 == 0:
+                            continue
+                        else:
+                            print("STOP")
+                            end = True
+                            break
+                    # get rid of first number in list
+                    prime.pop(0)
+                
+                    # if the list of prime numbers is empty, exit while loop
+                    if not prime:
+                        end = True
+            </code>
+        </pre>
+
+        <script>
+        function copyCode() {
+          var code = document.getElementById("code-block");
+          var range = document.createRange();
+          range.selectNode(code);
+          window.getSelection().removeAllRanges();
+          window.getSelection().addRange(range);
+          document.execCommand("copy");
+          alert("Code copied to clipboard!");
+        }
+        </script>
+    </div>
+</section>
+
+
+<section class="contact-section">
+    <div class="container1">
+        <div class="contact-left">
+            <h2>Contact</h2>
+
+            <form action="https://formsubmit.co/rgerjeki@gmail.com" method="POST">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="mail">E-Mail</label>
+                <input type="text" id="mail" name="mail" required>
+
+                <label for="message">Message</label>
+                <textarea name="message" id="message" cols="30" rows="10" required></textarea>
+                
+                <input type="submit" name="submit" class="send-message-cta" value="Send message">
+            </form>
+        </div>
+        <div class="contact-right">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5786652.95772588!2d-90.7586995505559!3d44.91287900458436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4d4caa3dc7ca0411%3A0x97dd48597a62c9b3!2sMichigan!5e0!3m2!1sen!2sus!4v1630865732213!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+</section>
+
+<script>
+
+    const mobileBtn = document.getElementById('mobile-cta')
+        nav = document.querySelector('nav')
+        mobileBtnExit = document.getElementById('mobile-exit');
+    
+    mobileBtn.addEventListener('click', () => {
+        nav.classList.add('menu-btn');
+    })
+
+    mobileBtnExit.addEventListener('click', () => {
+        nav.classList.remove('menu-btn');
+    })
+
+</script>
+
+</body>
+</html>
