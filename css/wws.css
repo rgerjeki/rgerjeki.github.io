@@ -642,7 +642,7 @@ a.snake-link:hover {
 .dropdown-content {
   display: none;
   position: relative;
-  background-color: #0C234B;
+  background-color: #ab0520;
   min-width: 160px;
   z-index: 1;
 }
@@ -657,7 +657,7 @@ a.snake-link:hover {
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: #0C234B;
+  background-color: #ab0520;
 }
 
 /* Show the dropdown menu on hover */

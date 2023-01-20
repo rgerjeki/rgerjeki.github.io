@@ -705,7 +705,7 @@ box-shadow: 0 0 40px -10px rgba(0, 0, 0, .4);
   .dropdown-content {
     display: none;
     position: relative;
-    background-color: #0C234B;
+    background-color: #ab0520;
     min-width: 160px;
     z-index: 1;
   }
@@ -719,7 +719,7 @@ box-shadow: 0 0 40px -10px rgba(0, 0, 0, .4);
   }
   
   /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: #0C234B;}
+  .dropdown-content a:hover {background-color: #ab0520;}
   
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {display: block;}
