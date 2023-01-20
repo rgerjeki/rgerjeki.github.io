@@ -53,6 +53,10 @@ label {
     width: 100%;
     height: auto;
     position: relative;
+
+    img {
+        margin-top: 0;
+    }
 }
 
 .wws video {
@@ -65,7 +69,7 @@ label {
     position: absolute;
     top: 0;
     left: 0;
-    background: #0C234B;
+    background: #000080;
     height: 100%;
     width: 100%;
     color: #f2f2f2;
