@@ -694,7 +694,7 @@ a.snake-link:hover {
 }
 
 .book {
-  margin-right: -300px;
+  margin-right: -150px;
   margin-top: 0px;
   margin-bottom: 250px;
   width: 30em; /* adjusted width */
@@ -750,7 +750,7 @@ a.snake-link:hover {
   }
 }
 .title-image {
-  margin-left: -500px;
+  margin-left: -300px;
   margin-top: 20px;
   margin-bottom: 40px;
   width: 500px; /* You can set this to whatever width you want */
