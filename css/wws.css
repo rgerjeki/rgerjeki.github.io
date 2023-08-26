@@ -709,7 +709,7 @@ a.snake-link:hover {
   overflow: auto;
   margin-top: 50px;
   margin-right: 20px;
-  margin-left: 50px;
+  margin-left: 0px;
   margin-bottom: 4em;
   width: 400px;
 }
@@ -720,14 +720,14 @@ a.snake-link:hover {
   width: inherit;
   background-size: cover !important;
   background-position: center !important;
-  height: 250px;
+  height: 350px;
   padding: 1em 2em;
   background: #313131;
   border-radius: 10px;
 }
 .flip > .front p,
 .flip > .back p {
-  font-size: 0.9125rem;
+  font-size: 0.95rem;
   line-height: 160%;
   color: #999;
 }
@@ -737,7 +737,7 @@ a.snake-link:hover {
   width: inherit;
   background-size: cover !important;
   background-position: center !important;
-  height: 250px;
+  height: 350px;
   padding: 1em 2em;
   background: #313131;
   border-radius: 10px;
@@ -748,6 +748,275 @@ a.snake-link:hover {
   color: #999;
 }
 
+.parent-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .text-shadow {
   text-shadow: 1px 1px rgba(0, 0, 0, 0.04), 2px 2px rgba(0, 0, 0, 0.04), 3px 3px rgba(0, 0, 0, 0.04), 4px 4px rgba(0, 0, 0, 0.04), 0.125rem 0.125rem rgba(0, 0, 0, 0.04), 6px 6px rgba(0, 0, 0, 0.04), 7px 7px rgba(0, 0, 0, 0.04), 8px 8px rgba(0, 0, 0, 0.04), 9px 9px rgba(0, 0, 0, 0.04), 0.3125rem 0.3125rem rgba(0, 0, 0, 0.04), 11px 11px rgba(0, 0, 0, 0.04), 12px 12px rgba(0, 0, 0, 0.04), 13px 13px rgba(0, 0, 0, 0.04), 14px 14px rgba(0, 0, 0, 0.04), 0.625rem 0.625rem rgba(0, 0, 0, 0.04), 16px 16px rgba(0, 0, 0, 0.04), 17px 17px rgba(0, 0, 0, 0.04), 18px 18px rgba(0, 0, 0, 0.04), 19px 19px rgba(0, 0, 0, 0.04), 1.25rem 1.25rem rgba(0, 0, 0, 0.04);
+}
+
+.container66 {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 300px;
+}
+
+.container66 h1:nth-child(1) {
+  color: #0C234B;
+  font-family: "Glory";
+  font-weight: 800;
+  font-size: 20px;
+  margin: 0 0 0 35%;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 210px;
+  animation: type 1s steps(40, end) forwards;
+}
+
+.container66 h1:nth-child(2) {
+  opacity: 0;
+  font-family: "Glory";
+  margin: 0 auto auto auto;
+  background: linear-gradient(to right, #0C234B, #ab0520, #0C234B);
+  font-weight: 80;
+  font-size: 100px;
+  width: 700px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  overflow: hidden;
+  white-space: nowrap; /* Add this line */
+  animation: shring-animation 1.2s steps(40, end) 1s forwards, blink 0.5s step-end infinite alternate;
+}
+
+hr#six {
+  background: #0C234B;
+  margin-bottom: 100px;
+  margin-top: 100px;
+  border-bottom: 1px dashed white;
+}
+hr#six:before {
+  border: 1px dashed white;
+  border-radius: 20px;
+}
+
+@keyframes shring-animation {
+  0% {
+    background-position: 0 0;
+    opacity: 0;
+    width: 0;
+  }
+  1% {
+    background-position: 0 0;
+    opacity: 1;
+    border-right: 1px solid #ab0520;
+  }
+  50% {
+    background-position: 150px 0;
+    opacity: 1;
+    border-right: 1px solid #ab0520;
+  }
+  100% {
+    background-position: 400px 0;
+    opacity: 1;
+    border-right: 1px solid #ab0520;
+  }
+}
+@keyframes type {
+  0% {
+    width: 0;
+  }
+  1%, 99% {
+    border-right: 1px solid #ab0520;
+  }
+  100% {
+    border-right: none;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+.hidden {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.visible {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+/* New styles for centering */
+#container23 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+#container23 ul {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+#container23 ul li {
+  list-style: none;
+  margin: 0 50px;
+}
+#container23 ul li a .fa {
+  font-size: 40px;
+  color: #0C234B;
+  line-height: 80px;
+  transition: 0.5s;
+  padding-right: 5px;
+}
+#container23 ul li a span {
+  margin: -12px;
+  position: absolute;
+  top: 26px;
+  color: #262626;
+  letter-spacing: 4px;
+  transition: 0.5s;
+}
+#container23 ul li a {
+  text-decoration: none;
+  display: absolute;
+  display: block;
+  width: 210px;
+  height: 80px;
+  background: #fff;
+  text-align: left;
+  padding-left: 20px;
+  transform: rotate(-30deg) skew(25deg) translate(0, 0);
+  transition: 0.5s;
+  box-shadow: -20px 20px 10px rgba(0, 0, 0, 0.5);
+}
+#container23 ul li a:before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: -20px;
+  height: 100%;
+  width: 20px;
+  background: #b1b1b1;
+  transform: 0.5s;
+  transform: rotate(0deg) skewY(-45deg);
+}
+#container23 ul li a:after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: -10px;
+  height: 20px;
+  width: 100%;
+  background: #b1b1b1;
+  transform: 0.5s;
+  transform: rotate(0deg) skewX(-45deg);
+}
+#container23 ul li a:hover {
+  transform: rotate(-30deg) skew(25deg) translate(20px, -15px);
+  box-shadow: -50px 50px 50px rgba(0, 0, 0, 0.5);
+}
+#container23 ul li:hover .fa {
+  color: #fff;
+}
+#container23 ul li:hover span {
+  color: #fff;
+}
+#container23 ul li:hover:nth-child(1) a {
+  background: #3b5998;
+}
+#container23 ul li:hover:nth-child(1) a:before {
+  background: #365492;
+}
+#container23 ul li:hover:nth-child(1) a:after {
+  background: #4a69ad;
+}
+#container23 ul li:hover:nth-child(2) a {
+  background: #444;
+}
+#container23 ul li:hover:nth-child(2) a:before {
+  background: #444;
+}
+#container23 ul li:hover:nth-child(2) a:after {
+  background: #444;
+}
+#container23 ul li:hover:nth-child(3) a {
+  background: #3b5998;
+}
+#container23 ul li:hover:nth-child(3) a:before {
+  background: #3b5998;
+}
+#container23 ul li:hover:nth-child(3) a:after {
+  background: #3b5998;
+}
+#container23 ul li:hover:nth-child(4) a {
+  background: #e4405f;
+}
+#container23 ul li:hover:nth-child(4) a:before {
+  background: #d81c3f;
+}
+#container23 ul li:hover:nth-child(4) a:after {
+  background: #e46880;
+}
+#container23 ul li:hover:nth-child(5) a {
+  background: #aaa;
+}
+#container23 ul li:hover:nth-child(5) a:before {
+  background: #aaa;
+}
+#container23 ul li:hover:nth-child(5) a:after {
+  background: #aaa;
+}
+
+#fadeInBlock {
+  text-align: center;
+  max-width: 90%;
+  width: 100%;
+}
+
+.intro-para span {
+  font-size: 20px;
+  font-weight: normal;
+  color: #0C234B;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.intro-para h1 {
+  font-size: 250px;
+  font-weight: bold;
+  -webkit-text-decoration: #ab0520;
+          text-decoration: #ab0520;
+  white-space: nowrap;
+}
+
+#container456 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.myinfo-titles {
+  background: linear-gradient(to right, #0C234B, #ab0520, #0C234B);
+  font-weight: 80;
+  font-size: 100px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 100px;
+  font-weight: bold;
+  color: #ab0520;
+  white-space: nowrap;
 }/*# sourceMappingURL=wws.css.map */
