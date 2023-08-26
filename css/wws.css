@@ -787,6 +787,7 @@ a.snake-link:hover {
   font-weight: 80;
   font-size: 100px;
   width: 700px;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   overflow: hidden;
@@ -1013,6 +1014,7 @@ hr#six:before {
   background: linear-gradient(to right, #0C234B, #ab0520, #0C234B);
   font-weight: 80;
   font-size: 100px;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 100px;
