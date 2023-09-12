@@ -707,11 +707,11 @@ a.snake-link:hover {
   position: relative;
   display: inline-block;
   overflow: auto;
-  margin-top: 50px;
-  margin-right: 20px;
-  margin-left: 0px;
+  margin-top: 5em;
+  margin-right: em;
+  margin-left: 3em;
   margin-bottom: 4em;
-  width: 400px;
+  width: 25em;
 }
 .flip > .front,
 .flip > .back {
@@ -720,7 +720,7 @@ a.snake-link:hover {
   width: inherit;
   background-size: cover !important;
   background-position: center !important;
-  height: 350px;
+  height: 25em;
   padding: 1em 2em;
   background: #313131;
   border-radius: 10px;
@@ -737,7 +737,7 @@ a.snake-link:hover {
   width: inherit;
   background-size: cover !important;
   background-position: center !important;
-  height: 350px;
+  height: 25em;
   padding: 1em 2em;
   background: #313131;
   border-radius: 10px;
@@ -982,6 +982,14 @@ hr#six:before {
   background: #aaa;
 }
 
+/* Media query to handle smaller screens */
+@media (max-width: 1200px) {
+  #container23 ul {
+    margin-top: 20em;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 #fadeInBlock {
   text-align: center;
   max-width: 90%;
@@ -1014,6 +1022,8 @@ hr#six:before {
   background: linear-gradient(to right, #0C234B, #ab0520, #0C234B);
   font-weight: 80;
   font-size: 100px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1021,4 +1031,34 @@ hr#six:before {
   font-weight: bold;
   color: #ab0520;
   white-space: nowrap;
+}
+
+input[type=password], input[type=submit] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.weak {
+  color: red;
+}
+
+.medium {
+  color: orange;
+}
+
+.strong {
+  color: green;
+}
+
+.container-check {
+  width: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: 70px 50px;
+  margin: 0 auto;
 }/*# sourceMappingURL=wws.css.map */

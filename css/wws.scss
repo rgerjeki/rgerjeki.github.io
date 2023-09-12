@@ -838,11 +838,11 @@ box-shadow: 0 0 40px -10px rgba(0, 0, 0, .4);
   position: relative;
   display: inline-block;
   overflow: auto;
-  margin-top: 50px;
-  margin-right: 20px;
-  margin-left: 0px;
+  margin-top: 5em;
+  margin-right: em;
+  margin-left: 3em;
   margin-bottom: 4em;
-  width: 400px;
+  width: 25em;
   >.front,
   >.back {
     display: block;
@@ -850,7 +850,7 @@ box-shadow: 0 0 40px -10px rgba(0, 0, 0, .4);
     width: inherit;
     background-size: cover!important;
     background-position: center!important;
-    height: 350px;
+    height: 25em;
     padding: 1em 2em;
     background: #313131;
     border-radius: 10px;
@@ -866,7 +866,7 @@ box-shadow: 0 0 40px -10px rgba(0, 0, 0, .4);
     width: inherit;
     background-size: cover!important;
     background-position: center!important;
-    height: 350px;
+    height: 25em;
     padding: 1em 2em;
     background: #313131;
     border-radius: 10px;
@@ -1129,6 +1129,15 @@ hr#six {
   }
 }
 
+/* Media query to handle smaller screens */
+@media (max-width: 1200px) {
+  #container23 ul {
+    margin-top: 20em;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 
 #fadeInBlock {
   text-align: center;
@@ -1162,6 +1171,8 @@ hr#six {
   background: linear-gradient(to right, #0C234B, #ab0520, #0C234B);
   font-weight: 80;
   font-size: 100px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   background-clip: text; // standard property  
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1169,6 +1180,39 @@ hr#six {
   font-weight: bold;
   color: #ab0520;
   white-space: nowrap;
+}
+
+// password_checker.html
+
+input[type="password"], input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.weak {
+  color: red;
+}
+
+.medium {
+  color: orange;
+}
+
+.strong {
+  color: green;
+}
+
+.container-check {
+  width: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: 70px 50px;
+  margin: 0 auto;
+
 }
 
 
