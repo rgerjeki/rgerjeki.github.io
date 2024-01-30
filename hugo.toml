@@ -144,7 +144,7 @@ url = "https://www.linkedin.com/in/rgerjeki/"
 name = "RSS"
 icon = "fa fa-2x fa-rss"
 weight = 6
-url = "https://myhugosite.com/index.xml"
+url = "https://rgerjeki.github.io/index.xml"
 rel = "alternate"
 type = "application/rss+xml"
 
