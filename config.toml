@@ -1,6 +1,5 @@
 baseURL = "https://rgerjeki.github.io/"
 title = "Reese Gerjekian"
-theme = "coder"
 languageCode = "en"
 defaultContentLanguage = "en"
 paginate = 6
