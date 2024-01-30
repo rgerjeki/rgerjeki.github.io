@@ -23,13 +23,6 @@
       <description>The Collatz Conjecture, also known as the 3(x) + 1 conjecture, is a famous unsolved problem in mathematics. It proposes a sequence defined by the following rules: Start with any positive integer x. If x is even, divide it by 2; if n is odd, multiply it by 3 and add 1. The conjecture posits that no matter the starting number, the sequence will eventually reach the value 1.&#xA;Copy Code # importing the required module import matplotlib.</description>
     </item>
     <item>
-      <title>Contact</title>
-      <link>https://rgerjeki.github.io/contact/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://rgerjeki.github.io/contact/</guid>
-      <description>Follow me, @johndoe.</description>
-    </item>
-    <item>
       <title>Fibonacci Sequence in Python</title>
       <link>https://rgerjeki.github.io/fibonacci-sequence-in-python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
