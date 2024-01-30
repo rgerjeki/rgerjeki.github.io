@@ -1,0 +1,77 @@
+<section>
+    <div>
+        <iframe src="https://trinket.io/embed/python3/a85b4399a9?outputOnly=true" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+    </div>
+    <div style="width: 100%; margin: 0 auto; background-color: #f2f2f2; padding: 20px;">
+        <pre>
+            <button onclick="copyCode()">Copy Code</button>
+            <code id="code-block" class="python">
+                # Program to check if a number is prime or not
+                num = 3
+                prime = []
+                
+                # To take input from the user
+                # num = int(input("Enter a number: "))
+                
+                while num != 100:
+                    if num > 1:
+                        # check for factors
+                        for i in range(2, num):
+                            if (num % i) == 0:
+                                num = num + 1
+                                break
+                        else:
+                            print(num, " is prime!")
+                            prime.append(num)
+                            num = num + 1
+                
+                    # Check for 1, but this program starts at 3 so no need for this.
+                    else:
+                        num = num + 1
+                
+                
+                end = False
+                
+                while end == False:
+                    # get first number in list
+                    first = prime[0]
+                
+                    # print list of prime numbers
+                    print(prime)
+                
+                    # Iterate through the list of prime numbers
+                    for x in prime:
+                        # calculate and print sum of x numbers in list and first number in list
+                        sum = x + first
+                        print(str(x), ' + ',  str(first),  ' = ',  x + first)
+                
+                        # if the sum is even, continue with the program
+                        if sum % 2 == 0:
+                            continue
+                        else:
+                            print("STOP")
+                            end = True
+                            break
+                    # get rid of first number in list
+                    prime.pop(0)
+                
+                    # if the list of prime numbers is empty, exit while loop
+                    if not prime:
+                        end = True
+            </code>
+        </pre>
+
+        <script>
+        function copyCode() {
+          var code = document.getElementById("code-block");
+          var range = document.createRange();
+          range.selectNode(code);
+          window.getSelection().removeAllRanges();
+          window.getSelection().addRange(range);
+          document.execCommand("copy");
+          alert("Code copied to clipboard!");
+        }
+        </script>
+    </div>
+</section>
+
