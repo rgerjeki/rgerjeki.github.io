@@ -129,21 +129,27 @@ weight = 1
 url = "https://github.com/rgerjeki"
 
 [[params.social]]
+name = "Instagram"
+icon = "fa fa-2x fa-instagram"
+weight = 3
+url = "https://www.instagram.com/rgerjeki/"
+
+[[params.social]]
 name = "Twitter"
 icon = "fa fa-2x fa-twitter"
-weight = 3
+weight = 4
 url = "https://twitter.com/reg_blog"
 
 [[params.social]]
 name = "LinkedIn"
 icon = "fa fa-2x fa-linkedin"
-weight = 4
+weight = 2
 url = "https://www.linkedin.com/in/rgerjeki/"
 
 [[params.social]]
 name = "RSS"
 icon = "fa fa-2x fa-rss"
-weight = 6
+weight = 5
 url = "https://rgerjeki.github.io/index.xml"
 rel = "alternate"
 type = "application/rss+xml"
