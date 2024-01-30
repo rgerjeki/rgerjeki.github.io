@@ -1,4 +1,4 @@
-baseURL = "https://rgerjeki.github.io"
+baseURL = "https://rgerjeki.github.io/"
 title = "Reese Gerjekian"
 theme = "hugo-coder"
 languageCode = "en"
