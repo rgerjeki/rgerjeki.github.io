@@ -1,6 +1,6 @@
 baseURL = "https://rgerjeki.github.io/"
 title = "Reese Gerjekian"
-theme = "hugo-coder"
+theme = "coder"
 languageCode = "en"
 defaultContentLanguage = "en"
 paginate = 6
@@ -166,3 +166,7 @@ url = "projects/"
 name = "Blog"
 weight = 3
 url = "https://www.reg-blog.com"
+
+[module]
+[module.hugoVersion]
+min = "0.77.0"
