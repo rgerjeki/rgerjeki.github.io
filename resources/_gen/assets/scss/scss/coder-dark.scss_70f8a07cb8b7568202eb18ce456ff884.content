@@ -1,6 +1,6 @@
 body.colorscheme-dark {
   color: #dadada;
-  background-color: #212121; }
+  background-color: #0b1529; }
   body.colorscheme-dark a {
     color: #42a5f5; }
   body.colorscheme-dark h1,
@@ -67,7 +67,7 @@ body.colorscheme-dark {
 @media (prefers-color-scheme: dark) {
   body.colorscheme-auto {
     color: #dadada;
-    background-color: #212121; }
+    background-color: #0b1529; }
     body.colorscheme-auto a {
       color: #42a5f5; }
     body.colorscheme-auto h1,
