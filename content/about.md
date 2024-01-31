@@ -6,8 +6,6 @@ aliases = ["about-reese-gerjekian"]
 author = "Hugo Authors"
 +++
 
-{{< aboutShortcode >}}
-
 Hello! I'm Reese Gerjekian, a creative spirit born and raised in Michigan. My journey is a blend of technology, creativity, and a deep love for the simple joys of life.
 
 #### My Roots and Passions
@@ -18,3 +16,5 @@ I am in the final lap of my academic journey at the University of Arizona, pursu
 
 #### A Summer of Growth and Learning
 The summer of 2023 was a pivotal chapter in my life. I had the incredible opportunity to live in the vibrant city of Seattle, Washington. There, I interned as an AWS Cloud Support Associate with Amazon Web Services. This experience was nothing short of transformative. I delved deep into the culture at AWS and gained extensive knowledge about the vast array 
+
+{{< aboutShortcode >}}
