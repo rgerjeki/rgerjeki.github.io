@@ -12,7 +12,13 @@
         {{ with .Site.Menus.main}}
           {{ range sort . }}
             <li class="navigation-item">
-              <a class="navigation-link" href="{{ index (apply (slice .URL) (.Params.urlFunc | default "relLangURL") ".") 0 }}">{{ .Name }}</a>
+              {{ if eq .Name "REG Blog Shop" }}
+                <a class="navigation-link" href="{{ index (apply (slice .URL) (.Params.urlFunc | default "relLangURL") ".") 0 }}">
+                  <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                </a>
+              {{ else }}
+                <a class="navigation-link" href="{{ index (apply (slice .URL) (.Params.urlFunc | default "relLangURL") ".") 0 }}">{{ .Name }}</a>
+              {{ end }}
             </li>
           {{ end }}
         {{ end }}

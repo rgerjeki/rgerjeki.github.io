@@ -174,5 +174,6 @@ url = "https://www.reg-blog.com"
 
 [[languages.en.menu.main]]
 name = "REG Blog Shop"
+icon = "fa fa-2x fa-shopping-bag"
 weight = 4
 url = "https://reg-blog.square.site"
