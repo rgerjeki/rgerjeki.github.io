@@ -171,3 +171,8 @@ url = "projects/"
 name = "Blog"
 weight = 3
 url = "https://www.reg-blog.com"
+
+[[languages.en.menu.main]]
+name = "REG Blog Shop"
+weight = 4
+url = "https://reg-blog.square.site"
