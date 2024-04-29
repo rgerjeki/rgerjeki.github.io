@@ -79,6 +79,13 @@
       <description> </description>
     </item>
     <item>
+      <title>How Bout Them Apples Website</title>
+      <link>https://rgerjeki.github.io/how-bout-them-apples/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://rgerjeki.github.io/how-bout-them-apples/</guid>
+      <description> </description>
+    </item>
+    <item>
       <title>Livy&#39;s History of Rome</title>
       <link>https://rgerjeki.github.io/livys-history-of-rome/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -97,7 +104,7 @@
       <link>https://rgerjeki.github.io/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://rgerjeki.github.io/projects/</guid>
-      <description> Python Projects Collatz Conjecture Goldbach Conjecture Twin Prime Conjecture Fibonacci Sequence Random Password Generator Password Checker Classics Projects CLAS 160D2 - Classical Mythology Livy&#39;s History of Rome Euripides&#39; Medea Hesiod’s Theogony Homeric Hymns Homer’s Iliad Homer&#39;s Odyssey CLAS 160B1 - Meet the Ancients: Gateway to Greece and Rome Signiture Assignment - Elgin Marbles </description>
+      <description> Web Developments REG Blog How Bout Them Apples The University of Michigan Dearborn Chess Club Python Projects Math Collatz Conjecture Goldbach Conjecture Twin Prime Conjecture Fibonacci Sequence Security Random Password Generator Password Checker Classics Projects CLAS 160D2 - Classical Mythology Livy&#39;s History of Rome Euripides&#39; Medea Hesiod’s Theogony Homeric Hymns Homer’s Iliad Homer&#39;s Odyssey CLAS 160B1 - Meet the Ancients: Gateway to Greece and Rome Signiture Assignment - Elgin Marbles </description>
     </item>
     <item>
       <title>Random Password Generator in Python</title>
@@ -105,6 +112,20 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://rgerjeki.github.io/random-password-generator-in-python/</guid>
       <description>This program is a Random Password Generator designed to enhance online security. By specifying the desired password length, users can create strong passwords that combine lowercase and uppercase letters, numbers, and special symbols.&#xA;Copy Code import random import math alpha = &#34;abcdefghijklmnopqrstuvwxyz&#34; num = &#34;0123456789&#34; special = &#34;@#$%&amp;*&#34; # pass_len=random.randint(8,13) #without User INput pass_len = int(input(&#34;Enter Password Length&#34;)) # length of password by 50-30-20 formula alpha_len = pass_len//2 num_len = math.</description>
+    </item>
+    <item>
+      <title>REG Blog Website</title>
+      <link>https://rgerjeki.github.io/reg-blog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://rgerjeki.github.io/reg-blog/</guid>
+      <description> </description>
+    </item>
+    <item>
+      <title>The University of Michigan Dearborn Chess Club Website</title>
+      <link>https://rgerjeki.github.io/university-of-michigan-dearborn-chess-club/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://rgerjeki.github.io/university-of-michigan-dearborn-chess-club/</guid>
+      <description> </description>
     </item>
     <item>
       <title>Twin Prime Conjecture in Python</title>
