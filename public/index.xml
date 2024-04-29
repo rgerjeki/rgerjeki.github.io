@@ -16,11 +16,25 @@
       <description>Hello! I&amp;rsquo;m Reese Gerjekian, a creative spirit born and raised in Michigan. My journey is a blend of technology, creativity, and a deep love for the simple joys of life.&#xA;My Roots and Passions Link to heading Growing up in Michigan, I was always fascinated by the endless possibilities of creating something new. This passion didn&amp;rsquo;t just stay confined to technology; it expanded into various realms such as developing websites (like this one), curating content for my blog, immersing myself in the world of literature, enjoying music, strategizing in chess, engaging in games with friends, and, above all, cherishing moments with my family.</description>
     </item>
     <item>
+      <title>CLAS 160B1 Signiture Assignment</title>
+      <link>https://rgerjeki.github.io/meet-the-ancients-gateway-to-greece-and-rome-signiture-assignment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://rgerjeki.github.io/meet-the-ancients-gateway-to-greece-and-rome-signiture-assignment/</guid>
+      <description> </description>
+    </item>
+    <item>
       <title>Collatz Conjecture in Python</title>
       <link>https://rgerjeki.github.io/collatz-conjecture-in-python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://rgerjeki.github.io/collatz-conjecture-in-python/</guid>
       <description>The Collatz Conjecture, also known as the 3(x) + 1 conjecture, is a famous unsolved problem in mathematics. It proposes a sequence defined by the following rules: Start with any positive integer x. If x is even, divide it by 2; if n is odd, multiply it by 3 and add 1. The conjecture posits that no matter the starting number, the sequence will eventually reach the value 1.&#xA;Copy Code # importing the required module import matplotlib.</description>
+    </item>
+    <item>
+      <title>Euripides&#39; Medea</title>
+      <link>https://rgerjeki.github.io/euripides-medea/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://rgerjeki.github.io/euripides-medea/</guid>
+      <description> </description>
     </item>
     <item>
       <title>Fibonacci Sequence in Python</title>
@@ -37,6 +51,41 @@
       <description>The Goldbach Conjecture is a famous unsolved problem in number theory that dates back to 1742. It was first proposed by the German mathematician Christian Goldbach, who wrote a letter to the famous mathematician Leonhard Euler in which he stated that &amp;ldquo;every positive even integer greater than 2 can be expressed as the sum of two prime numbers.&amp;rdquo;.&#xA;Copy Code # Program to check if a number is prime or not num = 3 prime = [] # To take input from the user # num = int(input(&#34;</description>
     </item>
     <item>
+      <title>Hesiod’s Theogony</title>
+      <link>https://rgerjeki.github.io/hesiods-theogony/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://rgerjeki.github.io/hesiods-theogony/</guid>
+      <description> </description>
+    </item>
+    <item>
+      <title>Homer&#39;s Odyssey</title>
+      <link>https://rgerjeki.github.io/homers-odyssey/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://rgerjeki.github.io/homers-odyssey/</guid>
+      <description> </description>
+    </item>
+    <item>
+      <title>Homer’s Iliad</title>
+      <link>https://rgerjeki.github.io/homers-iliad/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://rgerjeki.github.io/homers-iliad/</guid>
+      <description> </description>
+    </item>
+    <item>
+      <title>Homeric Hymns</title>
+      <link>https://rgerjeki.github.io/homeric-hymns/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://rgerjeki.github.io/homeric-hymns/</guid>
+      <description> </description>
+    </item>
+    <item>
+      <title>Livy&#39;s History of Rome</title>
+      <link>https://rgerjeki.github.io/livys-history-of-rome/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://rgerjeki.github.io/livys-history-of-rome/</guid>
+      <description> </description>
+    </item>
+    <item>
       <title>Password Checker in Python</title>
       <link>https://rgerjeki.github.io/password-checker-in-python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -48,7 +97,7 @@
       <link>https://rgerjeki.github.io/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://rgerjeki.github.io/projects/</guid>
-      <description> Python Projects Link to heading Collatz Conjecture Goldbach Conjecture Twin Prime Conjecture Fibonacci Sequence Random Password Generator Password Checker </description>
+      <description> Python Projects Collatz Conjecture Goldbach Conjecture Twin Prime Conjecture Fibonacci Sequence Random Password Generator Password Checker Classics Projects CLAS 160D2 - Classical Mythology Livy&#39;s History of Rome Euripides&#39; Medea Hesiod’s Theogony Homeric Hymns Homer’s Iliad Homer&#39;s Odyssey CLAS 160B1 - Meet the Ancients: Gateway to Greece and Rome Signiture Assignment - Elgin Marbles </description>
     </item>
     <item>
       <title>Random Password Generator in Python</title>

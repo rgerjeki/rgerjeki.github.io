@@ -1,0 +1,55 @@
+<details open>
+    <summary style="font-size: 1.25em; font-weight: bold;">Python Projects</summary>
+    <ul>
+      <li><a href="/collatz-conjecture-in-python/">Collatz Conjecture</a></li>
+      <li><a href="/goldbach-conjecture-in-python/">Goldbach Conjecture</a></li>
+      <li><a href="/twin-prime-conjecture-in-python/">Twin Prime Conjecture</a></li>
+      <li><a href="/fibonacci-sequence-in-python/">Fibonacci Sequence</a></li>
+      <li><a href="/random-password-generator-in-python/">Random Password Generator</a></li>
+      <li><a href="/password-checker-in-python/">Password Checker</a></li>
+    </ul>
+</details>
+<details open>
+    <summary style="font-size: 1.25em; font-weight: bold;">Classics Projects</summary>
+    <ul>
+        <details open>
+            <summary>CLAS 160D2 - Classical Mythology</summary>
+            <ul>
+                <li><a href="/livys-history-of-rome/">Livy's History of Rome</a></li>
+                <li><a href="/euripides-medea/">Euripides' Medea</a></li>
+                <li><a href="/hesiods-theogony/">Hesiod’s Theogony</a></li>
+                <li><a href="/homeric-hymns/">Homeric Hymns</a></li>
+                <li><a href="/homers-iliad/">Homer’s Iliad</a></li>
+                <li><a href="/homers-odyssey/">Homer's Odyssey</a></li>
+            </ul>
+        </details>
+        <details open>
+            <summary>CLAS 160B1 - Meet the Ancients: Gateway to Greece and Rome</summary>
+            <ul>
+                <li><a href="/meet-the-ancients-gateway-to-greece-and-rome-signiture-assignment/">Signiture Assignment - Elgin Marbles</a></li>
+            </ul>
+        </details>
+    </ul>
+</details>
+
+<style>
+    details > summary {
+        cursor: pointer;
+      }
+      
+      details > ul {
+        margin-left: 20px;
+      }
+</style>
+
+<script>
+    document.querySelectorAll('details').forEach(details => {
+        details.addEventListener('toggle', event => {
+          if (event.target.open) {
+            event.target.setAttribute('open', true);
+          } else {
+            event.target.removeAttribute('open');
+          }
+        });
+      });
+</script>
