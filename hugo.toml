@@ -129,16 +129,10 @@ weight = 1
 url = "https://github.com/rgerjeki"
 
 [[params.social]]
-name = "Instagram"
-icon = "fa fa-2x fa-instagram"
-weight = 3
-url = "https://www.instagram.com/rgerjeki/"
-
-[[params.social]]
 name = "Twitter"
 icon = "fa fa-2x fa-twitter"
 weight = 4
-url = "https://twitter.com/reg_blog"
+url = "https://twitter.com/rgerjekian"
 
 [[params.social]]
 name = "LinkedIn"
@@ -158,22 +152,6 @@ type = "application/rss+xml"
 languageName = ":en:"
 
 [[languages.en.menu.main]]
-name = "About Me"
-weight = 1
-url = "about/"
-
-[[languages.en.menu.main]]
 name = "Projects"
 weight = 2
 url = "projects/"
-
-[[languages.en.menu.main]]
-name = "Blog"
-weight = 3
-url = "https://www.reg-blog.com"
-
-[[languages.en.menu.main]]
-name = "REG Blog Shop"
-icon = "fa fa-2x fa-shopping-bag"
-weight = 4
-url = "https://reg-blog.square.site"
