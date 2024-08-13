@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://rgerjeki.github.io/web-developments/reg-blog/</loc>
+  </url><url>
+    <loc>https://rgerjeki.github.io/web-developments/</loc>
+  </url><url>
+    <loc>https://rgerjeki.github.io/python-projects/</loc>
+  </url><url>
+    <loc>https://rgerjeki.github.io/web-developments/seattle-routes/</loc>
+  </url><url>
+    <loc>https://rgerjeki.github.io/classics/</loc>
+  </url><url>
     <loc>https://rgerjeki.github.io/authors/</loc>
     <lastmod>2023-01-05T01:15:29+01:00</lastmod>
   </url><url>
@@ -13,44 +23,42 @@
   </url><url>
     <loc>https://rgerjeki.github.io/categories/</loc>
   </url><url>
-    <loc>https://rgerjeki.github.io/meet-the-ancients-gateway-to-greece-and-rome-signiture-assignment/</loc>
+    <loc>https://rgerjeki.github.io/classics/meet-the-ancients-gateway-to-greece-and-rome-signiture-assignment/</loc>
   </url><url>
-    <loc>https://rgerjeki.github.io/collatz-conjecture-in-python/</loc>
+    <loc>https://rgerjeki.github.io/python-projects/math/collatz-conjecture-in-python/</loc>
   </url><url>
-    <loc>https://rgerjeki.github.io/euripides-medea/</loc>
+    <loc>https://rgerjeki.github.io/classics/euripides-medea/</loc>
   </url><url>
-    <loc>https://rgerjeki.github.io/fibonacci-sequence-in-python/</loc>
+    <loc>https://rgerjeki.github.io/python-projects/math/fibonacci-sequence-in-python/</loc>
   </url><url>
-    <loc>https://rgerjeki.github.io/goldbach-conjecture-in-python/</loc>
+    <loc>https://rgerjeki.github.io/python-projects/math/goldbach-conjecture-in-python/</loc>
   </url><url>
-    <loc>https://rgerjeki.github.io/hesiods-theogony/</loc>
+    <loc>https://rgerjeki.github.io/classics/hesiods-theogony/</loc>
   </url><url>
-    <loc>https://rgerjeki.github.io/homers-odyssey/</loc>
+    <loc>https://rgerjeki.github.io/classics/homers-odyssey/</loc>
   </url><url>
-    <loc>https://rgerjeki.github.io/homers-iliad/</loc>
+    <loc>https://rgerjeki.github.io/classics/homers-iliad/</loc>
   </url><url>
-    <loc>https://rgerjeki.github.io/homeric-hymns/</loc>
+    <loc>https://rgerjeki.github.io/classics/homeric-hymns/</loc>
   </url><url>
-    <loc>https://rgerjeki.github.io/how-bout-them-apples/</loc>
+    <loc>https://rgerjeki.github.io/web-developments/how-bout-them-apples/</loc>
   </url><url>
-    <loc>https://rgerjeki.github.io/livys-history-of-rome/</loc>
+    <loc>https://rgerjeki.github.io/classics/livys-history-of-rome/</loc>
   </url><url>
-    <loc>https://rgerjeki.github.io/password-checker-in-python/</loc>
+    <loc>https://rgerjeki.github.io/python-projects/security/password-checker-in-python/</loc>
   </url><url>
     <loc>https://rgerjeki.github.io/projects/</loc>
   </url><url>
-    <loc>https://rgerjeki.github.io/random-password-generator-in-python/</loc>
+    <loc>https://rgerjeki.github.io/python-projects/security/random-password-generator-in-python/</loc>
   </url><url>
-    <loc>https://rgerjeki.github.io/authors/reese-gerjekian/</loc>
-  </url><url>
-    <loc>https://rgerjeki.github.io/reg-blog/</loc>
+    <loc>https://rgerjeki.github.io/authors/reese-enright-gerjekian/</loc>
   </url><url>
     <loc>https://rgerjeki.github.io/series/</loc>
   </url><url>
     <loc>https://rgerjeki.github.io/tags/</loc>
   </url><url>
-    <loc>https://rgerjeki.github.io/university-of-michigan-dearborn-chess-club/</loc>
+    <loc>https://rgerjeki.github.io/web-developments/university-of-michigan-dearborn-chess-club/</loc>
   </url><url>
-    <loc>https://rgerjeki.github.io/twin-prime-conjecture-in-python/</loc>
+    <loc>https://rgerjeki.github.io/python-projects/math/twin-prime-conjecture-in-python/</loc>
   </url>
 </urlset>

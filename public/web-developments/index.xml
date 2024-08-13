@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web Developments on Reese Enright-Gerjekian</title>
+    <link>https://rgerjeki.github.io/web-developments/</link>
+    <description>Recent content in Web Developments on Reese Enright-Gerjekian</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <atom:link href="https://rgerjeki.github.io/web-developments/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>REG Blog Website</title>
+      <link>https://rgerjeki.github.io/web-developments/reg-blog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://rgerjeki.github.io/web-developments/reg-blog/</guid>
+      <description> Link to Website Link to Github </description>
+    </item>
+    <item>
+      <title>Seattle Routes</title>
+      <link>https://rgerjeki.github.io/web-developments/seattle-routes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://rgerjeki.github.io/web-developments/seattle-routes/</guid>
+      <description> Link to Website Link to Github </description>
+    </item>
+    <item>
+      <title>How Bout Them Apples Website</title>
+      <link>https://rgerjeki.github.io/web-developments/how-bout-them-apples/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://rgerjeki.github.io/web-developments/how-bout-them-apples/</guid>
+      <description> Link to Website Link to Github </description>
+    </item>
+    <item>
+      <title>The University of Michigan Dearborn Chess Club Website</title>
+      <link>https://rgerjeki.github.io/web-developments/university-of-michigan-dearborn-chess-club/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://rgerjeki.github.io/web-developments/university-of-michigan-dearborn-chess-club/</guid>
+      <description> Link to Website Link to Github </description>
+    </item>
+  </channel>
+</rss>

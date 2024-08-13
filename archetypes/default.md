@@ -1,5 +1,5 @@
 +++ 
 title = ""
 description = ""
-authors = ["Reese Gerjekian"]
+authors = ["Reese Enright-Gerjekian"]
 +++
