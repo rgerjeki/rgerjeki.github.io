@@ -1,5 +1,5 @@
 baseURL = "https://rgerjeki.github.io/"
-title = "Reese Enright-Gerjekian"
+title = "Reese Gerjekian"
 languageCode = "en"
 defaultContentLanguage = "en"
 paginate = 6
@@ -11,9 +11,9 @@ enableEmoji = true
 noClasses = false
 
 [params]
-author = "Reese Enright-Gerjekian"
+author = "Reese Gerjekian"
 # license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
-description = "Reese Enright-Gerjekian's personal website"
+description = "Reese Gerjekian's personal website"
 keywords = "blog,developer,personal"
 info = ["B.A.S in Cyber Operations", "AWS Cloud Support Associate"]
 avatarURL = "images/avatar.jpeg"

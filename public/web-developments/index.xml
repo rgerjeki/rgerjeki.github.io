@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Web Developments on Reese Enright-Gerjekian</title>
+    <title>Web Developments on Reese Gerjekian</title>
     <link>https://rgerjeki.github.io/web-developments/</link>
-    <description>Recent content in Web Developments on Reese Enright-Gerjekian</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Web Developments on Reese Gerjekian</description>
+    <generator>Hugo</generator>
     <language>en</language>
     <atom:link href="https://rgerjeki.github.io/web-developments/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -12,28 +12,28 @@
       <link>https://rgerjeki.github.io/web-developments/reg-blog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://rgerjeki.github.io/web-developments/reg-blog/</guid>
-      <description> Link to Website Link to Github </description>
+      <description>&lt;iframe src=&#34;https://www.reg-blog.com&#34; width=&#34;100%&#34; height=&#34;500px&#34;&gt;&#xA;&lt;/iframe&gt;&#xA;&lt;a href=&#34;https://www.reg-blog.com&#34;&gt;Link to Website&lt;/a&gt;&#xA;&lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/REGBlog/REGBlog.github.io&#34;&gt;Link to Github&lt;/a&gt;</description>
     </item>
     <item>
       <title>Seattle Routes</title>
       <link>https://rgerjeki.github.io/web-developments/seattle-routes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://rgerjeki.github.io/web-developments/seattle-routes/</guid>
-      <description> Link to Website Link to Github </description>
+      <description>&lt;iframe src=&#34;https://seattleroutes.github.io&#34; width=&#34;100%&#34; height=&#34;500px&#34;&gt;&#xA;&lt;/iframe&gt;&#xA;&lt;a href=&#34;https://seattleroutes.github.io&#34;&gt;Link to Website&lt;/a&gt;&#xA;&lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/SeattleRoutes/SeattleRoutes.github.io&#34;&gt;Link to Github&lt;/a&gt;</description>
     </item>
     <item>
       <title>How Bout Them Apples Website</title>
       <link>https://rgerjeki.github.io/web-developments/how-bout-them-apples/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://rgerjeki.github.io/web-developments/how-bout-them-apples/</guid>
-      <description> Link to Website Link to Github </description>
+      <description>&lt;iframe src=&#34;https://howboutthemapples.github.io&#34; width=&#34;100%&#34; height=&#34;500px&#34;&gt;&#xA;&lt;/iframe&gt;&#xA;&lt;a href=&#34;https://howboutthemapples.github.io&#34;&gt;Link to Website&lt;/a&gt;&#xA;&lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/HowBoutThemApples/HowBoutThemApples.github.io&#34;&gt;Link to Github&lt;/a&gt;</description>
     </item>
     <item>
       <title>The University of Michigan Dearborn Chess Club Website</title>
       <link>https://rgerjeki.github.io/web-developments/university-of-michigan-dearborn-chess-club/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://rgerjeki.github.io/web-developments/university-of-michigan-dearborn-chess-club/</guid>
-      <description> Link to Website Link to Github </description>
+      <description>&lt;iframe src=&#34;https://uofmdcc.github.io&#34; width=&#34;100%&#34; height=&#34;500px&#34;&gt;&#xA;&lt;/iframe&gt;&#xA;&lt;a href=&#34;https://uofmdcc.github.io&#34;&gt;Link to Website&lt;/a&gt;&#xA;&lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/UofMDCC/UofMDCC.github.io&#34;&gt;Link to Github&lt;/a&gt;</description>
     </item>
   </channel>
 </rss>
