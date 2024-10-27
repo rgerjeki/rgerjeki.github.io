@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Authors of Hugo on Reese Gerjekian</title>
-    <link>https://rgerjeki.github.io/authors/hugo-authors/</link>
+    <link>http://localhost:1313/authors/hugo-authors/</link>
     <description>Recent content in Authors of Hugo on Reese Gerjekian</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="https://rgerjeki.github.io/authors/hugo-authors/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/authors/hugo-authors/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
