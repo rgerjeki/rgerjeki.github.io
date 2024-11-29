@@ -2,64 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/web-developments/reg-blog/</loc>
+    <loc>https://rgerjeki.github.io/web-developments/reg-blog/</loc>
   </url><url>
-    <loc>http://localhost:1313/web-developments/</loc>
+    <loc>https://rgerjeki.github.io/web-developments/</loc>
   </url><url>
-    <loc>http://localhost:1313/python-projects/</loc>
+    <loc>https://rgerjeki.github.io/python-projects/</loc>
   </url><url>
-    <loc>http://localhost:1313/web-developments/seattle-routes/</loc>
+    <loc>https://rgerjeki.github.io/web-developments/seattle-routes/</loc>
   </url><url>
-    <loc>http://localhost:1313/classics/</loc>
+    <loc>https://rgerjeki.github.io/classics/</loc>
   </url><url>
-    <loc>http://localhost:1313/authors/</loc>
+    <loc>https://rgerjeki.github.io/authors/</loc>
     <lastmod>2023-01-05T01:15:29+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/authors/hugo-authors/</loc>
+    <loc>https://rgerjeki.github.io/authors/hugo-authors/</loc>
     <lastmod>2023-01-05T01:15:29+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/web-developments/aws-study-guides/</loc>
+    <loc>https://rgerjeki.github.io/chill-guy/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://rgerjeki.github.io/web-developments/aws-study-guides/</loc>
   </url><url>
-    <loc>http://localhost:1313/classics/meet-the-ancients-gateway-to-greece-and-rome-signiture-assignment/</loc>
+    <loc>https://rgerjeki.github.io/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/python-projects/math/collatz-conjecture-in-python/</loc>
+    <loc>https://rgerjeki.github.io/classics/meet-the-ancients-gateway-to-greece-and-rome-signiture-assignment/</loc>
   </url><url>
-    <loc>http://localhost:1313/classics/euripides-medea/</loc>
+    <loc>https://rgerjeki.github.io/python-projects/math/collatz-conjecture-in-python/</loc>
   </url><url>
-    <loc>http://localhost:1313/python-projects/math/fibonacci-sequence-in-python/</loc>
+    <loc>https://rgerjeki.github.io/classics/euripides-medea/</loc>
   </url><url>
-    <loc>http://localhost:1313/python-projects/math/goldbach-conjecture-in-python/</loc>
+    <loc>https://rgerjeki.github.io/python-projects/math/fibonacci-sequence-in-python/</loc>
   </url><url>
-    <loc>http://localhost:1313/classics/hesiods-theogony/</loc>
+    <loc>https://rgerjeki.github.io/python-projects/math/goldbach-conjecture-in-python/</loc>
   </url><url>
-    <loc>http://localhost:1313/classics/homers-odyssey/</loc>
+    <loc>https://rgerjeki.github.io/classics/hesiods-theogony/</loc>
   </url><url>
-    <loc>http://localhost:1313/classics/homers-iliad/</loc>
+    <loc>https://rgerjeki.github.io/classics/homers-odyssey/</loc>
   </url><url>
-    <loc>http://localhost:1313/classics/homeric-hymns/</loc>
+    <loc>https://rgerjeki.github.io/classics/homers-iliad/</loc>
   </url><url>
-    <loc>http://localhost:1313/web-developments/how-bout-them-apples/</loc>
+    <loc>https://rgerjeki.github.io/classics/homeric-hymns/</loc>
   </url><url>
-    <loc>http://localhost:1313/classics/livys-history-of-rome/</loc>
+    <loc>https://rgerjeki.github.io/web-developments/how-bout-them-apples/</loc>
   </url><url>
-    <loc>http://localhost:1313/python-projects/security/password-checker-in-python/</loc>
+    <loc>https://rgerjeki.github.io/classics/livys-history-of-rome/</loc>
   </url><url>
-    <loc>http://localhost:1313/projects/</loc>
+    <loc>https://rgerjeki.github.io/python-projects/security/password-checker-in-python/</loc>
   </url><url>
-    <loc>http://localhost:1313/python-projects/security/random-password-generator-in-python/</loc>
+    <loc>https://rgerjeki.github.io/projects/</loc>
   </url><url>
-    <loc>http://localhost:1313/authors/reese-enright-gerjekian/</loc>
+    <loc>https://rgerjeki.github.io/python-projects/security/random-password-generator-in-python/</loc>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://rgerjeki.github.io/authors/reese-enright-gerjekian/</loc>
   </url><url>
-    <loc>http://localhost:1313/series/</loc>
+    <loc>https://rgerjeki.github.io/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://rgerjeki.github.io/series/</loc>
   </url><url>
-    <loc>http://localhost:1313/web-developments/university-of-michigan-dearborn-chess-club/</loc>
+    <loc>https://rgerjeki.github.io/tags/</loc>
   </url><url>
-    <loc>http://localhost:1313/python-projects/math/twin-prime-conjecture-in-python/</loc>
+    <loc>https://rgerjeki.github.io/web-developments/university-of-michigan-dearborn-chess-club/</loc>
+  </url><url>
+    <loc>https://rgerjeki.github.io/python-projects/math/twin-prime-conjecture-in-python/</loc>
   </url>
 </urlset>

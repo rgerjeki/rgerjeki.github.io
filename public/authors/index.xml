@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Authors on Reese Gerjekian</title>
-    <link>http://localhost:1313/authors/</link>
+    <link>https://rgerjeki.github.io/authors/</link>
     <description>Recent content in Authors on Reese Gerjekian</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 05 Jan 2023 01:15:29 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/authors/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://rgerjeki.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Authors of Hugo</title>
-      <link>http://localhost:1313/authors/hugo-authors/</link>
+      <link>https://rgerjeki.github.io/authors/hugo-authors/</link>
       <pubDate>Thu, 05 Jan 2023 01:15:29 +0100</pubDate>
-      <guid>http://localhost:1313/authors/hugo-authors/</guid>
+      <guid>https://rgerjeki.github.io/authors/hugo-authors/</guid>
       <description></description>
     </item>
     <item>
       <title>Reese Enright-Gerjekian</title>
-      <link>http://localhost:1313/authors/reese-enright-gerjekian/</link>
+      <link>https://rgerjeki.github.io/authors/reese-enright-gerjekian/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/authors/reese-enright-gerjekian/</guid>
+      <guid>https://rgerjeki.github.io/authors/reese-enright-gerjekian/</guid>
       <description></description>
     </item>
   </channel>
