@@ -1,7 +1,7 @@
 +++ 
 title = "REG Blog Website"
 description = ""
-authors = ["Reese Enright-Gerjekian"]
+authors = ["Reese Gerjekian"]
 weight = 1
 +++
 

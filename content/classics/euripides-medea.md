@@ -1,7 +1,7 @@
 +++ 
 title = "Euripides' Medea"
 description = ""
-authors = ["Reese Enright-Gerjekian"]
+authors = ["Reese Gerjekian"]
 +++
 
 {{< medeaShortcode >}}

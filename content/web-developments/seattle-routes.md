@@ -1,7 +1,7 @@
 +++ 
 title = "Seattle Routes"
 description = ""
-authors = ["Reese Enright-Gerjekian"]
+authors = ["Reese Gerjekian"]
 weight = 2
 +++
 

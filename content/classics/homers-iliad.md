@@ -1,7 +1,7 @@
 +++ 
 title = "Homer’s Iliad"
 description = ""
-authors = ["Reese Enright-Gerjekian"]
+authors = ["Reese Gerjekian"]
 +++
 
 {{< homerShortcode1 >}}

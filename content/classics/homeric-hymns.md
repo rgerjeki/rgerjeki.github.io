@@ -1,7 +1,7 @@
 +++ 
 title = "Homeric Hymns"
 description = ""
-authors = ["Reese Enright-Gerjekian"]
+authors = ["Reese Gerjekian"]
 +++
 
 {{< homericShortcode >}}

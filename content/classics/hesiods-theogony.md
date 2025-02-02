@@ -1,7 +1,7 @@
 +++ 
 title = "Hesiod’s Theogony"
 description = ""
-authors = ["Reese Enright-Gerjekian"]
+authors = ["Reese Gerjekian"]
 +++
 
 {{< hesiodShortcode >}}
