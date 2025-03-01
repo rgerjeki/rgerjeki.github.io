@@ -8,6 +8,20 @@
     <language>en</language>
     <atom:link href="https://rgerjeki.github.io/authors/reese-gerjekian/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Final Research Paper</title>
+      <link>https://rgerjeki.github.io/cyber-operations/final-research-paper/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://rgerjeki.github.io/cyber-operations/final-research-paper/</guid>
+      <description>&lt;iframe src=&#34;https://rgerjeki.github.io/pdfs/Reese Gerjekian_Final Research Paper_CYBV498_Spring24.pdf&#34; width=&#34;100%&#34; height=&#34;500px&#34;&gt;&#xA;&lt;/iframe&gt;&#xA;&#xA;&lt;iframe src=&#34;https://rgerjeki.github.io/pdfs/Reese Gerjekian_Annotated References_CYBV498_Spring24.pdf&#34; width=&#34;100%&#34; height=&#34;500px&#34;&gt;&#xA;&lt;/iframe&gt;</description>
+    </item>
+    <item>
+      <title>CyberApolis Water Breach Report</title>
+      <link>https://rgerjeki.github.io/cyber-operations/cyberapolis-water-breach-report/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://rgerjeki.github.io/cyber-operations/cyberapolis-water-breach-report/</guid>
+      <description>&lt;iframe src=&#34;https://rgerjeki.github.io/pdfs/Reese Gerjekian_CyberApolis Water Breach Report.pdf&#34; width=&#34;100%&#34; height=&#34;500px&#34;&gt;&#xA;&lt;/iframe&gt;</description>
+    </item>
+    <item>
       <title>AWS S3 Bucket Region Checker</title>
       <link>https://rgerjeki.github.io/web-developments/s3-bucket-region/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

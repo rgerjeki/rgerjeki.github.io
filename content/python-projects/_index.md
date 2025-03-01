@@ -1,4 +1,4 @@
 +++
 title = "Python Projects"
-weight = 2
+weight = 3
 +++
