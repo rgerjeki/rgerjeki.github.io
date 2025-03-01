@@ -93,40 +93,65 @@
   <main class="wrapper">
     <nav class="navigation">
   <section class="container">
+    
     <a class="navigation-title" href="/">
       Reese Gerjekian
     </a>
+
     
-      <input type="checkbox" id="menu-toggle" />
-      <label class="menu-button float-right" for="menu-toggle">
-        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
-      </label>
-      <ul class="navigation-list">
+    <ul class="navigation-list">
+      
+      <li class="navigation-item">
         
-          
-            <li class="navigation-item">
-              
-                <a class="navigation-link" href="/projects/">Projects</a>
-              
-            </li>
-          
-            <li class="navigation-item">
-              
-                <a class="navigation-link" href="/chill-guy/">:)</a>
-              
-            </li>
-          
+          <a class="navigation-link" href="/projects/">Projects</a>
+          > 
+          <span class="current">
+            
+              Password Checke...
+            
+          </span>
         
-        
-      </ul>
-    
+      </li>
+
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="/chill-guy/">😎</a>
+      </li>
+    </ul>
   </section>
 </nav>
 
+<style>
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .navigation-title {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .navigation-list {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+  .navigation-item {
+    display: flex;
+    align-items: center;
+  }
+  .navigation-item a {
+    text-decoration: none;
+  }
+  .current {
+    font-weight: bold;
+  }
+</style>
 
     <div class="content">
       
-  <section class="container page">
+  
+<section class="container page">
   <article>
     <header>
       <h1 class="title">
@@ -135,7 +160,6 @@
         </a>
       </h1>
     </header>
-
     <p>The program defines a function, password_strength, that evaluates the strength of a provided password based on several criteria: length, presence of lowercase letters, uppercase letters, numbers, and special characters. It returns a string describing the password&rsquo;s strength as either &ldquo;Weak&rdquo;, &ldquo;Medium&rdquo;, or &ldquo;Strong&rdquo;. When run as a standalone script, the program prompts the user to input a password and then displays the strength assessment of the entered password.</p>
 <div class="container-check">
     <br>

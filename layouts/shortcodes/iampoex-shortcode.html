@@ -1,5 +1,28 @@
 <iframe src="https://iampoex.github.io" width="100%" height="500px">
 </iframe>
-<a href="https://iampoex.github.io">Link to Website</a>
-<br>
-<a href="https://github.com/iampoex/iampoex.github.io">Link to Github</a>
+
+<div class="button-container">
+    <a href="https://iampoex.github.io" class="button">Link to Website</a>
+    <a href="https://github.com/iampoex/iampoex.github.io" class="button">Link to Github</a>
+</div>
+
+<style>
+  .button-container {
+      display: flex;
+      gap: 10px; /* Space between buttons */
+      justify-content: left; /* Aligns buttons to the left, change to center or right if needed */
+  }
+  .button {
+      display: inline-block;
+      padding: 10px 15px;
+      font-size: 16px;
+      text-decoration: none;
+      color: white;
+      background-color: #007BFF; /* Blue color, change as needed */
+      border-radius: 5px;
+      transition: background 0.3s;
+  }
+  .button:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+  }
+</style>

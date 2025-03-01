@@ -15,20 +15,23 @@
 <meta name="author" content="Reese Gerjekian">
 <meta name="description" content="
 
-Link to Website
 
-Link to Github">
+    Visit Website
+    View on GitHub
+
+
+">
 <meta name="keywords" content="blog,developer,personal">
 
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="REG Blog Website">
-  <meta name="twitter:description" content="Link to Website Link to Github">
+  <meta name="twitter:description" content="Visit Website View on GitHub">
 
 <meta property="og:url" content="https://rgerjeki.github.io/web-developments/reg-blog/">
   <meta property="og:site_name" content="Reese Gerjekian">
   <meta property="og:title" content="REG Blog Website">
-  <meta property="og:description" content="Link to Website Link to Github">
+  <meta property="og:description" content="Visit Website View on GitHub">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="web-developments">
@@ -97,40 +100,65 @@ Link to Github">
   <main class="wrapper">
     <nav class="navigation">
   <section class="container">
+    
     <a class="navigation-title" href="/">
       Reese Gerjekian
     </a>
+
     
-      <input type="checkbox" id="menu-toggle" />
-      <label class="menu-button float-right" for="menu-toggle">
-        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
-      </label>
-      <ul class="navigation-list">
+    <ul class="navigation-list">
+      
+      <li class="navigation-item">
         
-          
-            <li class="navigation-item">
-              
-                <a class="navigation-link" href="/projects/">Projects</a>
-              
-            </li>
-          
-            <li class="navigation-item">
-              
-                <a class="navigation-link" href="/chill-guy/">:)</a>
-              
-            </li>
-          
+          <a class="navigation-link" href="/projects/">Projects</a>
+          > 
+          <span class="current">
+            
+              REG Blog Websit...
+            
+          </span>
         
-        
-      </ul>
-    
+      </li>
+
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="/chill-guy/">😎</a>
+      </li>
+    </ul>
   </section>
 </nav>
 
+<style>
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .navigation-title {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .navigation-list {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+  .navigation-item {
+    display: flex;
+    align-items: center;
+  }
+  .navigation-item a {
+    text-decoration: none;
+  }
+  .current {
+    font-weight: bold;
+  }
+</style>
 
     <div class="content">
       
-  <section class="container page">
+  
+<section class="container page">
   <article>
     <header>
       <h1 class="title">
@@ -139,12 +167,33 @@ Link to Github">
         </a>
       </h1>
     </header>
-
     <iframe src="https://regblog.github.io" width="100%" height="500px">
 </iframe>
-<a href="https://regblog.github.io">Link to Website</a>
-<br>
-<a href="https://github.com/REGBlog/REGBlog.github.io">Link to Github</a>
+<div class="button-container">
+    <a href="https://regblog.github.io" class="button">Visit Website</a>
+    <a href="https://github.com/REGBlog/REGBlog.github.io" class="button">View on GitHub</a>
+</div>
+
+<style>
+  .button-container {
+      display: flex;
+      gap: 10px;  
+      justify-content: left;  
+  }
+  .button {
+      display: inline-block;
+      padding: 10px 15px;
+      font-size: 16px;
+      text-decoration: none;
+      color: white;
+      background-color: #007BFF;  
+      border-radius: 5px;
+      transition: background 0.3s;
+  }
+  .button:hover {
+      background-color: #0056b3;  
+  }
+</style>
 
   </article>
 </section>
