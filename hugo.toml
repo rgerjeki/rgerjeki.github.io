@@ -15,7 +15,7 @@ author = "Reese Gerjekian"
 # license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
 description = "Reese Gerjekian's personal website"
 keywords = "blog,developer,personal"
-info = ["B.A.S in Cyber Operations", "AWS Cloud Support Associate"]
+info = ["B.A.S in Cyber Operations", "AWS Cloud Support Engineer"]
 avatarURL = "images/avatar.png"
 #gravatar = "john.doe@example.com"
 dateFormat = "January 2, 2006"
