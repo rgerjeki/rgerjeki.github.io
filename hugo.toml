@@ -151,6 +151,6 @@ weight = 2
 url = "projects/"
 
 [[languages.en.menu.main]]
-name = ":)"
+name = "Blog"
 weight = 3
-url = "chill-guy/"
+url = "https://regblog.github.io"
