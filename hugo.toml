@@ -10,13 +10,30 @@ enableEmoji = true
 [markup.highlight]
 noClasses = false
 
+[[params.info]]
+text = "MS in Data Science / MBA in Organizational Management"
+institution = "Eastern University"
+logo = "images/eu-logo.png"
+url = "https://www.eastern.edu/academics/graduate-programs/mba-ms-dual-degree"
+
+[[params.info]]
+text = "B.A.S in Cyber Operations"
+institution = "University of Arizona"
+logo = "images/ua-logo.png"
+url = "https://www.arizona.edu/degree-search/majors/cyber-operations-defense-and-forensics-emphasis?_gl=1*fwswf9*_gcl_au*MTA4NjYwNjY1MC4xNzU1MzE5Mjk5*_ga*MTIxMTU0NjU4MC4xNzU1MzE5Mjk5*_ga_7PV3540XS3*czE3NTUzMTkyOTkkbzEkZzEkdDE3NTUzMTk0NDQkajYwJGwwJGgxNjY1NzQxOTAz"
+
+[[params.info]]
+text = "AWS Cloud Support Engineer"
+institution = "Amazon Web Services"
+logo = "images/aws-logo.png"
+url = "https://aws.amazon.com/"
+
 [params]
 author = "Reese Gerjekian"
 # license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
 description = "Reese Gerjekian's personal website"
 keywords = "blog,developer,personal"
-info = ["B.A.S in Cyber Operations", "AWS Cloud Support Engineer"]
-avatarURL = "images/avatar.png"
+avatarURL = "images/avatar.JPG"
 #gravatar = "john.doe@example.com"
 dateFormat = "January 2, 2006"
 since = 2020

@@ -2,58 +2,58 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Web Developments on Reese Gerjekian</title>
-    <link>http://localhost:1313/web-developments/</link>
+    <link>https://rgerjeki.github.io/web-developments/</link>
     <description>Recent content in Web Developments on Reese Gerjekian</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="http://localhost:1313/web-developments/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://rgerjeki.github.io/web-developments/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AWS S3 Bucket Region Checker</title>
-      <link>http://localhost:1313/web-developments/s3-bucket-region/</link>
+      <link>https://rgerjeki.github.io/web-developments/s3-bucket-region/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/web-developments/s3-bucket-region/</guid>
+      <guid>https://rgerjeki.github.io/web-developments/s3-bucket-region/</guid>
       <description>&lt;iframe src=&#34;https://s3bucketregion.github.io&#34; width=&#34;100%&#34; height=&#34;500px&#34;&gt;&#xA;&lt;/iframe&gt;&#xA;&lt;div class=&#34;button-container&#34;&gt;&#xA;    &lt;a href=&#34;https://s3bucketregion.github.io&#34; class=&#34;button&#34;&gt;Visit Website&lt;/a&gt;&#xA;    &lt;a href=&#34;https://github.com/s3bucketregion/s3bucketregion.github.io&#34; class=&#34;button&#34;&gt;View on GitHub&lt;/a&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;style&gt;&#xA;  .button-container {&#xA;      display: flex;&#xA;      gap: 10px;  &#xA;      justify-content: left;  &#xA;  }&#xA;  .button {&#xA;      display: inline-block;&#xA;      padding: 10px 15px;&#xA;      font-size: 16px;&#xA;      text-decoration: none;&#xA;      color: white;&#xA;      background-color: #007BFF;  &#xA;      border-radius: 5px;&#xA;      transition: background 0.3s;&#xA;  }&#xA;  .button:hover {&#xA;      background-color: #0056b3;  &#xA;  }&#xA;&lt;/style&gt;</description>
     </item>
     <item>
       <title>AWS Study Guides</title>
-      <link>http://localhost:1313/web-developments/aws-study-guides/</link>
+      <link>https://rgerjeki.github.io/web-developments/aws-study-guides/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/web-developments/aws-study-guides/</guid>
+      <guid>https://rgerjeki.github.io/web-developments/aws-study-guides/</guid>
       <description>&lt;iframe src=&#34;https://aws-study-guides.github.io&#34; width=&#34;100%&#34; height=&#34;500px&#34;&gt;&#xA;&lt;/iframe&gt;&#xA;&#xA;&lt;div class=&#34;button-container&#34;&gt;&#xA;    &lt;a href=&#34;https://aws-study-guides.github.io&#34; class=&#34;button&#34;&gt;Link to Website&lt;/a&gt;&#xA;    &lt;a href=&#34;https://github.com/aws-study-guides/aws-study-guides.github.io&#34; class=&#34;button&#34;&gt;Link to Github&lt;/a&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;style&gt;&#xA;  .button-container {&#xA;      display: flex;&#xA;      gap: 10px;  &#xA;      justify-content: left;  &#xA;  }&#xA;  .button {&#xA;      display: inline-block;&#xA;      padding: 10px 15px;&#xA;      font-size: 16px;&#xA;      text-decoration: none;&#xA;      color: white;&#xA;      background-color: #007BFF;  &#xA;      border-radius: 5px;&#xA;      transition: background 0.3s;&#xA;  }&#xA;  .button:hover {&#xA;      background-color: #0056b3;  &#xA;  }&#xA;&lt;/style&gt;</description>
     </item>
     <item>
       <title>How Bout Them Apples Website</title>
-      <link>http://localhost:1313/web-developments/how-bout-them-apples/</link>
+      <link>https://rgerjeki.github.io/web-developments/how-bout-them-apples/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/web-developments/how-bout-them-apples/</guid>
+      <guid>https://rgerjeki.github.io/web-developments/how-bout-them-apples/</guid>
       <description>&lt;iframe src=&#34;https://howboutthemapples.github.io&#34; width=&#34;100%&#34; height=&#34;500px&#34;&gt;&#xA;&lt;/iframe&gt;&#xA;&#xA;&lt;div class=&#34;button-container&#34;&gt;&#xA;    &lt;a href=&#34;https://howboutthemapples.github.io&#34; class=&#34;button&#34;&gt;Link to Website&lt;/a&gt;&#xA;    &lt;a href=&#34;https://github.com/HowBoutThemApples/HowBoutThemApples.github.io&#34; class=&#34;button&#34;&gt;Link to Github&lt;/a&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;style&gt;&#xA;  .button-container {&#xA;      display: flex;&#xA;      gap: 10px;  &#xA;      justify-content: left;  &#xA;  }&#xA;  .button {&#xA;      display: inline-block;&#xA;      padding: 10px 15px;&#xA;      font-size: 16px;&#xA;      text-decoration: none;&#xA;      color: white;&#xA;      background-color: #007BFF;  &#xA;      border-radius: 5px;&#xA;      transition: background 0.3s;&#xA;  }&#xA;  .button:hover {&#xA;      background-color: #0056b3;  &#xA;  }&#xA;&lt;/style&gt;</description>
     </item>
     <item>
       <title>IAM Policy Explainer</title>
-      <link>http://localhost:1313/web-developments/iam-policy-explainer/</link>
+      <link>https://rgerjeki.github.io/web-developments/iam-policy-explainer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/web-developments/iam-policy-explainer/</guid>
+      <guid>https://rgerjeki.github.io/web-developments/iam-policy-explainer/</guid>
       <description>&lt;iframe src=&#34;https://iampoex.github.io&#34; width=&#34;100%&#34; height=&#34;500px&#34;&gt;&#xA;&lt;/iframe&gt;&#xA;&#xA;&lt;div class=&#34;button-container&#34;&gt;&#xA;    &lt;a href=&#34;https://iampoex.github.io&#34; class=&#34;button&#34;&gt;Link to Website&lt;/a&gt;&#xA;    &lt;a href=&#34;https://github.com/iampoex/iampoex.github.io&#34; class=&#34;button&#34;&gt;Link to Github&lt;/a&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;style&gt;&#xA;  .button-container {&#xA;      display: flex;&#xA;      gap: 10px;  &#xA;      justify-content: left;  &#xA;  }&#xA;  .button {&#xA;      display: inline-block;&#xA;      padding: 10px 15px;&#xA;      font-size: 16px;&#xA;      text-decoration: none;&#xA;      color: white;&#xA;      background-color: #007BFF;  &#xA;      border-radius: 5px;&#xA;      transition: background 0.3s;&#xA;  }&#xA;  .button:hover {&#xA;      background-color: #0056b3;  &#xA;  }&#xA;&lt;/style&gt;</description>
     </item>
     <item>
       <title>REG Blog Website</title>
-      <link>http://localhost:1313/web-developments/reg-blog/</link>
+      <link>https://rgerjeki.github.io/web-developments/reg-blog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/web-developments/reg-blog/</guid>
+      <guid>https://rgerjeki.github.io/web-developments/reg-blog/</guid>
       <description>&lt;iframe src=&#34;https://regblog.github.io&#34; width=&#34;100%&#34; height=&#34;500px&#34;&gt;&#xA;&lt;/iframe&gt;&#xA;&lt;div class=&#34;button-container&#34;&gt;&#xA;    &lt;a href=&#34;https://regblog.github.io&#34; class=&#34;button&#34;&gt;Visit Website&lt;/a&gt;&#xA;    &lt;a href=&#34;https://github.com/REGBlog/REGBlog.github.io&#34; class=&#34;button&#34;&gt;View on GitHub&lt;/a&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;style&gt;&#xA;  .button-container {&#xA;      display: flex;&#xA;      gap: 10px;  &#xA;      justify-content: left;  &#xA;  }&#xA;  .button {&#xA;      display: inline-block;&#xA;      padding: 10px 15px;&#xA;      font-size: 16px;&#xA;      text-decoration: none;&#xA;      color: white;&#xA;      background-color: #007BFF;  &#xA;      border-radius: 5px;&#xA;      transition: background 0.3s;&#xA;  }&#xA;  .button:hover {&#xA;      background-color: #0056b3;  &#xA;  }&#xA;&lt;/style&gt;</description>
     </item>
     <item>
       <title>Seattle Routes</title>
-      <link>http://localhost:1313/web-developments/seattle-routes/</link>
+      <link>https://rgerjeki.github.io/web-developments/seattle-routes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/web-developments/seattle-routes/</guid>
+      <guid>https://rgerjeki.github.io/web-developments/seattle-routes/</guid>
       <description>&lt;iframe src=&#34;https://seattleroutes.github.io&#34; width=&#34;100%&#34; height=&#34;500px&#34;&gt;&#xA;&lt;/iframe&gt;&#xA;&#xA;&lt;div class=&#34;button-container&#34;&gt;&#xA;    &lt;a href=&#34;https://seattleroutes.github.io&#34; class=&#34;button&#34;&gt;Link to Website&lt;/a&gt;&#xA;    &lt;a href=&#34;https://github.com/SeattleRoutes/SeattleRoutes.github.io&#34; class=&#34;button&#34;&gt;Link to Github&lt;/a&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;style&gt;&#xA;  .button-container {&#xA;      display: flex;&#xA;      gap: 10px;  &#xA;      justify-content: left;  &#xA;  }&#xA;  .button {&#xA;      display: inline-block;&#xA;      padding: 10px 15px;&#xA;      font-size: 16px;&#xA;      text-decoration: none;&#xA;      color: white;&#xA;      background-color: #007BFF;  &#xA;      border-radius: 5px;&#xA;      transition: background 0.3s;&#xA;  }&#xA;  .button:hover {&#xA;      background-color: #0056b3;  &#xA;  }&#xA;&lt;/style&gt;</description>
     </item>
     <item>
       <title>The University of Michigan Dearborn Chess Club Website</title>
-      <link>http://localhost:1313/web-developments/university-of-michigan-dearborn-chess-club/</link>
+      <link>https://rgerjeki.github.io/web-developments/university-of-michigan-dearborn-chess-club/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/web-developments/university-of-michigan-dearborn-chess-club/</guid>
+      <guid>https://rgerjeki.github.io/web-developments/university-of-michigan-dearborn-chess-club/</guid>
       <description>&lt;iframe src=&#34;https://uofmdcc.github.io&#34; width=&#34;100%&#34; height=&#34;500px&#34;&gt;&#xA;&lt;/iframe&gt;&#xA;&#xA;&lt;div class=&#34;button-container&#34;&gt;&#xA;    &lt;a href=&#34;https://uofmdcc.github.io&#34; class=&#34;button&#34;&gt;Link to Website&lt;/a&gt;&#xA;    &lt;a href=&#34;https://github.com/UofMDCC/UofMDCC.github.io&#34; class=&#34;button&#34;&gt;Link to Github&lt;/a&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;style&gt;&#xA;  .button-container {&#xA;      display: flex;&#xA;      gap: 10px;  &#xA;      justify-content: left;  &#xA;  }&#xA;  .button {&#xA;      display: inline-block;&#xA;      padding: 10px 15px;&#xA;      font-size: 16px;&#xA;      text-decoration: none;&#xA;      color: white;&#xA;      background-color: #007BFF;  &#xA;      border-radius: 5px;&#xA;      transition: background 0.3s;&#xA;  }&#xA;  .button:hover {&#xA;      background-color: #0056b3;  &#xA;  }&#xA;&lt;/style&gt;</description>
     </item>
   </channel>

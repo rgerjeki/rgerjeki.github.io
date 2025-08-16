@@ -1,6 +1,28 @@
 <h1>{{ .Site.Params.author }}</h1>
-{{ if reflect.IsSlice .Site.Params.info }}
-<h2>{{ range .Site.Params.info }}{{ . | markdownify }}<br>{{ end}}</h2>
-{{ else }}
-<h2>{{ .Site.Params.info | markdownify }} </h2>
+{{ $info := .Site.Params.info }}
+{{ if $info }}
+  <h2>
+    {{ if reflect.IsSlice $info }}
+      {{ range $item := $info }}
+        {{ if (reflect.IsMap $item) }}
+          {{ $text := $item.text }}
+          {{ $url := $item.url }}
+          {{ $logo := $item.logo }}
+          {{ $inst := $item.institution }}
+          {{ if and $logo $url }}
+            {{ with $text }}{{ . | markdownify }} {{ end }}
+            <a href="{{ $url }}" target="_blank" rel="noopener">
+              <img src="{{ $logo }}" alt="{{ $inst }}" style="height:20px; vertical-align:middle; margin-left:6px;" />
+            </a><br>
+          {{ else }}
+            {{ with $text }}{{ . | markdownify }}{{ end }}<br>
+          {{ end }}
+        {{ else }}
+          {{ $item | markdownify }}<br>
+        {{ end }}
+      {{ end }}
+    {{ else }}
+      {{ $info | markdownify }}
+    {{ end }}
+  </h2>
 {{ end }}
