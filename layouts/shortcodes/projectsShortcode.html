@@ -1,26 +1,51 @@
+{{/* Helper: render a section and all its child sections recursively */}}
+{{ define "renderSectionTree" }}
+<details open>
+  <summary>{{ .Title }}</summary>
+  <ul>
+    {{/* First: child sections (recurse) */}}
+    {{ range .Sections.ByWeight }}
+      {{ template "renderSectionTree" . }}
+    {{ end }}
+
+    {{/* Then: regular pages inside this section */}}
+    {{ range .RegularPages.ByWeight }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+  </ul>
+</details>
+{{ end }}
+
 {{ range .Site.Sections.ByWeight }}
 <details open>
-    <summary style="font-size: 1.25em; font-weight: bold;">{{ .Title }}</summary>
-    <ul>
-    {{ range .Pages.ByWeight }}
-        {{ if .IsSection }}
-        <!-- Handle Subsections -->
-        {{ range .Sections.ByWeight }}
-        <details open>
-            <summary>{{ .Title }}</summary>
-            <ul>
-            {{ range .Pages.ByWeight }}
-                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-            {{ end }}
-            </ul>
-        </details>
-        {{ end }}
-        {{ else }}
-        <!-- Handle Regular Pages -->
-        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-        {{ end }}
+  <summary style="font-size: 1.25em; font-weight: bold;">{{ .Title }}</summary>
+  <ul>
+    {{/* A) Show child sections (any depth) */}}
+    {{ range .Sections.ByWeight }}
+      {{ template "renderSectionTree" . }}
     {{ end }}
-    </ul>
+
+    {{/* B) Show pages that live directly under the section.
+           If there ARE child sections, put these under an "Other" dropdown.
+           If there AREN'T child sections, list them flat. */}}
+    {{ $regular := .RegularPages.ByWeight }}
+    {{ if gt (len .Sections) 0 }}
+      {{ if gt (len $regular) 0 }}
+        <details open>
+          <summary>Other</summary>
+          <ul>
+            {{ range $regular }}
+              <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+            {{ end }}
+          </ul>
+        </details>
+      {{ end }}
+    {{ else }}
+      {{ range $regular }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    {{ end }}
+  </ul>
 </details>
 {{ end }}
 

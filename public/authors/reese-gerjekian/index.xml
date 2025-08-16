@@ -15,6 +15,13 @@
       <description>&lt;iframe src=&#34;https://rgerjeki.github.io/pdfs/Reese Gerjekian_Final Research Paper_CYBV498_Spring24.pdf&#34; width=&#34;100%&#34; height=&#34;500px&#34;&gt;&#xA;&lt;/iframe&gt;&#xA;&#xA;&lt;iframe src=&#34;https://rgerjeki.github.io/pdfs/Reese Gerjekian_Annotated References_CYBV498_Spring24.pdf&#34; width=&#34;100%&#34; height=&#34;500px&#34;&gt;&#xA;&lt;/iframe&gt;</description>
     </item>
     <item>
+      <title>IAM Policy Explainer</title>
+      <link>https://rgerjeki.github.io/web-developments/aws/iam-policy-explainer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://rgerjeki.github.io/web-developments/aws/iam-policy-explainer/</guid>
+      <description>&lt;iframe src=&#34;https://iampoex.github.io&#34; width=&#34;100%&#34; height=&#34;500px&#34;&gt;&#xA;&lt;/iframe&gt;&#xA;&#xA;&lt;div class=&#34;button-container&#34;&gt;&#xA;    &lt;a href=&#34;https://iampoex.github.io&#34; class=&#34;button&#34;&gt;Link to Website&lt;/a&gt;&#xA;    &lt;a href=&#34;https://github.com/iampoex/iampoex.github.io&#34; class=&#34;button&#34;&gt;Link to Github&lt;/a&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;style&gt;&#xA;  .button-container {&#xA;      display: flex;&#xA;      gap: 10px;  &#xA;      justify-content: left;  &#xA;  }&#xA;  .button {&#xA;      display: inline-block;&#xA;      padding: 10px 15px;&#xA;      font-size: 16px;&#xA;      text-decoration: none;&#xA;      color: white;&#xA;      background-color: #007BFF;  &#xA;      border-radius: 5px;&#xA;      transition: background 0.3s;&#xA;  }&#xA;  .button:hover {&#xA;      background-color: #0056b3;  &#xA;  }&#xA;&lt;/style&gt;</description>
+    </item>
+    <item>
       <title>CyberApolis Water Breach Report</title>
       <link>https://rgerjeki.github.io/cyber-operations/cyberapolis-water-breach-report/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -23,16 +30,16 @@
     </item>
     <item>
       <title>AWS S3 Bucket Region Checker</title>
-      <link>https://rgerjeki.github.io/web-developments/s3-bucket-region/</link>
+      <link>https://rgerjeki.github.io/web-developments/aws/s3-bucket-region/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://rgerjeki.github.io/web-developments/s3-bucket-region/</guid>
+      <guid>https://rgerjeki.github.io/web-developments/aws/s3-bucket-region/</guid>
       <description>&lt;iframe src=&#34;https://s3bucketregion.github.io&#34; width=&#34;100%&#34; height=&#34;500px&#34;&gt;&#xA;&lt;/iframe&gt;&#xA;&lt;div class=&#34;button-container&#34;&gt;&#xA;    &lt;a href=&#34;https://s3bucketregion.github.io&#34; class=&#34;button&#34;&gt;Visit Website&lt;/a&gt;&#xA;    &lt;a href=&#34;https://github.com/s3bucketregion/s3bucketregion.github.io&#34; class=&#34;button&#34;&gt;View on GitHub&lt;/a&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;style&gt;&#xA;  .button-container {&#xA;      display: flex;&#xA;      gap: 10px;  &#xA;      justify-content: left;  &#xA;  }&#xA;  .button {&#xA;      display: inline-block;&#xA;      padding: 10px 15px;&#xA;      font-size: 16px;&#xA;      text-decoration: none;&#xA;      color: white;&#xA;      background-color: #007BFF;  &#xA;      border-radius: 5px;&#xA;      transition: background 0.3s;&#xA;  }&#xA;  .button:hover {&#xA;      background-color: #0056b3;  &#xA;  }&#xA;&lt;/style&gt;</description>
     </item>
     <item>
       <title>AWS Study Guides</title>
-      <link>https://rgerjeki.github.io/web-developments/aws-study-guides/</link>
+      <link>https://rgerjeki.github.io/web-developments/aws/aws-study-guides/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://rgerjeki.github.io/web-developments/aws-study-guides/</guid>
+      <guid>https://rgerjeki.github.io/web-developments/aws/aws-study-guides/</guid>
       <description>&lt;iframe src=&#34;https://aws-study-guides.github.io&#34; width=&#34;100%&#34; height=&#34;500px&#34;&gt;&#xA;&lt;/iframe&gt;&#xA;&#xA;&lt;div class=&#34;button-container&#34;&gt;&#xA;    &lt;a href=&#34;https://aws-study-guides.github.io&#34; class=&#34;button&#34;&gt;Link to Website&lt;/a&gt;&#xA;    &lt;a href=&#34;https://github.com/aws-study-guides/aws-study-guides.github.io&#34; class=&#34;button&#34;&gt;Link to Github&lt;/a&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;style&gt;&#xA;  .button-container {&#xA;      display: flex;&#xA;      gap: 10px;  &#xA;      justify-content: left;  &#xA;  }&#xA;  .button {&#xA;      display: inline-block;&#xA;      padding: 10px 15px;&#xA;      font-size: 16px;&#xA;      text-decoration: none;&#xA;      color: white;&#xA;      background-color: #007BFF;  &#xA;      border-radius: 5px;&#xA;      transition: background 0.3s;&#xA;  }&#xA;  .button:hover {&#xA;      background-color: #0056b3;  &#xA;  }&#xA;&lt;/style&gt;</description>
     </item>
     <item>
@@ -106,13 +113,6 @@
       <description>&lt;iframe src=&#34;https://howboutthemapples.github.io&#34; width=&#34;100%&#34; height=&#34;500px&#34;&gt;&#xA;&lt;/iframe&gt;&#xA;&#xA;&lt;div class=&#34;button-container&#34;&gt;&#xA;    &lt;a href=&#34;https://howboutthemapples.github.io&#34; class=&#34;button&#34;&gt;Link to Website&lt;/a&gt;&#xA;    &lt;a href=&#34;https://github.com/HowBoutThemApples/HowBoutThemApples.github.io&#34; class=&#34;button&#34;&gt;Link to Github&lt;/a&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;style&gt;&#xA;  .button-container {&#xA;      display: flex;&#xA;      gap: 10px;  &#xA;      justify-content: left;  &#xA;  }&#xA;  .button {&#xA;      display: inline-block;&#xA;      padding: 10px 15px;&#xA;      font-size: 16px;&#xA;      text-decoration: none;&#xA;      color: white;&#xA;      background-color: #007BFF;  &#xA;      border-radius: 5px;&#xA;      transition: background 0.3s;&#xA;  }&#xA;  .button:hover {&#xA;      background-color: #0056b3;  &#xA;  }&#xA;&lt;/style&gt;</description>
     </item>
     <item>
-      <title>IAM Policy Explainer</title>
-      <link>https://rgerjeki.github.io/web-developments/iam-policy-explainer/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://rgerjeki.github.io/web-developments/iam-policy-explainer/</guid>
-      <description>&lt;iframe src=&#34;https://iampoex.github.io&#34; width=&#34;100%&#34; height=&#34;500px&#34;&gt;&#xA;&lt;/iframe&gt;&#xA;&#xA;&lt;div class=&#34;button-container&#34;&gt;&#xA;    &lt;a href=&#34;https://iampoex.github.io&#34; class=&#34;button&#34;&gt;Link to Website&lt;/a&gt;&#xA;    &lt;a href=&#34;https://github.com/iampoex/iampoex.github.io&#34; class=&#34;button&#34;&gt;Link to Github&lt;/a&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;style&gt;&#xA;  .button-container {&#xA;      display: flex;&#xA;      gap: 10px;  &#xA;      justify-content: left;  &#xA;  }&#xA;  .button {&#xA;      display: inline-block;&#xA;      padding: 10px 15px;&#xA;      font-size: 16px;&#xA;      text-decoration: none;&#xA;      color: white;&#xA;      background-color: #007BFF;  &#xA;      border-radius: 5px;&#xA;      transition: background 0.3s;&#xA;  }&#xA;  .button:hover {&#xA;      background-color: #0056b3;  &#xA;  }&#xA;&lt;/style&gt;</description>
-    </item>
-    <item>
       <title>Livy&#39;s History of Rome</title>
       <link>https://rgerjeki.github.io/classics/livys-history-of-rome/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -125,6 +125,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://rgerjeki.github.io/python-projects/security/password-checker-in-python/</guid>
       <description>&lt;p&gt;The program defines a function, password_strength, that evaluates the strength of a provided password based on several criteria: length, presence of lowercase letters, uppercase letters, numbers, and special characters. It returns a string describing the password&amp;rsquo;s strength as either &amp;ldquo;Weak&amp;rdquo;, &amp;ldquo;Medium&amp;rdquo;, or &amp;ldquo;Strong&amp;rdquo;. When run as a standalone script, the program prompts the user to input a password and then displays the strength assessment of the entered password.&lt;/p&gt;&#xA;&lt;div class=&#34;container-check&#34;&gt;&#xA;    &lt;br&gt;&#xA;    &lt;h2&gt;Password Strength Checker&lt;/h2&gt;&#xA;    &lt;script&gt;&#xA;        function checkPasswordStrength() {&#xA;            const password = document.getElementById(&#39;passwordInput&#39;).value;&#xA;            let resultText = &#39;&#39;;&#xA;    &#xA;            if (password.length &lt; 8) {&#xA;                resultText = &#39;Weak: Password is too short.&#39;;&#xA;            } else if (!/[a-z]/.test(password)) {&#xA;                resultText = &#39;Weak: Password should contain at least one lowercase letter.&#39;;&#xA;            } else if (!/[A-Z]/.test(password)) {&#xA;                resultText = &#39;Weak: Password should contain at least one uppercase letter.&#39;;&#xA;            } else if (!/[0-9]/.test(password)) {&#xA;                resultText = &#39;Weak: Password should contain at least one digit.&#39;;&#xA;            } else if (!/[@_!#$%^&amp;*()&lt;&gt;?/\|}{~:]/.test(password)) {&#xA;                resultText = &#39;Medium: Password should contain at least one special character for stronger strength.&#39;;&#xA;            } else {&#xA;                resultText = &#39;Strong: Your password is strong.&#39;;&#xA;            }&#xA;    &#xA;            const strengthDisplay = document.getElementById(&#39;strengthDisplay&#39;);&#xA;            strengthDisplay.textContent = `Result: ${resultText}`;&#xA;            strengthDisplay.className = resultText.split(&#39;:&#39;)[0].toLowerCase();&#xA;        }&#xA;    &lt;/script&gt;&#xA;    &#xA;    &#xA;    &lt;input type=&#34;password&#34; id=&#34;passwordInput&#34; oninput=&#34;checkPasswordStrength()&#34; name=&#34;password&#34; placeholder=&#34;Enter your password&#34; required&gt;&#xA;    &lt;p id=&#34;strengthDisplay&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Query Lab</title>
+      <link>https://rgerjeki.github.io/web-developments/sql/query-lab/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://rgerjeki.github.io/web-developments/sql/query-lab/</guid>
+      <description>&lt;iframe src=&#34;https://querylab-reg.github.io&#34; width=&#34;100%&#34; height=&#34;500px&#34;&gt;&#xA;&lt;/iframe&gt;&#xA;&lt;div class=&#34;button-container&#34;&gt;&#xA;    &lt;a href=&#34;https://querylab-reg.github.io&#34; class=&#34;button&#34;&gt;Visit Website&lt;/a&gt;&#xA;    &lt;a href=&#34;https://github.com/QueryLab-reg/QueryLab-reg.github.io&#34; class=&#34;button&#34;&gt;View on GitHub&lt;/a&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;style&gt;&#xA;  .button-container {&#xA;      display: flex;&#xA;      gap: 10px;  &#xA;      justify-content: left;  &#xA;  }&#xA;  .button {&#xA;      display: inline-block;&#xA;      padding: 10px 15px;&#xA;      font-size: 16px;&#xA;      text-decoration: none;&#xA;      color: white;&#xA;      background-color: #007BFF;  &#xA;      border-radius: 5px;&#xA;      transition: background 0.3s;&#xA;  }&#xA;  .button:hover {&#xA;      background-color: #0056b3;  &#xA;  }&#xA;&lt;/style&gt;</description>
     </item>
     <item>
       <title>Random Password Generator in Python</title>

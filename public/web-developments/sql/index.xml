@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SQL on Reese Gerjekian</title>
+    <link>https://rgerjeki.github.io/web-developments/sql/</link>
+    <description>Recent content in SQL on Reese Gerjekian</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="https://rgerjeki.github.io/web-developments/sql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Query Lab</title>
+      <link>https://rgerjeki.github.io/web-developments/sql/query-lab/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://rgerjeki.github.io/web-developments/sql/query-lab/</guid>
+      <description>&lt;iframe src=&#34;https://querylab-reg.github.io&#34; width=&#34;100%&#34; height=&#34;500px&#34;&gt;&#xA;&lt;/iframe&gt;&#xA;&lt;div class=&#34;button-container&#34;&gt;&#xA;    &lt;a href=&#34;https://querylab-reg.github.io&#34; class=&#34;button&#34;&gt;Visit Website&lt;/a&gt;&#xA;    &lt;a href=&#34;https://github.com/QueryLab-reg/QueryLab-reg.github.io&#34; class=&#34;button&#34;&gt;View on GitHub&lt;/a&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;style&gt;&#xA;  .button-container {&#xA;      display: flex;&#xA;      gap: 10px;  &#xA;      justify-content: left;  &#xA;  }&#xA;  .button {&#xA;      display: inline-block;&#xA;      padding: 10px 15px;&#xA;      font-size: 16px;&#xA;      text-decoration: none;&#xA;      color: white;&#xA;      background-color: #007BFF;  &#xA;      border-radius: 5px;&#xA;      transition: background 0.3s;&#xA;  }&#xA;  .button:hover {&#xA;      background-color: #0056b3;  &#xA;  }&#xA;&lt;/style&gt;</description>
+    </item>
+  </channel>
+</rss>
