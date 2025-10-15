@@ -11,12 +11,6 @@ enableEmoji = true
 noClasses = false
 
 [[params.info]]
-text = "MS in Data Science / MBA in Organizational Management"
-institution = "Eastern University"
-logo = "images/eu-logo.png"
-url = "https://www.eastern.edu/academics/graduate-programs/mba-ms-dual-degree"
-
-[[params.info]]
 text = "B.A.S in Cyber Operations"
 institution = "University of Arizona"
 logo = "images/ua-logo.png"
