@@ -89,6 +89,15 @@
 
 
 <body class="preload-transitions colorscheme-auto">
+  <script>
+    (function() {
+      var csClass = "colorscheme-auto";
+      if (!document.documentElement.classList.contains(csClass)) {
+        document.documentElement.classList.remove('colorscheme-light', 'colorscheme-dark', 'colorscheme-auto');
+        document.documentElement.classList.add(csClass);
+      }
+    })();
+  </script>
   
 <div class="float-container">
     <a id="dark-mode-toggle" class="colorscheme-toggle">
@@ -114,12 +123,6 @@
             <li class="navigation-item">
               
                 <a class="navigation-link" href="/projects/">Projects</a>
-              
-            </li>
-          
-            <li class="navigation-item">
-              
-                <a class="navigation-link" href="https://regblog.github.io">Blog</a>
               
             </li>
           

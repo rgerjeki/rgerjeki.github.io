@@ -81,6 +81,15 @@
 
 
 <body class="preload-transitions colorscheme-auto">
+  <script>
+    (function() {
+      var csClass = "colorscheme-auto";
+      if (!document.documentElement.classList.contains(csClass)) {
+        document.documentElement.classList.remove('colorscheme-light', 'colorscheme-dark', 'colorscheme-auto');
+        document.documentElement.classList.add(csClass);
+      }
+    })();
+  </script>
   
 <div class="float-container">
     <a id="dark-mode-toggle" class="colorscheme-toggle">
@@ -106,12 +115,6 @@
             <li class="navigation-item">
               
                 <a class="navigation-link" href="/projects/">Projects</a>
-              
-            </li>
-          
-            <li class="navigation-item">
-              
-                <a class="navigation-link" href="https://regblog.github.io">Blog</a>
               
             </li>
           
@@ -268,6 +271,22 @@
         <li><a href="/classics/homeric-hymns/">Homeric Hymns</a></li>
       
         <li><a href="/classics/livys-history-of-rome/">Livy&#39;s History of Rome</a></li>
+      
+    
+  </ul>
+</details>
+
+<details open>
+  <summary style="font-size: 1.25em; font-weight: bold;">Tools</summary>
+  <ul>
+    
+    
+
+    
+    
+    
+      
+        <li><a href="/tools/home-affordability/">Home Affordability Calculator</a></li>
       
     
   </ul>

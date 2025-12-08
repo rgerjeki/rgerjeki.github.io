@@ -20,6 +20,15 @@
   </url><url>
     <loc>http://localhost:1313/classics/</loc>
   </url><url>
+    <loc>http://localhost:1313/tools/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tools/home-affordability/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/authors/</loc>
     <lastmod>2023-01-05T01:15:29+01:00</lastmod>
   </url><url>
@@ -63,8 +72,6 @@
     <loc>http://localhost:1313/web-developments/sql/query-lab/</loc>
   </url><url>
     <loc>http://localhost:1313/python-projects/security/random-password-generator-in-python/</loc>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
   </url><url>
     <loc>http://localhost:1313/authors/reese-gerjekian/</loc>
   </url><url>

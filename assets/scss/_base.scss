@@ -7,9 +7,32 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+  background-color: $bg-color;
+  min-height: 100%;
+}
+
+html,
+body {
+  background-color: $bg-color;
+  min-height: 100%;
+}
+
+html.colorscheme-dark {
+  background-color: $bg-color-dark;
+  color: $fg-color-dark;
+}
+
+html.colorscheme-auto {
+  background-color: $bg-color;
+  @media (prefers-color-scheme: dark) {
+    background-color: $bg-color-dark;
+    color: $fg-color-dark;
+  }
 }
 
 body {
+  margin: 0;
+  min-height: 100%;
   color: $fg-color;
   background-color: $bg-color;
   font-family: $font-family;
@@ -21,6 +44,24 @@ body {
     font-size: 1.6em;
     line-height: 1.6em;
   }
+}
+
+body.colorscheme-dark {
+  background-color: $bg-color-dark;
+  color: $fg-color-dark;
+}
+
+body.colorscheme-auto {
+  background-color: $bg-color;
+  @media (prefers-color-scheme: dark) {
+    background-color: $bg-color-dark;
+    color: $fg-color-dark;
+  }
+}
+
+main,
+.wrapper {
+  background-color: inherit;
 }
 
 iframe[src*=disqus] {

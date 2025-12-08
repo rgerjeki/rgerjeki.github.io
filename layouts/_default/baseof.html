@@ -14,6 +14,15 @@
 {{ end }}
 
 <body class="preload-transitions {{ $csClass }}{{ if .Site.Params.rtl }} rtl{{ end }}">
+  <script>
+    (function() {
+      var csClass = "{{ $csClass }}";
+      if (!document.documentElement.classList.contains(csClass)) {
+        document.documentElement.classList.remove('colorscheme-light', 'colorscheme-dark', 'colorscheme-auto');
+        document.documentElement.classList.add(csClass);
+      }
+    })();
+  </script>
   {{ partial "float" . }}
   <main class="wrapper">
     {{ partial "header.html" . }}

@@ -1,6 +1,13 @@
 body.colorscheme-dark {
   color: #dadada;
-  background-color: #393E46; }
+  background-color: #212121;
+  min-height: 100%; }
+  body.colorscheme-dark body {
+    background-color: #212121;
+    min-height: 100%; }
+  body.colorscheme-dark html.colorscheme-dark,
+  body.colorscheme-dark body.colorscheme-dark {
+    background-color: #212121; }
   body.colorscheme-dark a {
     color: #2a7195; }
   body.colorscheme-dark h1,
@@ -67,7 +74,14 @@ body.colorscheme-dark {
 @media (prefers-color-scheme: dark) {
   body.colorscheme-auto {
     color: #dadada;
-    background-color: #393E46; }
+    background-color: #212121;
+    min-height: 100%; }
+    body.colorscheme-auto body {
+      background-color: #212121;
+      min-height: 100%; }
+    body.colorscheme-auto html.colorscheme-dark,
+    body.colorscheme-auto body.colorscheme-dark {
+      background-color: #212121; }
     body.colorscheme-auto a {
       color: #2a7195; }
     body.colorscheme-auto h1,
@@ -264,6 +278,99 @@ body.colorscheme-dark .taxonomy-element {
       color: #dadada; }
     body.colorscheme-auto .taxonomy-element a:active {
       color: #dadada; } }
+
+:root.colorscheme-dark,
+html.colorscheme-dark,
+body.colorscheme-dark {
+  --chart-principal: #2a9ed1;
+  --chart-interest: #d86b8a; }
+
+.amortization-card {
+  background: #424242; }
+  .amortization-card .amortization-legend .swatch.principal {
+    background: #2a9ed1; }
+  .amortization-card .amortization-legend .swatch.interest {
+    background: #d86b8a; }
+  .amortization-card .chart-frame {
+    border-color: #4f4f4f;
+    background: #212121; }
+    .amortization-card .chart-frame .chart-tooltip {
+      background: rgba(0, 0, 0, 0.9);
+      color: #dadada; }
+  .amortization-card .amortization-summary .label {
+    color: #dadada; }
+  .amortization-card .amortization-summary .value {
+    color: #dadada; }
+  .amortization-card .amortization-table table th,
+  .amortization-card .amortization-table table td {
+    border-bottom: 1px solid #4f4f4f; }
+  .amortization-card .amortization-table table thead {
+    background: #424242; }
+
+body.colorscheme-dark .tools-section .eyebrow {
+  color: #2a7195; }
+
+body.colorscheme-dark .tool-card {
+  background: #424242; }
+  body.colorscheme-dark .tool-card label span {
+    color: #dadada; }
+  body.colorscheme-dark .tool-card label input {
+    background: #212121;
+    color: #dadada;
+    border-color: #4f4f4f; }
+    body.colorscheme-dark .tool-card label input:focus {
+      outline-color: #2a7195;
+      border-color: #2a7195; }
+
+body.colorscheme-dark .tool-actions button {
+  background: #2a7195; }
+
+body.colorscheme-dark .tool-actions .footnote {
+  color: #dadada; }
+
+body.colorscheme-dark .tools-results {
+  background: #212121;
+  border-color: #4f4f4f; }
+
+body.colorscheme-dark .result-grid .result {
+  background: #424242; }
+  body.colorscheme-dark .result-grid .result .label {
+    color: #dadada; }
+  body.colorscheme-dark .result-grid .result .value {
+    color: #dadada; }
+
+body.colorscheme-dark .result-breakdown ul li {
+  background: #424242; }
+
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto .tools-section .eyebrow {
+    color: #2a7195; }
+  body.colorscheme-auto .tool-card {
+    background: #424242; }
+    body.colorscheme-auto .tool-card label span {
+      color: #dadada; }
+    body.colorscheme-auto .tool-card label input {
+      background: #212121;
+      color: #dadada;
+      border-color: #4f4f4f; }
+      body.colorscheme-auto .tool-card label input:focus {
+        outline-color: #2a7195;
+        border-color: #2a7195; }
+  body.colorscheme-auto .tool-actions button {
+    background: #2a7195; }
+  body.colorscheme-auto .tool-actions .footnote {
+    color: #dadada; }
+  body.colorscheme-auto .tools-results {
+    background: #212121;
+    border-color: #4f4f4f; }
+  body.colorscheme-auto .result-grid .result {
+    background: #424242; }
+    body.colorscheme-auto .result-grid .result .label {
+      color: #dadada; }
+    body.colorscheme-auto .result-grid .result .value {
+      color: #dadada; }
+  body.colorscheme-auto .result-breakdown ul li {
+    background: #424242; } }
 
 body.colorscheme-dark .footer a {
   color: #2a7195; }

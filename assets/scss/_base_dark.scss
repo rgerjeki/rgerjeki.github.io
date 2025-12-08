@@ -1,6 +1,17 @@
 @mixin base_dark {
   color: $fg-color-dark;
-  background-color: #393E46;
+  background-color: $bg-color-dark;
+  min-height: 100%;
+
+  body {
+    background-color: $bg-color-dark;
+    min-height: 100%;
+  }
+
+  html.colorscheme-dark,
+  body.colorscheme-dark {
+    background-color: $bg-color-dark;
+  }
 
   a {
     color: $link-color-dark;

@@ -1,0 +1,189 @@
+<section class="container tools-section">
+  <div class="tool-card">
+    <div class="tool-copy">
+      <p>Estimate what you can comfortably spend on a home using your income, debts, and a realistic monthly payment target. Adjust the inputs to explore different down payments and rates.</p>
+      <h2>Plan your budget</h2>
+      <p>We size your budget using a debt-to-income (DTI) limit and include property taxes, insurance, and optional HOA dues. Use it to sanity-check listings before you talk to a lender.</p>
+    </div>
+
+    <form id="affordability-form" class="affordability-form">
+      <div class="input-grid">
+        <label>
+          <span>Annual gross income</span>
+          <input type="number" name="annualIncome" value="120000" min="0" step="1000" required>
+        </label>
+        <label>
+          <span>Monthly debt payments</span>
+          <input type="number" name="monthlyDebt" value="800" min="0" step="50" required>
+        </label>
+        <label>
+          <span>Down payment (cash ready)</span>
+          <input type="number" name="downPayment" value="60000" min="0" step="500" required>
+        </label>
+        <label>
+          <span>Interest rate (APR)</span>
+          <input type="number" name="interestRate" value="6.5" min="0" max="15" step="0.05" required>
+        </label>
+        <label>
+          <span>Loan term (years)</span>
+          <input type="number" name="loanTerm" value="30" min="5" max="40" step="1" required>
+        </label>
+        <label>
+          <span>Max debt-to-income (DTI) %</span>
+          <input type="number" name="dtiLimit" value="36" min="20" max="50" step="1" required>
+        </label>
+        <label>
+          <span>Property tax rate (% of price, annual)</span>
+          <input type="number" name="taxRate" value="1.2" min="0" max="5" step="0.05" required>
+        </label>
+        <label>
+          <span>Homeowner's insurance (monthly)</span>
+          <input type="number" name="insurance" value="150" min="0" step="10" required>
+        </label>
+        <label>
+          <span>HOA dues (monthly, optional)</span>
+          <input type="number" name="hoa" value="0" min="0" step="10">
+        </label>
+      </div>
+
+      <div class="tool-actions">
+        <button type="submit">Calculate affordability</button>
+        <p class="footnote">Educational estimate only—actual approval depends on credit, reserves, and property-specific costs.</p>
+      </div>
+    </form>
+  </div>
+
+  <div class="tools-results" id="affordability-results">
+    <div class="result-grid">
+      <div class="result">
+        <p class="label">Estimated max home price</p>
+        <p class="value" id="homePriceOutput">$0</p>
+      </div>
+      <div class="result">
+        <p class="label">Estimated monthly housing cost</p>
+        <p class="value" id="monthlyPaymentOutput">$0</p>
+      </div>
+      <div class="result">
+        <p class="label">Max loan amount</p>
+        <p class="value" id="loanAmountOutput">$0</p>
+      </div>
+      <div class="result">
+        <p class="label">Housing budget from DTI</p>
+        <p class="value" id="housingBudgetOutput">$0</p>
+      </div>
+    </div>
+
+    <div class="result-breakdown">
+      <h3>Monthly breakdown</h3>
+      <ul>
+        <li><span>Principal &amp; interest</span><span id="piOutput">$0</span></li>
+        <li><span>Property taxes</span><span id="taxOutput">$0</span></li>
+        <li><span>Homeowner's insurance</span><span id="insuranceOutput">$0</span></li>
+        <li><span>HOA dues</span><span id="hoaOutput">$0</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<script>
+  (() => {
+    const form = document.getElementById('affordability-form');
+    if (!form) return;
+
+    const outputs = {
+      price: document.getElementById('homePriceOutput'),
+      monthly: document.getElementById('monthlyPaymentOutput'),
+      loan: document.getElementById('loanAmountOutput'),
+      budget: document.getElementById('housingBudgetOutput'),
+      pi: document.getElementById('piOutput'),
+      tax: document.getElementById('taxOutput'),
+      insurance: document.getElementById('insuranceOutput'),
+      hoa: document.getElementById('hoaOutput'),
+    };
+
+    const currency = (value) => {
+      return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value || 0);
+    };
+
+    const monthlyPI = (loanAmount, rate, termYears) => {
+      if (loanAmount <= 0) return 0;
+      const months = termYears * 12;
+      const monthlyRate = rate / 100 / 12;
+      if (monthlyRate === 0) return loanAmount / months;
+      return loanAmount * (monthlyRate / (1 - Math.pow(1 + monthlyRate, -months)));
+    };
+
+    const totalMonthlyCost = (price, params) => {
+      const loan = Math.max(price - params.downPayment, 0);
+      const pi = monthlyPI(loan, params.interestRate, params.loanTerm);
+      const tax = price * (params.taxRate / 100) / 12;
+      const insurance = params.insurance;
+      const hoa = params.hoa;
+      const total = pi + tax + insurance + hoa;
+      return { total, pi, tax, insurance, hoa, loan };
+    };
+
+    const findMaxPrice = (budget, params) => {
+      if (budget <= 0) return { price: 0, breakdown: totalMonthlyCost(0, params) };
+
+      let low = 0;
+      let high = 300000;
+
+      while (totalMonthlyCost(high, params).total < budget && high < 5000000) {
+        high *= 1.5;
+      }
+
+      for (let i = 0; i < 40; i++) {
+        const mid = (low + high) / 2;
+        const cost = totalMonthlyCost(mid, params).total;
+        if (cost > budget) {
+          high = mid;
+        } else {
+          low = mid;
+        }
+      }
+
+      const breakdown = totalMonthlyCost(low, params);
+      return { price: low, breakdown };
+    };
+
+    const calculate = () => {
+      const data = new FormData(form);
+      const annualIncome = Number(data.get('annualIncome')) || 0;
+      const monthlyDebt = Number(data.get('monthlyDebt')) || 0;
+      const downPayment = Number(data.get('downPayment')) || 0;
+      const interestRate = Number(data.get('interestRate')) || 0;
+      const loanTerm = Number(data.get('loanTerm')) || 30;
+      const dtiLimit = Number(data.get('dtiLimit')) || 36;
+      const taxRate = Number(data.get('taxRate')) || 1.2;
+      const insurance = Number(data.get('insurance')) || 0;
+      const hoa = Number(data.get('hoa')) || 0;
+
+      const monthlyIncome = annualIncome / 12;
+      const housingBudget = Math.max(0, monthlyIncome * (dtiLimit / 100) - monthlyDebt);
+
+      const params = { downPayment, interestRate, loanTerm, taxRate, insurance, hoa };
+      const { price, breakdown } = findMaxPrice(housingBudget, params);
+
+      outputs.price.textContent = currency(price);
+      outputs.monthly.textContent = currency(breakdown.total);
+      outputs.loan.textContent = currency(breakdown.loan);
+      outputs.budget.textContent = currency(housingBudget);
+      outputs.pi.textContent = currency(breakdown.pi);
+      outputs.tax.textContent = currency(breakdown.tax);
+      outputs.insurance.textContent = currency(breakdown.insurance);
+      outputs.hoa.textContent = currency(breakdown.hoa);
+    };
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      calculate();
+    });
+
+    form.addEventListener('input', () => {
+      calculate();
+    });
+
+    calculate();
+  })();
+</script>

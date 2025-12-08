@@ -1,0 +1,408 @@
+<section class="container tools-section">
+  <div class="tool-card">
+    <div class="tool-copy">
+      <h2>Plan your budget</h2>
+      <p>Estimate what you can comfortably spend on a home using your income, debts, and a realistic monthly payment target. Adjust the inputs to explore different down payments and rates.</p>
+      <p>We size your budget using a debt-to-income (DTI) limit and include property taxes, insurance, and optional HOA dues. Use it to sanity-check listings before you talk to a lender.</p>
+    </div>
+
+    <form id="affordability-form" class="affordability-form">
+      <div class="input-grid">
+        <label>
+          <span>Annual gross income</span>
+          <input type="number" name="annualIncome" value="98000" min="0" step="1000" required>
+        </label>
+        <label>
+          <span>Monthly debt payments</span>
+          <input type="number" name="monthlyDebt" value="800" min="0" step="50" required>
+        </label>
+        <label>
+          <span>Down payment (cash ready)</span>
+          <input type="number" name="downPayment" value="5000" min="0" step="500" required>
+        </label>
+        <label>
+          <span>Interest rate (APR)</span>
+          <input type="number" name="interestRate" value="6.5" min="0" max="15" step="0.05" required>
+        </label>
+        <label>
+          <span>Loan term (years)</span>
+          <input type="number" name="loanTerm" value="30" min="5" max="40" step="1" required>
+        </label>
+        <label>
+          <span>Max debt-to-income (DTI) %</span>
+          <input type="number" name="dtiLimit" value="36" min="20" max="50" step="1" required>
+        </label>
+        <label>
+          <span>Property tax rate (% of price, annual)</span>
+          <input type="number" name="taxRate" value="1.2" min="0" max="5" step="0.05" required>
+        </label>
+        <label>
+          <span>Homeowner's insurance (monthly)</span>
+          <input type="number" name="insurance" value="150" min="0" step="10" required>
+        </label>
+        <label>
+          <span>HOA dues (monthly, optional)</span>
+          <input type="number" name="hoa" value="0" min="0" step="10">
+        </label>
+      </div>
+
+      <div class="tool-actions">
+        <button type="submit">Calculate affordability</button>
+        <p class="footnote">Educational estimate only—actual approval depends on credit, reserves, and property-specific costs.</p>
+      </div>
+    </form>
+  </div>
+
+  <div class="tools-results" id="affordability-results">
+    <div class="result-grid">
+      <div class="result">
+        <p class="label">Estimated max home price</p>
+        <p class="value" id="homePriceOutput">$0</p>
+      </div>
+      <div class="result">
+        <p class="label">Estimated monthly housing cost</p>
+        <p class="value" id="monthlyPaymentOutput">$0</p>
+      </div>
+      <div class="result">
+        <p class="label">Max loan amount</p>
+        <p class="value" id="loanAmountOutput">$0</p>
+      </div>
+      <div class="result">
+        <p class="label">Housing budget from DTI</p>
+        <p class="value" id="housingBudgetOutput">$0</p>
+      </div>
+    </div>
+
+    <div class="result-breakdown">
+      <h3>Monthly breakdown</h3>
+      <ul>
+        <li><span>Principal &amp; interest</span><span id="piOutput">$0</span></li>
+        <li><span>Property taxes</span><span id="taxOutput">$0</span></li>
+        <li><span>Homeowner's insurance</span><span id="insuranceOutput">$0</span></li>
+        <li><span>HOA dues</span><span id="hoaOutput">$0</span></li>
+      </ul>
+    </div>
+
+    <div class="amortization-card">
+      <div class="amortization-header">
+        <h3>Principal vs. interest by year</h3>
+        <p>Shows how much of your payment goes to principal (equity) versus interest each year over the loan.</p>
+      </div>
+      <div class="amortization-legend">
+        <span><span class="swatch principal"></span>Principal</span>
+        <span><span class="swatch interest"></span>Interest</span>
+      </div>
+      <div class="chart-frame">
+        <canvas id="amortizationChart" height="260"></canvas>
+        <div class="chart-tooltip" id="amortizationTooltip"></div>
+      </div>
+      <div class="amortization-detail" id="amortizationDetail">
+        <p><strong>Hover a bar</strong> to see the yearly breakdown.</p>
+      </div>
+      <div class="amortization-summary">
+        <div>
+          <p class="label">Total principal paid</p>
+          <p class="value" id="totalPrincipalOutput">$0</p>
+        </div>
+        <div>
+          <p class="label">Total interest paid</p>
+          <p class="value" id="totalInterestOutput">$0</p>
+        </div>
+        <div>
+          <p class="label">Interest as % of loan</p>
+          <p class="value" id="interestPctOutput">0%</p>
+        </div>
+      </div>
+      <div class="amortization-table">
+        <h4>First 12 months (month-to-month)</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Month</th>
+              <th>Principal</th>
+              <th>Interest</th>
+              <th>Ending balance</th>
+            </tr>
+          </thead>
+          <tbody id="amortizationTableBody">
+            <tr><td colspan="4">Enter values to see the month-by-month breakdown.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  (() => {
+    const form = document.getElementById('affordability-form');
+    if (!form) return;
+
+    const outputs = {
+      price: document.getElementById('homePriceOutput'),
+      monthly: document.getElementById('monthlyPaymentOutput'),
+      loan: document.getElementById('loanAmountOutput'),
+      budget: document.getElementById('housingBudgetOutput'),
+      pi: document.getElementById('piOutput'),
+      tax: document.getElementById('taxOutput'),
+      insurance: document.getElementById('insuranceOutput'),
+      hoa: document.getElementById('hoaOutput'),
+    };
+
+    const currency = (value) => {
+      return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value || 0);
+    };
+
+    const monthlyPI = (loanAmount, rate, termYears) => {
+      if (loanAmount <= 0) return 0;
+      const months = termYears * 12;
+      const monthlyRate = rate / 100 / 12;
+      if (monthlyRate === 0) return loanAmount / months;
+      return loanAmount * (monthlyRate / (1 - Math.pow(1 + monthlyRate, -months)));
+    };
+
+    const totalMonthlyCost = (price, params) => {
+      const loan = Math.max(price - params.downPayment, 0);
+      const pi = monthlyPI(loan, params.interestRate, params.loanTerm);
+      const tax = price * (params.taxRate / 100) / 12;
+      const insurance = params.insurance;
+      const hoa = params.hoa;
+      const total = pi + tax + insurance + hoa;
+      return { total, pi, tax, insurance, hoa, loan };
+    };
+
+    const amortizationSchedules = (loanAmount, rate, termYears, piPayment) => {
+      const monthlyRate = rate / 100 / 12;
+      const months = termYears * 12;
+      let balance = loanAmount;
+      let yearly = [];
+      let monthly = [];
+
+      for (let m = 1; m <= months; m++) {
+        const interest = monthlyRate > 0 ? balance * monthlyRate : 0;
+        const principal = Math.max(0, piPayment - interest);
+        balance = Math.max(0, balance - principal);
+
+        const yearIndex = Math.ceil(m / 12) - 1;
+        if (!yearly[yearIndex]) {
+          yearly[yearIndex] = { principal: 0, interest: 0, endingBalance: 0 };
+        }
+        yearly[yearIndex].principal += principal;
+        yearly[yearIndex].interest += interest;
+        yearly[yearIndex].endingBalance = balance;
+
+        monthly.push({
+          month: m,
+          principal,
+          interest,
+          endingBalance: balance,
+        });
+      }
+      return { yearly, monthly };
+    };
+
+    const drawChart = (schedule) => {
+      const canvas = document.getElementById('amortizationChart');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const width = canvas.clientWidth || 600;
+      canvas.width = width;
+      const height = canvas.height;
+
+      ctx.clearRect(0, 0, width, height);
+
+      if (!schedule.length) return;
+
+      const padding = { top: 10, right: 12, bottom: 30, left: 12 };
+      const chartW = width - padding.left - padding.right;
+      const chartH = height - padding.top - padding.bottom;
+      const maxValue = Math.max(...schedule.map(y => y.principal + y.interest), 1);
+      const barWidth = chartW / schedule.length * 0.7;
+      const gap = (chartW / schedule.length) - barWidth;
+      const principalColor = '#2a7195';
+      const interestColor = '#8b1c40';
+
+      ctx.font = '12px sans-serif';
+      ctx.fillStyle = '#666';
+
+      schedule.forEach((year, idx) => {
+        const total = year.principal + year.interest;
+        const x = padding.left + idx * (barWidth + gap);
+        const totalHeight = (total / maxValue) * chartH;
+        const interestHeight = (year.interest / maxValue) * chartH;
+        const principalHeight = (year.principal / maxValue) * chartH;
+
+        // Interest (bottom)
+        ctx.fillStyle = interestColor;
+        ctx.fillRect(x, padding.top + chartH - interestHeight, barWidth, interestHeight);
+
+        // Principal (top)
+        ctx.fillStyle = principalColor;
+        ctx.fillRect(x, padding.top + chartH - totalHeight, barWidth, principalHeight);
+
+        // Year label
+        ctx.fillStyle = '#666';
+        ctx.fillText(`${idx + 1}`, x + barWidth / 2 - 4, height - 8);
+
+        // Store hitbox for hover
+        year._hit = {
+          x,
+          y: padding.top + chartH - totalHeight,
+          w: barWidth,
+          h: totalHeight,
+        };
+      });
+    };
+
+    const bindHover = (schedule) => {
+      const canvas = document.getElementById('amortizationChart');
+      const tooltip = document.getElementById('amortizationTooltip');
+      const detail = document.getElementById('amortizationDetail');
+      if (!canvas || !tooltip || !detail) return;
+      const rect = () => canvas.getBoundingClientRect();
+
+      const showDetail = (idx, year) => {
+        detail.innerHTML = `
+          <p><strong>Year ${idx + 1}</strong></p>
+          <p>Principal: ${currency(year.principal)}</p>
+          <p>Interest: ${currency(year.interest)}</p>
+          <p>Ending balance: ${currency(year.endingBalance)}</p>
+        `;
+      };
+
+      const onMove = (e) => {
+        const r = rect();
+        const x = e.clientX - r.left;
+        const y = e.clientY - r.top;
+
+        const hitIndex = schedule.findIndex((year) => {
+          const h = year._hit;
+          if (!h) return false;
+          return x >= h.x && x <= h.x + h.w && y >= h.y && y <= h.y + h.h;
+        });
+
+        if (hitIndex === -1) {
+          tooltip.style.opacity = 0;
+          return;
+        }
+
+        const year = schedule[hitIndex];
+        tooltip.style.opacity = 1;
+        tooltip.style.left = `${x + 10}px`;
+        tooltip.style.top = `${y + 10}px`;
+        showDetail(hitIndex, year);
+      };
+
+      const onLeave = () => {
+        tooltip.style.opacity = 0;
+      };
+
+      canvas.addEventListener('mousemove', onMove);
+      canvas.addEventListener('mouseleave', onLeave);
+    };
+
+    const renderSummary = (schedules, loanAmount) => {
+      const totalPrincipal = schedules.yearly.reduce((sum, y) => sum + y.principal, 0);
+      const totalInterest = schedules.yearly.reduce((sum, y) => sum + y.interest, 0);
+      const pct = loanAmount > 0 ? (totalInterest / loanAmount) * 100 : 0;
+
+      const principalEl = document.getElementById('totalPrincipalOutput');
+      const interestEl = document.getElementById('totalInterestOutput');
+      const pctEl = document.getElementById('interestPctOutput');
+
+      if (principalEl) principalEl.textContent = currency(totalPrincipal);
+      if (interestEl) interestEl.textContent = currency(totalInterest);
+      if (pctEl) pctEl.textContent = `${pct.toFixed(1)}%`;
+    };
+
+    const renderMonthlyTable = (schedules) => {
+      const tbody = document.getElementById('amortizationTableBody');
+      if (!tbody) return;
+
+      const firstYear = schedules.monthly.slice(0, 12);
+      if (!firstYear.length) {
+        tbody.innerHTML = '<tr><td colspan="4">Enter values to see the month-by-month breakdown.</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = firstYear.map(entry => `
+        <tr>
+          <td>${entry.month}</td>
+          <td>${currency(entry.principal)}</td>
+          <td>${currency(entry.interest)}</td>
+          <td>${currency(entry.endingBalance)}</td>
+        </tr>
+      `).join('');
+    };
+
+    const findMaxPrice = (budget, params) => {
+      if (budget <= 0) return { price: 0, breakdown: totalMonthlyCost(0, params) };
+
+      let low = 0;
+      let high = 300000;
+
+      while (totalMonthlyCost(high, params).total < budget && high < 5000000) {
+        high *= 1.5;
+      }
+
+      for (let i = 0; i < 40; i++) {
+        const mid = (low + high) / 2;
+        const cost = totalMonthlyCost(mid, params).total;
+        if (cost > budget) {
+          high = mid;
+        } else {
+          low = mid;
+        }
+      }
+
+      const breakdown = totalMonthlyCost(low, params);
+      return { price: low, breakdown };
+    };
+
+    const calculate = () => {
+      const data = new FormData(form);
+      const annualIncome = Number(data.get('annualIncome')) || 0;
+      const monthlyDebt = Number(data.get('monthlyDebt')) || 0;
+      const downPayment = Number(data.get('downPayment')) || 0;
+      const interestRate = Number(data.get('interestRate')) || 0;
+      const loanTerm = Number(data.get('loanTerm')) || 30;
+      const dtiLimit = Number(data.get('dtiLimit')) || 36;
+      const taxRate = Number(data.get('taxRate')) || 1.2;
+      const insurance = Number(data.get('insurance')) || 0;
+      const hoa = Number(data.get('hoa')) || 0;
+
+      const monthlyIncome = annualIncome / 12;
+      const housingBudget = Math.max(0, monthlyIncome * (dtiLimit / 100) - monthlyDebt);
+
+      const params = { downPayment, interestRate, loanTerm, taxRate, insurance, hoa };
+      const { price, breakdown } = findMaxPrice(housingBudget, params);
+      const schedules = amortizationSchedules(breakdown.loan, interestRate, loanTerm, breakdown.pi);
+      const schedule = schedules.yearly;
+
+      outputs.price.textContent = currency(price);
+      outputs.monthly.textContent = currency(breakdown.total);
+      outputs.loan.textContent = currency(breakdown.loan);
+      outputs.budget.textContent = currency(housingBudget);
+      outputs.pi.textContent = currency(breakdown.pi);
+      outputs.tax.textContent = currency(breakdown.tax);
+      outputs.insurance.textContent = currency(breakdown.insurance);
+      outputs.hoa.textContent = currency(breakdown.hoa);
+
+      drawChart(schedule);
+      bindHover(schedule);
+      renderSummary(schedules, breakdown.loan);
+      renderMonthlyTable(schedules);
+    };
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      calculate();
+    });
+
+    form.addEventListener('input', () => {
+      calculate();
+    });
+
+    calculate();
+  })();
+</script>

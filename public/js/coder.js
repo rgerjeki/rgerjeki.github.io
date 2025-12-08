@@ -1,4 +1,5 @@
 const body = document.body;
+const htmlEl = document.documentElement;
 const darkModeToggle = document.getElementById('dark-mode-toggle');
 const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
@@ -33,6 +34,8 @@ function setTheme(theme) {
     let inverse = theme === 'dark' ? 'light' : 'dark';
     body.classList.remove('colorscheme-' + inverse);
     body.classList.add('colorscheme-' + theme);
+    htmlEl.classList.remove('colorscheme-auto', 'colorscheme-light', 'colorscheme-dark');
+    htmlEl.classList.add('colorscheme-' + theme);
     document.documentElement.style['color-scheme'] = theme;
 
     function waitForElm(selector) {
