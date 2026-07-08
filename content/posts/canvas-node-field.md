@@ -6,7 +6,7 @@ slug = "canvas-node-field"
 description = "Those animated node fields (drifting points, thin lines between neighbors, the whole web nudged by your cursor) don't need a library. A small HTML and CSS shell, then a walk through the JavaScript that does the work."
 tags = ["javascript", "canvas", "webdev"]
 
-cover = ""
+cover = "images/Constellation.webp"
 
 devto = true
 +++
