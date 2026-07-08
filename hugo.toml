@@ -41,11 +41,11 @@ home = ["HTML", "RSS", "syndication"]
 [params]
 author = "Reese Gerjekian"
 # license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
-description = "Reese Gerjekian's personal website"
+description = "Reese Gerjekian's cybersecurity and AWS cloud portfolio and blog, plus the projects I build and learn from."
 keywords = "blog,developer,personal,cybersecurity,aws,cloud,security"
-# Home hero copy — edit these freely, they drive layouts/partials/home.html
+# Home hero copy (edit these freely). They drive layouts/partials/home.html
 kicker = "// cybersecurity · aws cloud"
-tagline = "Security engineering and AWS cloud — field notes, write-ups, and the projects behind them."
+tagline = "Cybersecurity and AWS cloud. Field notes, write-ups, and the projects I build while learning."
 avatarURL = "images/avatar.JPG"
 #gravatar = "john.doe@example.com"
 dateFormat = "January 2, 2006"
@@ -176,17 +176,17 @@ type = "application/rss+xml"
 
 # --- Operator homepage --------------------------------------------------------
 # Terminal-boot hero. `prompt` is the shell prompt; each [[params.terminal.lines]]
-# is a typed command + its output. Edit freely — the homepage reads these.
+# is a typed command + its output. Edit freely; the homepage reads these.
 [params.terminal]
 prompt = "reese@cloud:~$"
 
 [[params.terminal.lines]]
 cmd = "whoami"
-out = "Reese Gerjekian — cybersecurity · aws cloud"
+out = "Reese Gerjekian // cybersecurity · aws cloud"
 
 [[params.terminal.lines]]
 cmd = "cat mission.txt"
-out = "I secure cloud infrastructure and write about how it's done."
+out = "Cybersecurity and AWS cloud. Projects, write-ups, and notes on what I'm learning."
 
 [[params.terminal.lines]]
 cmd = "ls ~/"
