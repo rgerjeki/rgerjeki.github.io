@@ -87,7 +87,9 @@ function buildArticle(post, siteBase) {
     description: post.description || "",
     tags: Array.isArray(post.tags) ? post.tags.slice(0, 4) : [],
   };
-  if (post.cover_image) article.main_image = post.cover_image;
+  // Cover images are intentionally NOT synced: Dev.to owns its own cover
+  // (uploaded/generated there), and omitting main_image on update leaves it
+  // untouched. The `cover` front matter still drives the image on this site.
   if (post.series) article.series = post.series;
   return { article };
 }
@@ -128,7 +130,7 @@ export default {
       log(
         `[devto] would ${existingId ? "UPDATE" : "CREATE"} "${post.title}"\n` +
           `        canonical_url: ${payload.article.canonical_url}\n` +
-          `        tags: [${payload.article.tags.join(", ")}]  main_image: ${payload.article.main_image || "(none)"}  series: ${payload.article.series || "(none)"}`
+          `        tags: [${payload.article.tags.join(", ")}]  cover: not synced (managed on Dev.to)  series: ${payload.article.series || "(none)"}`
       );
       return { action: existingId ? "update (dry-run)" : "create (dry-run)", url: null };
     }

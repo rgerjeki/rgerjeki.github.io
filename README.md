@@ -173,7 +173,7 @@ description = "One or two sentences. Used for SEO, blog cards, and Dev.to."
 tags = ["aws", "security"]          # site tag pages plus Dev.to tags (max 4)
 
 # slug = "my-post-title"            # optional URL override; avoid changing once live
-cover = "/images/posts/cover.png"   # optional; card + header image, and Dev.to cover
+cover = "/images/posts/cover.png"   # optional; card + header image on this site (not synced to Dev.to)
 
 # --- Syndication ---
 devto = false                       # true = cross-post and keep in sync with Dev.to
@@ -248,7 +248,7 @@ DRY_RUN=1 node scripts/syndicate/sync.mjs     # prints intended create/update ac
 | permalink `/blog/<slug>/` | `canonical_url`                | absolute; makes this site canonical |
 | `description`             | `description`                  | |
 | `tags`                    | `tags`                         | lowercased, alphanumerics only, max 4 |
-| `cover`                   | `main_image`                   | absolutized to a full URL |
+| `cover`                   | (not synced)                   | Dev.to owns its own cover; set it on Dev.to |
 | `series`                  | `series`                       | optional |
 | (always)                  | `published: true`              | only non-draft posts are ever syndicated |
 
@@ -256,6 +256,11 @@ DRY_RUN=1 node scripts/syndicate/sync.mjs     # prints intended create/update ac
 > use plain Markdown (Hugo shortcodes will not render on Dev.to). Inline images that
 > use site-relative paths (`/images/...`) are rewritten to absolute URLs
 > automatically.
+
+> **Cover images are not synced.** The sync never sends `main_image`, so Dev.to
+> keeps whatever cover you set there and a re-sync will not overwrite it. The
+> intended workflow: generate/upload a cover on Dev.to, then save that image into
+> this repo and point the post's `cover` at it for the on-site header and cards.
 
 ### Adding another platform later
 
