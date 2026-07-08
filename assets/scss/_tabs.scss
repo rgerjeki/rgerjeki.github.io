@@ -33,8 +33,8 @@
   }
 
   label.tab-label {
-    background-color: $alt-bg-color;
-    border-color: $darker-alt-bg-color;
+    background-color: var(--surface-2);
+    border-color: var(--border);
     border-radius: 4px 4px 0px 0px;
 
     border-style: solid;
@@ -51,12 +51,12 @@
   }
 
   input.tab-input:checked + label.tab-label {
-    background-color: $bg-color;
+    background-color: var(--bg);
   }
 
   .tab-content {
-    background-color: $bg-color;
-    border-color: $darker-alt-bg-color;
+    background-color: var(--bg);
+    border-color: var(--border);
     border-style: solid;
     border-width: 1px;
     display: none;

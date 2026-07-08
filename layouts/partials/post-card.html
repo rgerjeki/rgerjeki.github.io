@@ -1,5 +1,5 @@
 {{/* Reusable post card — used on the home page and the blog index. */}}
-<li class="post-card">
+<li class="post-card" data-reveal>
   <a class="post-card-link" href="{{ .RelPermalink }}">
     {{ with .Params.cover | default .Params.cover_image }}
       <div class="post-card-cover">

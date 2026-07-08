@@ -47,12 +47,6 @@
         {{ .Content }}
 
         <footer class="post-footer">
-          {{ if .Params.devto }}
-            <p class="syndication-note">
-              Cross-posted to Dev.to{{ with .Params.devto_url }} at <a href="{{ . }}" target="_blank" rel="noopener">{{ . }}</a>{{ end }}. This page is the canonical source.
-            </p>
-          {{ end }}
-
           {{ with .Params.tags }}
             <div class="tags post-footer-tags">
               {{ range . }}<a href="{{ (printf "/tags/%s/" (. | urlize)) | relLangURL }}">{{ . }}</a>{{ end }}

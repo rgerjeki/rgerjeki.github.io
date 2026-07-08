@@ -1,0 +1,341 @@
+// =============================================================================
+// Projects page — "Operator" showcase (filterable card grid).
+// Reuses the .op-card / .op-cards / .mini-tag system from _home.scss.
+// =============================================================================
+.op-projects,
+.op-list {
+  width: 100%;
+  padding-bottom: 4rem;
+}
+
+.op-list-intro {
+  font-size: 1.7rem;
+  margin-top: 1.6rem;
+  color: var(--fg-muted);
+}
+
+// Date chip on list cards — no leading "#".
+.op-card-date {
+  color: var(--fg-muted);
+  &::before { content: none; }
+}
+
+.op-proj-head {
+  padding: 4.4rem 0 2.4rem;
+
+  @media only screen and (max-width: 768px) {
+    padding: 2.8rem 0 1.6rem;
+  }
+}
+
+.op-proj-title {
+  font-family: var(--font-sans);
+  font-size: 5.4rem;
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  margin: 0.8rem 0 0;
+  color: var(--fg-strong);
+
+  @media only screen and (max-width: 768px) {
+    font-size: 3.8rem;
+  }
+}
+
+.op-proj-sub {
+  font-family: var(--font-serif);
+  font-size: 1.9rem;
+  line-height: 1.5;
+  color: var(--fg-muted);
+  max-width: 60ch;
+  margin: 1.6rem 0 0;
+}
+
+.op-proj-cmd {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  margin: 2.4rem 0 0;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+
+  .op-cmd { color: var(--fg); }
+}
+
+.op-proj-count {
+  color: var(--accent);
+  background-color: var(--accent-wash);
+  border: 1px solid var(--accent-line);
+  border-radius: var(--radius-sm);
+  padding: 0.1rem 0.7rem;
+}
+
+// -- Filter chips ------------------------------------------------------------
+.op-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 2.6rem 0 0;
+  border-top: 1px solid var(--border);
+  padding-top: 2.2rem;
+}
+
+.op-filter {
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
+  color: var(--fg-muted);
+  background-color: transparent;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  padding: 0.55rem 1.25rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: color 0.16s ease, border-color 0.16s ease, background-color 0.16s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--accent);
+    border-color: var(--accent-line);
+  }
+
+  &.is-active {
+    color: var(--accent-contrast);
+    background-color: var(--accent);
+    border-color: var(--accent);
+  }
+}
+
+.op-filter-n {
+  font-size: 1.1rem;
+  opacity: 0.7;
+}
+
+.op-filter.is-active .op-filter-n { opacity: 0.85; }
+
+// -- Grid --------------------------------------------------------------------
+.op-proj-grid {
+  margin-top: 2.4rem;
+}
+
+// =============================================================================
+// Project / single-page detail — operator chrome around the content
+// =============================================================================
+.op-page {
+  width: 100%;
+  padding: 1.6rem 0 3.2rem;
+}
+
+.op-crumb {
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  color: var(--fg-muted);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+
+  a {
+    color: var(--fg-muted);
+    &:hover,
+    &:focus { color: var(--accent); }
+  }
+}
+
+.op-crumb-sep { color: var(--border-strong); }
+.op-crumb-cur { color: var(--accent); }
+
+.op-page-head {
+  padding: 2.4rem 0;
+  margin-bottom: 2.4rem;
+  border-bottom: 1px solid var(--border);
+
+  .op-kicker { margin-bottom: 0.8rem; }
+}
+
+.op-page-title {
+  font-family: var(--font-sans);
+  font-size: 4.4rem;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin: 0;
+  color: var(--fg-strong);
+
+  @media only screen and (max-width: 768px) {
+    font-size: 3.2rem;
+  }
+}
+
+.op-page-sub {
+  font-family: var(--font-serif);
+  font-size: 1.9rem;
+  line-height: 1.5;
+  color: var(--fg-muted);
+  max-width: 68ch;
+  margin: 1.6rem 0 0;
+}
+
+.op-page-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem 1.8rem;
+  margin-top: 2rem;
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  color: var(--fg-muted);
+}
+
+.op-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  i { color: var(--accent); }
+}
+
+.op-page-tags {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+}
+
+// The rendered body inherits base typography; just give it rhythm.
+.op-page-body {
+  font-size: 1.7rem;
+
+  > :first-child { margin-top: 0; }
+
+  // -- Redesign the legacy shortcode content --------------------------------
+  // Embeds (PDFs, github.io apps): frame them like an operator viewport.
+  iframe {
+    display: block;
+    width: 100%;
+    height: 76vh;
+    min-height: 56rem;
+    margin: 0 0 1.8rem;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-lg);
+    background-color: var(--surface);
+    box-shadow: var(--glow-accent);
+  }
+
+  // Code-runner embeds (trinket) stay compact, not full-height.
+  iframe.op-runner {
+    height: 40rem;
+    min-height: 0;
+    margin-bottom: 1.4rem;
+    box-shadow: none;
+  }
+
+  // Override the shortcodes' hardcoded-blue buttons + inline <style>.
+  // `.op-page-body .button` (0,2,0) outranks the inline `.button` (0,1,0).
+  .button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0 0 1rem;
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    padding: 1.05rem 1.7rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-strong);
+    background-color: var(--surface);
+    color: var(--fg-strong);
+    text-decoration: none;
+    transition: transform 0.16s ease, border-color 0.16s ease,
+      color 0.16s ease, box-shadow 0.16s ease;
+
+    &::after {
+      content: "\2197"; // ↗
+      font-size: 0.9em;
+      color: var(--accent);
+    }
+
+    &:hover,
+    &:focus-visible {
+      transform: translateY(-2px);
+      border-color: var(--accent-line);
+      color: var(--accent);
+      background-color: var(--surface);
+      box-shadow: var(--shadow);
+    }
+  }
+}
+
+.op-runner-block { margin: 0 0 2rem; }
+
+// Interactive mini-demo (e.g. the live password-strength checker).
+.op-demo {
+  margin: 0 0 2.4rem;
+  padding: 1.8rem 2rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  h2 { margin-top: 0; }
+
+  input[type="password"] {
+    width: 100%;
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    padding: 1rem 1.2rem;
+    color: var(--fg-strong);
+    background-color: var(--bg);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius);
+
+    &:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-wash);
+    }
+  }
+}
+
+.op-demo-result {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  margin: 1.2rem 0 0;
+  min-height: 1.4rem;
+  color: var(--fg-muted);
+
+  &.weak { color: #e5484d; }
+  &.medium { color: var(--term-amber); }
+  &.strong { color: var(--term-green); }
+}
+
+.op-page-foot {
+  margin-top: 4rem;
+  padding-top: 2.4rem;
+  border-top: 1px solid var(--border);
+}
+
+.op-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  color: var(--fg-muted);
+  transition: color 0.16s ease, transform 0.16s ease;
+
+  &:hover,
+  &:focus {
+    color: var(--accent);
+    text-decoration: none;
+  }
+}

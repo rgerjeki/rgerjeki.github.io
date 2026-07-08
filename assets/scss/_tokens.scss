@@ -38,6 +38,18 @@
   // Focus ring
   --focus-ring: rgba(15, 118, 110, 0.55);
 
+  // Operator / terminal accents
+  --term-green: #16a34a; // prompt / success glyphs
+  --term-amber: #b45309; // caret / warnings
+  --glow-accent: 0 0 0 1px var(--accent-line), 0 10px 34px rgba(15, 118, 110, 0.10);
+  --grid-line: rgba(15, 118, 110, 0.07); // faint background grid
+  --net-node: rgba(15, 118, 110, 0.55); // canvas node field color
+  --scanline: rgba(20, 22, 26, 0.03);
+
+  // Data-viz (amortization chart on the tools page)
+  --chart-principal: #2a7195;
+  --chart-interest: #b23b5a;
+
   // Shape & motion
   --radius: 10px;
   --radius-sm: 6px;
@@ -53,15 +65,15 @@
 // -- Dark palette ------------------------------------------------------------
 @mixin dark-tokens {
   --bg: #{$bg-color-dark};
-  --nav-bg: rgba(21, 24, 28, 0.82);
-  --bg-subtle: #191d22;
-  --surface: #1b1f25;
-  --surface-2: #232830;
+  --nav-bg: rgba(11, 14, 18, 0.82);
+  --bg-subtle: #10141a;
+  --surface: #12161c;
+  --surface-2: #1a1f27;
   --fg: #{$fg-color-dark};
   --fg-strong: #{$alt-fg-color-dark};
   --fg-muted: #9aa1a9;
-  --border: #2a2f37;
-  --border-strong: #363c45;
+  --border: #232a33;
+  --border-strong: #303845;
 
   --accent: #{$link-color-dark};
   --accent-hover: #5eead4;
@@ -69,14 +81,25 @@
   --accent-wash: rgba(45, 212, 191, 0.10);
   --accent-line: rgba(45, 212, 191, 0.35);
 
-  --code-bg: #12161a;
-  --code-border: #262c34;
+  --code-bg: #0c1014;
+  --code-border: #1c222b;
   --code-inline-bg: #{$lighter-alt-bg-color-dark};
 
   --focus-ring: rgba(45, 212, 191, 0.6);
 
-  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.36);
-  --shadow-hover: 0 2px 4px rgba(0, 0, 0, 0.5), 0 14px 36px rgba(0, 0, 0, 0.5);
+  // Operator / terminal accents (dark)
+  --term-green: #4ade80;
+  --term-amber: #fbbf24;
+  --glow-accent: 0 0 0 1px var(--accent-line), 0 0 44px rgba(45, 212, 191, 0.10);
+  --grid-line: rgba(45, 212, 191, 0.05);
+  --net-node: rgba(45, 212, 191, 0.55);
+  --scanline: rgba(0, 0, 0, 0.14);
+
+  --chart-principal: #2a9ed1;
+  --chart-interest: #d86b8a;
+
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 8px 24px rgba(0, 0, 0, 0.44);
+  --shadow-hover: 0 2px 4px rgba(0, 0, 0, 0.6), 0 16px 40px rgba(0, 0, 0, 0.6);
 }
 
 html.colorscheme-dark,

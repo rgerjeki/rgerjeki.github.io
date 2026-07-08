@@ -1,56 +1,128 @@
-{{/* Home page — hero (identity, credentials, social) + latest writing.
-     Wrapped so the flex `.content` row treats the whole home as one column. */}}
-<div class="home">
-<section class="hero">
-  <div class="hero-grid container">
-    <div class="hero-main">
-      <p class="hero-kicker">{{ .Site.Params.kicker | default "// cybersecurity · aws cloud" }}</p>
-      <h1 class="hero-name">{{ .Site.Params.author }}</h1>
+{{/* Home page — "Operator" redesign.
+     Terminal-boot hero over a live canvas node-field, a system-readout status
+     strip, selected work, and latest writing. All motion is progressive
+     enhancement (operator.js) and respects prefers-reduced-motion; the content
+     below is fully present and readable with JS disabled. */}}
+{{ $prompt := "reese@cloud:~$" }}
+{{ with .Site.Params.terminal }}{{ with .prompt }}{{ $prompt = . }}{{ end }}{{ end }}
 
-      {{ with .Site.Params.tagline }}
-        <p class="hero-tagline">{{ . | markdownify }}</p>
-      {{ end }}
+{{/* Set the JS flag before the hero paints so reveal/typing hidden-states only
+     apply when JS is on — no-JS visitors see everything, no flash. */}}
+<script>document.documentElement.classList.add('op-js');</script>
 
-      {{ $info := .Site.Params.info }}
-      {{ if and $info (reflect.IsSlice $info) }}
-        <ul class="hero-creds">
-          {{ range $item := $info }}
-            {{ if reflect.IsMap $item }}
-              <li class="cred">
-                {{ with $item.logo }}<img class="cred-logo" src="{{ . | relURL }}" alt="{{ $item.institution }}" loading="lazy">{{ end }}
-                <span class="cred-text">
-                  {{ with $item.text }}{{ . | markdownify }}{{ end }}
-                  {{ with $item.institution }}<span class="cred-inst">{{ if $item.url }}<a href="{{ $item.url }}" target="_blank" rel="noopener">{{ . }}</a>{{ else }}{{ . }}{{ end }}</span>{{ end }}
-                </span>
-              </li>
-            {{ end }}
-          {{ end }}
-        </ul>
-      {{ end }}
+<div class="home operator">
 
-      <div class="hero-actions">
-        {{ with .Site.GetPage "/posts" }}<a class="btn btn-primary" href="{{ .RelPermalink }}">Read the blog</a>{{ end }}
-        {{ with .Site.GetPage "/projects" }}<a class="btn" href="{{ .RelPermalink }}">View projects</a>{{ end }}
+{{/* ---- Hero ------------------------------------------------------------ */}}
+<section class="op-hero" data-hero>
+  <canvas class="op-net" data-net aria-hidden="true"></canvas>
+  <div class="op-grid" aria-hidden="true"></div>
+
+  <div class="op-hero-inner container">
+    <p class="op-kicker">{{ .Site.Params.kicker | default "// cybersecurity · aws cloud" }}</p>
+    <h1 class="op-name">{{ .Site.Params.author }}</h1>
+
+    {{ with .Site.Params.terminal.lines }}
+    <div class="op-term" data-term aria-label="Terminal introduction">
+      <div class="op-term-bar" aria-hidden="true">
+        <span class="op-term-dots"><i></i><i></i><i></i></span>
+        <span class="op-term-name">{{ $prompt }}</span>
+        <span class="op-term-shell">zsh</span>
       </div>
+      <div class="op-term-screen">
+        {{ range . }}
+          <p class="op-line" data-line>
+            <span class="op-prompt">{{ $prompt }}</span>
+            <span class="op-cmd" data-cmd>{{ .cmd }}</span>
+          </p>
+          <p class="op-out" data-out>{{ .out }}</p>
+        {{ end }}
+        <p class="op-line op-line-live" aria-hidden="true">
+          <span class="op-prompt">{{ $prompt }}</span><span class="op-caret" data-caret></span>
+        </p>
+      </div>
+    </div>
+    {{ end }}
 
-      <nav class="hero-social" aria-label="Social links">
-        {{ partial "home/social.html" . }}
-      </nav>
+    <div class="op-actions">
+      {{ with .Site.GetPage "/posts" }}<a class="btn btn-primary op-magnet" href="{{ .RelPermalink }}"><i class="fa fa-terminal" aria-hidden="true"></i> Read the blog</a>{{ end }}
+      {{ with .Site.GetPage "/projects" }}<a class="btn op-magnet" href="{{ .RelPermalink }}">View projects</a>{{ end }}
     </div>
 
-    <div class="hero-aside">
-      {{ partial "home/avatar.html" . }}
-    </div>
+    <nav class="op-social hero-social" aria-label="Social links">
+      {{ partial "home/social.html" . }}
+    </nav>
   </div>
+
+  <a class="op-scrollcue" href="#work" aria-label="Scroll to work">
+    <span>scroll</span>
+    <i class="fa fa-angle-down" aria-hidden="true"></i>
+  </a>
 </section>
 
-{{/* Latest writing — only renders once posts exist. */}}
+{{/* ---- Status readout (credentials) ----------------------------------- */}}
+{{ $info := .Site.Params.info }}
+{{ if and $info (reflect.IsSlice $info) }}
+<section class="op-status container" data-reveal>
+  <span class="op-status-label" data-scramble>// status</span>
+  <ul class="op-status-list">
+    {{ range $item := $info }}
+      {{ if reflect.IsMap $item }}
+        <li class="op-status-item">
+          <span class="op-status-dot" aria-hidden="true"></span>
+          {{ with $item.text }}<span class="op-status-role">{{ . | markdownify }}</span>{{ end }}
+          {{ with $item.institution }}<span class="op-status-inst">{{ if $item.url }}<a href="{{ $item.url }}" target="_blank" rel="noopener">{{ . }}</a>{{ else }}{{ . }}{{ end }}</span>{{ end }}
+        </li>
+      {{ end }}
+    {{ end }}
+  </ul>
+</section>
+{{ end }}
+
+{{/* ---- Recent projects — the 6 newest, pulled live from content -------- */}}
+{{ $sections := where site.Sections "Section" "not in" (slice "posts" "authors") }}
+{{ $slugs := slice }}
+{{ range $sections }}{{ $slugs = $slugs | append .Section }}{{ end }}
+{{ $recent := sort (where site.RegularPages "Section" "in" $slugs) "Date" "desc" }}
+{{ with $recent }}
+<section id="work" class="op-featured container">
+  <div class="section-head" data-reveal>
+    <h2 data-scramble>Recent projects</h2>
+    {{ with site.GetPage "/projects" }}<a class="section-more" href="{{ .RelPermalink }}">All projects →</a>{{ end }}
+  </div>
+  <ul class="op-cards">
+    {{ range first 6 . }}
+      <li class="op-card" data-reveal>
+        <a class="op-card-link" href="{{ .RelPermalink }}">
+          <div class="op-card-top">
+            <span class="op-card-kind">{{ with .CurrentSection.Title }}{{ . | lower }}{{ else }}{{ .Section }}{{ end }}</span>
+            <span class="op-card-metaright">
+              {{ if not .Date.IsZero }}<span class="op-card-year">{{ .Date.Year }}</span>{{ end }}
+              <i class="op-card-arrow fa fa-arrow-right" aria-hidden="true"></i>
+            </span>
+          </div>
+          <h3 class="op-card-title">{{ .Title }}</h3>
+          {{ $desc := .Description }}
+          {{ if not $desc }}{{ $desc = .Summary | plainify | chomp }}{{ end }}
+          {{ with $desc }}<p class="op-card-desc">{{ . | truncate 140 }}</p>{{ end }}
+          {{ with .Params.tags }}
+            <div class="op-card-tags">
+              {{ range first 4 . }}<span class="mini-tag">{{ . }}</span>{{ end }}
+            </div>
+          {{ end }}
+        </a>
+      </li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}
+
+{{/* ---- Latest writing ------------------------------------------------- */}}
 {{ $posts := where site.RegularPages "Section" "posts" }}
 {{ $posts = where $posts "Params.hidden" "!=" true }}
 {{ with $posts }}
-  <section class="home-writing container">
-    <div class="section-head">
-      <h2>Latest writing</h2>
+  <section class="op-writing container">
+    <div class="section-head" data-reveal>
+      <h2 data-scramble>Latest writing</h2>
       {{ with site.GetPage "/posts" }}<a class="section-more" href="{{ .RelPermalink }}">All posts →</a>{{ end }}
     </div>
     <ul class="post-cards">
@@ -60,4 +132,14 @@
     </ul>
   </section>
 {{ end }}
+
 </div>{{/* .home */}}
+
+{{/* ---- Operator motion (home only) ------------------------------------ */}}
+{{ if hugo.IsServer }}
+  {{ $op := resources.Get "js/operator.js" }}
+  <script src="{{ $op.RelPermalink }}" defer></script>
+{{ else }}
+  {{ $op := resources.Get "js/operator.js" | minify | fingerprint }}
+  <script src="{{ $op.RelPermalink }}" integrity="{{ $op.Data.Integrity }}" defer></script>
+{{ end }}

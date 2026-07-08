@@ -28,13 +28,13 @@ $alt-fg-color: #14161a !default; // strong ink (headings)
 $darker-alt-bg-color: #e7e5df !default; // inline code background
 $link-color: #0f766e !default; // deep teal (AA on paper)
 
-// -- Dark palette (warm charcoal, not pure black) ----------------------------
-$bg-color-dark: #15181c !default; // warm charcoal canvas
+// -- Dark palette ("Operator" — deep slate, near-black canvas) ----------------
+$bg-color-dark: #0b0e12 !default; // deep slate canvas
 $fg-color-dark: #e6e7e4 !default; // soft off-white
-$alt-bg-color-dark: #232830 !default; // surfaces
+$alt-bg-color-dark: #1a1f27 !default; // surfaces
 $alt-fg-color-dark: #f2f3f0 !default; // strong headings
-$lighter-alt-bg-color-dark: #2a3039 !default; // inline code background
-$link-color-dark: #2dd4bf !default; // bright teal (AA on charcoal)
+$lighter-alt-bg-color-dark: #1c222b !default; // inline code background
+$link-color-dark: #2dd4bf !default; // bright teal (AA on slate)
 
 // -- Notice colors (unchanged from upstream; already accessible) -------------
 $fg-color-notice-note-icon: #5e35b1 !default;

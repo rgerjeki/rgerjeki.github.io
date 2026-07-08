@@ -1,5 +1,8 @@
 // =============================================================================
-// Home page — hero + latest writing.
+// Home page — "Operator" redesign.
+// Terminal-boot hero over a canvas node-field, system-readout status strip,
+// selected work, and latest writing. Shared card/section/button classes at the
+// bottom are also used by the blog index + post-card partial — keep them.
 // =============================================================================
 
 // -- Buttons (shared) --------------------------------------------------------
@@ -7,23 +10,25 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  font-family: var(--font-sans);
-  font-size: 1.5rem;
-  font-weight: 550;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
   line-height: 1;
-  padding: 1.1rem 1.8rem;
+  padding: 1.15rem 1.9rem;
   border-radius: var(--radius);
   border: 1px solid var(--border-strong);
   color: var(--fg-strong);
   background-color: var(--surface);
   cursor: pointer;
-  transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease, color 0.16s ease;
+  transition: transform 0.16s ease, border-color 0.16s ease,
+    box-shadow 0.16s ease, color 0.16s ease, background-color 0.16s ease;
 
   &:hover,
   &:focus-visible {
     text-decoration: none;
-    transform: translateY(-1px);
+    transform: translateY(-2px);
     border-color: var(--accent-line);
     color: var(--accent);
     box-shadow: var(--shadow);
@@ -43,118 +48,244 @@
   }
 }
 
-// Home wrapper — claims the full width of the flex `.content` row so the hero
-// and "latest writing" stack vertically instead of sitting side by side.
 .home {
   width: 100%;
 }
 
-// -- Hero --------------------------------------------------------------------
-.hero {
-  padding: 4.8rem 0 2.4rem;
+// -- Reveal-on-scroll (progressive enhancement) ------------------------------
+// Hidden state only applies when JS is on (html.op-js) so no-JS shows content.
+html.op-js [data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+  will-change: opacity, transform;
+}
 
-  @media only screen and (max-width: 768px) {
-    padding: 3.2rem 0 1.6rem;
+html.op-js [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+// Scroll-progress line (added by operator.js).
+.op-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--term-green), var(--accent));
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  pointer-events: none;
+}
+
+// Scrambling headings keep a monospace feel mid-decrypt.
+[data-scramble] { font-variant-ligatures: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html.op-js [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none;
   }
 }
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 4rem;
+// =============================================================================
+// Hero
+// =============================================================================
+.op-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8rem 0 6rem;
+  margin-top: -2rem; // hug the nav
 
   @media only screen and (max-width: 768px) {
-    grid-template-columns: 1fr;
-    gap: 2.4rem;
+    min-height: auto;
+    padding: 4rem 0 3rem;
   }
 }
 
-.hero-kicker {
+// Canvas node-field + faint grid, layered behind the content.
+.op-net {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.op-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 30%, transparent 78%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 30%, transparent 78%);
+}
+
+.op-hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.op-kicker {
   font-family: var(--font-mono);
   font-size: 1.4rem;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   color: var(--accent);
-  margin: 0 0 1.2rem;
+  margin: 0 0 1rem;
   text-transform: lowercase;
 }
 
-.hero-name {
-  font-size: 5.2rem;
-  line-height: 1.02;
-  letter-spacing: -0.03em;
-  margin: 0;
+.op-name {
+  font-size: 6.6rem;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  font-weight: 600;
+  margin: 0 0 2.6rem;
+  color: var(--fg-strong);
 
+  @media only screen and (max-width: 900px) {
+    font-size: 4.8rem;
+  }
   @media only screen and (max-width: 768px) {
-    font-size: 3.8rem;
+    font-size: 3.9rem;
+    margin-bottom: 2rem;
   }
 }
 
-.hero-tagline {
-  font-family: var(--font-serif);
-  font-size: 2.1rem;
-  line-height: 1.5;
-  color: var(--fg-muted);
-  max-width: 44ch;
-  margin: 1.6rem 0 0;
-
-  @media only screen and (max-width: 768px) {
-    font-size: 1.9rem;
-  }
+// -- Terminal window ---------------------------------------------------------
+.op-term {
+  max-width: 62rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  background-color: color-mix(in srgb, var(--surface) 82%, transparent);
+  box-shadow: var(--glow-accent);
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
-.hero-creds {
-  list-style: none;
-  margin: 2.4rem 0 0;
-  padding: 0;
+.op-term-bar {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem 1.2rem;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1.3rem;
+  border-bottom: 1px solid var(--border);
+  background-color: color-mix(in srgb, var(--surface-2) 70%, transparent);
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+}
 
-  .cred {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.7rem;
-    font-family: var(--font-mono);
+.op-term-dots {
+  display: inline-flex;
+  gap: 0.55rem;
+
+  i {
+    width: 1.1rem;
+    height: 1.1rem;
+    border-radius: 50%;
+    background-color: var(--border-strong);
+    display: block;
+  }
+  i:nth-child(1) { background-color: #ff5f57; }
+  i:nth-child(2) { background-color: #febc2e; }
+  i:nth-child(3) { background-color: #28c840; }
+}
+
+.op-term-name {
+  color: var(--fg-muted);
+  margin: 0 auto 0 0.4rem;
+}
+
+.op-term-shell {
+  color: var(--fg-muted);
+  opacity: 0.7;
+}
+
+.op-term-screen {
+  padding: 1.6rem 1.7rem 1.8rem;
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  line-height: 1.35;
+
+  @media only screen and (max-width: 768px) {
     font-size: 1.35rem;
-    color: var(--fg);
-    background-color: var(--surface-2);
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    padding: 0.5rem 1.2rem;
-  }
-
-  .cred-logo {
-    height: 16px;
-    width: auto;
-    vertical-align: middle;
-  }
-
-  .cred-inst {
-    color: var(--fg-muted);
-
-    a {
-      color: var(--fg-muted);
-
-      &:hover {
-        color: var(--accent);
-      }
-    }
-
-    &::before {
-      content: "· ";
-    }
   }
 }
 
-.hero-actions {
+.op-line {
+  margin: 0;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.op-prompt {
+  color: var(--term-green);
+  margin-right: 0.7rem;
+  user-select: none;
+}
+
+.op-cmd {
+  color: var(--fg-strong);
+}
+
+.op-out {
+  margin: 0.3rem 0 1.5rem;
+  color: var(--fg-muted);
+
+  &:last-of-type {
+    margin-bottom: 0.6rem;
+  }
+}
+
+// Blinking block caret on the live prompt line.
+.op-caret {
+  display: inline-block;
+  width: 0.9ch;
+  height: 1.15em;
+  vertical-align: text-bottom;
+  background-color: var(--accent);
+  animation: op-blink 1.05s steps(1) infinite;
+}
+
+@keyframes op-blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+// When JS drives the typing, hide the not-yet-typed lines.
+html.op-js .op-term.is-typing .op-line[data-typed="false"],
+html.op-js .op-term.is-typing .op-out[data-typed="false"] {
+  visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.op-js .op-term.is-typing .op-line,
+  html.op-js .op-term.is-typing .op-out {
+    visibility: visible !important;
+  }
+  .op-caret { animation: none; }
+}
+
+.op-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin: 2.8rem 0 0;
+  margin: 3rem 0 0;
 }
 
-.hero-social {
+.op-social {
   margin-top: 2.4rem;
 
   ul {
@@ -168,31 +299,252 @@
   a {
     color: var(--fg-muted);
     font-size: 2rem;
+    transition: color 0.16s ease, transform 0.16s ease;
 
     &:hover,
     &:focus {
       color: var(--accent);
+      transform: translateY(-2px);
     }
   }
 }
 
-.hero-aside {
-  .avatar {
-    display: flex;
-    justify-content: center;
+// -- Scroll cue --------------------------------------------------------------
+.op-scrollcue {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: 2.4rem;
+  transform: translateX(-50%);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  color: var(--fg-muted);
+
+  &:hover { color: var(--accent); text-decoration: none; }
+
+  i { font-size: 1.6rem; animation: op-bob 1.8s ease-in-out infinite; }
+
+  @media only screen and (max-width: 768px) { display: none; }
+}
+
+@keyframes op-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+// =============================================================================
+// Status readout
+// =============================================================================
+.op-status {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.8rem 2rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin-top: 1rem;
+}
+
+.op-status-label {
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+
+.op-status-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 2.4rem;
+  margin: 0;
+  padding: 0;
+}
+
+.op-status-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-mono);
+  font-size: 1.35rem;
+  color: var(--fg);
+}
+
+.op-status-dot {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background-color: var(--term-green);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--term-green) 22%, transparent);
+  flex: none;
+}
+
+.op-status-role p { display: inline; margin: 0; }
+
+.op-status-inst {
+  color: var(--fg-muted);
+  &::before { content: "· "; }
+  a { color: var(--fg-muted); &:hover { color: var(--accent); } }
+}
+
+// =============================================================================
+// Selected work
+// =============================================================================
+.op-featured { padding-top: 1rem; }
+
+.op-cards {
+  list-style: none;
+  padding: 0;
+  margin: 2.4rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  gap: 1.6rem;
+}
+
+.op-card-link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.8rem 1.9rem 1.7rem;
+  color: inherit;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: var(--accent);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.22s ease;
   }
 
-  .avatar img {
-    width: 20rem;
-    box-shadow: var(--shadow);
+  &:hover,
+  &:focus-visible {
+    text-decoration: none;
+    transform: translateY(-3px);
+    border-color: var(--accent-line);
+    box-shadow: var(--shadow-hover);
 
-    @media only screen and (max-width: 768px) {
-      width: 13rem;
-    }
+    &::before { transform: scaleY(1); }
+    .op-card-arrow { transform: translate(3px, -3px); color: var(--accent); }
   }
 }
 
-// -- Section heading (shared: home + blog) -----------------------------------
+.op-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+
+.op-card-kind {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  color: var(--accent);
+  background-color: var(--accent-wash);
+  border: 1px solid var(--accent-line);
+  border-radius: 999px;
+  padding: 0.3rem 0.9rem;
+}
+
+.op-card-metaright {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.op-card-year {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  letter-spacing: 0.03em;
+  color: var(--fg-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.op-card-arrow {
+  font-size: 1.4rem;
+  color: var(--fg-muted);
+  transition: transform 0.18s ease, color 0.18s ease;
+}
+
+.op-card-title {
+  font-family: var(--font-sans);
+  font-size: 1.95rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--fg-strong);
+}
+
+.op-card-desc {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: var(--fg-muted);
+  margin: 0.8rem 0 1.4rem;
+}
+
+.op-card-tags {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+
+.op-writing { padding-top: 1rem; }
+.op-reveal-card { display: flex; }
+
+// =============================================================================
+// Custom cursor (desktop, fine-pointer only — added by operator.js)
+// =============================================================================
+.op-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 26px;
+  height: 26px;
+  margin: -13px 0 0 -13px;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: width 0.18s ease, height 0.18s ease, margin 0.18s ease,
+    background-color 0.18s ease, border-color 0.18s ease;
+  mix-blend-mode: normal;
+}
+
+.op-cursor.is-active {
+  width: 46px;
+  height: 46px;
+  margin: -23px 0 0 -23px;
+  background-color: var(--accent-wash);
+}
+
+body.op-has-cursor { cursor: none; }
+body.op-has-cursor a,
+body.op-has-cursor button,
+body.op-has-cursor .op-magnet { cursor: none; }
+
+// =============================================================================
+// Shared: section heading + post-card grid (home + blog index + partial)
+// =============================================================================
 .section-head {
   display: flex;
   align-items: baseline;
@@ -214,7 +566,6 @@
   white-space: nowrap;
 }
 
-// -- Post card grid (home + blog index) --------------------------------------
 .post-cards {
   list-style: none;
   padding: 0;
@@ -224,9 +575,7 @@
   gap: 2rem;
 }
 
-.post-card {
-  display: flex;
-}
+.post-card { display: flex; width: 100%; }
 
 .post-card-link {
   display: flex;
@@ -253,11 +602,7 @@
   overflow: hidden;
   background-color: var(--surface-2);
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  img { width: 100%; height: 100%; object-fit: cover; }
 }
 
 .post-card-body {
@@ -275,13 +620,13 @@
   align-items: center;
   gap: 0.6rem;
 
-  .dot {
-    opacity: 0.6;
-  }
+  .dot { opacity: 0.6; }
 }
 
 .post-card-title {
+  font-family: var(--font-sans);
   font-size: 2rem;
+  font-weight: 600;
   line-height: 1.2;
   margin: 0.8rem 0 0;
   color: var(--fg-strong);

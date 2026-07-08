@@ -1,13 +1,50 @@
-<!-- Main Content Wrapper (Separate from ToC) -->
-<section class="container page">
-  <article>
-    <header>
-      <h1 class="title">
-        <a class="title-link" href="{{ .Permalink | safeURL }}">
-          {{ .Title }}
-        </a>
-      </h1>
+{{/* Project / single-page detail — "Operator" chrome around .Content.
+     The body (shortcodes, tools, write-ups) is rendered untouched; base
+     typography styles it because it lives inside `.content`. */}}
+<script>document.documentElement.classList.add('op-js');</script>
+
+<article class="op-page">
+  <div class="container">
+    <nav class="op-crumb" aria-label="Breadcrumb">
+      <a href="{{ "/" | relLangURL }}">~</a>
+      {{ range .Ancestors.Reverse }}
+        {{ if not .IsHome }}<span class="op-crumb-sep">/</span><a href="{{ "/projects/" | relLangURL }}?filter={{ .Section }}">{{ .Title | lower }}</a>{{ end }}
+      {{ end }}
+      <span class="op-crumb-sep">/</span><span class="op-crumb-cur">{{ .Title | lower }}</span>
+    </nav>
+
+    <header class="op-page-head">
+      {{ with .CurrentSection }}{{ if not .IsHome }}<p class="op-kicker">// {{ .Title | lower }}</p>{{ end }}{{ end }}
+      <h1 class="op-page-title" data-scramble>{{ .Title }}</h1>
+      {{ with .Description }}<p class="op-page-sub">{{ . }}</p>{{ end }}
+
+      {{ $hasDate := not .Date.IsZero }}
+      {{ if or $hasDate .ReadingTime .Params.tags }}
+        <div class="op-page-meta">
+          {{ if $hasDate }}<span class="op-meta-item"><i class="fa fa-calendar-o" aria-hidden="true"></i>{{ .Date.Year }}</span>{{ end }}
+          {{ with .ReadingTime }}<span class="op-meta-item"><i class="fa fa-clock-o" aria-hidden="true"></i>{{ . }} min read</span>{{ end }}
+          {{ with .Params.tags }}<span class="op-page-tags">{{ range first 5 . }}<span class="mini-tag">{{ . }}</span>{{ end }}</span>{{ end }}
+        </div>
+      {{ end }}
     </header>
-    {{ .Content }}
-  </article>
-</section>
+
+    <div class="op-page-body">
+      {{ .Content }}
+    </div>
+
+    <footer class="op-page-foot">
+      <a class="op-back op-magnet" href="{{ "/projects/" | relLangURL }}">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i> back to projects
+      </a>
+    </footer>
+  </div>
+</article>
+
+{{/* Shared operator motion (cursor, progress line, scramble title). */}}
+{{ if hugo.IsServer }}
+  {{ $op := resources.Get "js/operator.js" }}
+  <script src="{{ $op.RelPermalink }}" defer></script>
+{{ else }}
+  {{ $op := resources.Get "js/operator.js" | minify | fingerprint }}
+  <script src="{{ $op.RelPermalink }}" integrity="{{ $op.Data.Integrity }}" defer></script>
+{{ end }}

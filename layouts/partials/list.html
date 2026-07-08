@@ -1,23 +1,66 @@
-<section class="container list">
-  <header>
-    <h1 class="title">
-      <a class="title-link" href="{{ .Permalink | safeURL }}">
-        {{- if eq .Kind "term" -}}
-          {{- i18n .Data.Plural 1 | title -}}
-          {{- print ": " -}}
-        {{- end -}}
-        {{- i18n (lower .Title) | default .Title | title -}}
-      </a>
-    </h1>
-  </header>
-  {{ .Content }}
-  <ul>
-    {{ range .Paginator.Pages }}
-    <li>
-      <span class="date">{{ .Date | time.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
-      <a class="title" href="{{ .Params.externalLink | default .RelPermalink }}">{{ .Title }}</a>
-    </li>
+{{/* Section / taxonomy list — "Operator" chrome + card grid.
+     Replaces the plain date+link list so breadcrumb targets match the theme. */}}
+<script>document.documentElement.classList.add('op-js');</script>
+
+{{ $page := . }}
+<section class="op-list">
+  <div class="container">
+    <nav class="op-crumb" aria-label="Breadcrumb">
+      <a href="{{ "/" | relLangURL }}">~</a>
+      {{ range .Ancestors.Reverse }}
+        {{ if not .IsHome }}<span class="op-crumb-sep">/</span><a href="{{ "/projects/" | relLangURL }}?filter={{ .Section }}">{{ .Title | lower }}</a>{{ end }}
+      {{ end }}
+      <span class="op-crumb-sep">/</span><span class="op-crumb-cur">{{ .Title | lower }}</span>
+    </nav>
+
+    <header class="op-page-head">
+      <p class="op-kicker">// {{ if eq .Kind "term" }}{{ .Data.Singular }}{{ else }}section{{ end }} · {{ len .Pages }} items</p>
+      <h1 class="op-page-title" data-scramble>
+        {{- if eq .Kind "term" }}{{ i18n .Data.Plural 1 | title }}: {{ end }}{{ i18n (lower .Title) | default .Title | title -}}
+      </h1>
+      {{ with .Content }}<div class="op-page-body op-list-intro">{{ . }}</div>{{ end }}
+    </header>
+
+    {{ with .Paginator.Pages }}
+      <ul class="op-cards op-proj-grid">
+        {{ range . }}
+          {{ $href := .Params.externalLink | default .RelPermalink }}
+          <li class="op-card" data-reveal>
+            <a class="op-card-link" href="{{ $href }}"{{ if .Params.externalLink }} target="_blank" rel="noopener"{{ end }}>
+              <div class="op-card-top">
+                <span class="op-card-kind">
+                  {{- if .IsSection }}<i class="fa fa-folder-o" aria-hidden="true"></i> directory
+                  {{- else }}{{ with .CurrentSection }}{{ .Title | lower }}{{ end }}{{ end -}}
+                </span>
+                <i class="op-card-arrow fa fa-arrow-right" aria-hidden="true"></i>
+              </div>
+              <h3 class="op-card-title">{{ .Title }}</h3>
+              {{ $desc := .Description }}
+              {{ if not $desc }}{{ $desc = .Summary | plainify | chomp }}{{ end }}
+              {{ with $desc }}<p class="op-card-desc">{{ . | truncate 150 }}</p>{{ end }}
+              <div class="op-card-tags">
+                {{ if not .Date.IsZero }}<span class="mini-tag op-card-date">{{ .Date.Format (.Site.Params.dateFormat | default "Jan 2, 2006") }}</span>{{ end }}
+                {{ with .Params.tags }}{{ range first 3 . }}<span class="mini-tag">{{ . }}</span>{{ end }}{{ end }}
+              </div>
+            </a>
+          </li>
+        {{ end }}
+      </ul>
+      {{ partial "pagination.html" $page }}
     {{ end }}
-  </ul>
-  {{ partial "pagination.html" . }}
+
+    <footer class="op-page-foot">
+      <a class="op-back op-magnet" href="{{ "/projects/" | relLangURL }}">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i> back to projects
+      </a>
+    </footer>
+  </div>
 </section>
+
+{{ if hugo.IsServer }}
+  {{ $op := resources.Get "js/operator.js" }}
+  <script src="{{ $op.RelPermalink }}" defer></script>
+{{ else }}
+  {{ $op := resources.Get "js/operator.js" | minify | fingerprint }}
+  <script src="{{ $op.RelPermalink }}" integrity="{{ $op.Data.Integrity }}" defer></script>
+{{ end }}

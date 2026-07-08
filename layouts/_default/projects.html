@@ -1,0 +1,109 @@
+{{ define "title" }}{{ .Title }} · {{ .Site.Title }}{{ end }}
+
+{{ define "content" }}
+{{/* Set the JS flag before paint so reveal hidden-states only apply with JS. */}}
+<script>document.documentElement.classList.add('op-js');</script>
+
+{{ $sections := where site.Sections "Section" "not in" (slice "posts" "authors") }}
+{{ $slugs := slice }}
+{{ range $sections }}{{ $slugs = $slugs | append .Section }}{{ end }}
+{{/* Every project page, flattened and sorted newest-first by year. */}}
+{{ $projects := where site.RegularPages "Section" "in" $slugs }}
+{{ $projects = sort $projects "Date" "desc" }}
+{{ $total := len $projects }}
+
+<div class="op-projects" data-projects>
+  <section class="container op-proj-head">
+    <p class="op-kicker">// ~/projects</p>
+    <h1 class="op-proj-title" data-scramble>{{ .Title }}</h1>
+    {{ with .Description }}<p class="op-proj-sub">{{ . }}</p>{{ end }}
+
+    <div class="op-proj-cmd" aria-hidden="true">
+      <span class="op-prompt">reese@cloud:~$</span>
+      <span class="op-cmd">find ~/projects -type f | wc -l</span>
+      <span class="op-proj-count">{{ $total }}</span>
+    </div>
+
+    <div class="op-filters" role="tablist" aria-label="Filter projects">
+      <button type="button" class="op-filter is-active" data-filter="all">
+        all <span class="op-filter-n">{{ $total }}</span>
+      </button>
+      {{ range $sections }}
+        <button type="button" class="op-filter op-magnet" data-filter="{{ .Section }}">
+          {{ .Title | lower }} <span class="op-filter-n">{{ len .RegularPagesRecursive }}</span>
+        </button>
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="container">
+    <ul class="op-cards op-proj-grid">
+      {{ range $projects }}
+        <li class="op-card op-proj-card" data-cat="{{ .Section }}" data-reveal>
+          <a class="op-card-link" href="{{ .RelPermalink }}">
+            <div class="op-card-top">
+              <span class="op-card-kind">{{ with .CurrentSection.Title }}{{ . | lower }}{{ else }}{{ .Section }}{{ end }}</span>
+              <span class="op-card-metaright">
+                {{ if not .Date.IsZero }}<span class="op-card-year">{{ .Date.Year }}</span>{{ end }}
+                <i class="op-card-arrow fa fa-arrow-right" aria-hidden="true"></i>
+              </span>
+            </div>
+            <h3 class="op-card-title">{{ .Title }}</h3>
+            {{ $desc := .Description }}
+            {{ if not $desc }}{{ $desc = .Summary | plainify | chomp }}{{ end }}
+            {{ with $desc }}<p class="op-card-desc">{{ . | truncate 150 }}</p>{{ end }}
+            {{ with .Params.tags }}
+              <div class="op-card-tags">
+                {{ range first 4 . }}<span class="mini-tag">{{ . }}</span>{{ end }}
+              </div>
+            {{ end }}
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+</div>
+
+{{/* Filter behaviour (self-contained). */}}
+<script>
+(function () {
+  var wrap = document.querySelector("[data-projects]");
+  if (!wrap) return;
+  var btns = Array.prototype.slice.call(wrap.querySelectorAll("[data-filter]"));
+  var cards = Array.prototype.slice.call(wrap.querySelectorAll("[data-cat]"));
+
+  function apply(f, updateURL) {
+    var matched = btns.some(function (x) { return x.getAttribute("data-filter") === f; });
+    if (!matched) f = "all";
+    btns.forEach(function (x) {
+      x.classList.toggle("is-active", x.getAttribute("data-filter") === f);
+    });
+    cards.forEach(function (c) {
+      var show = f === "all" || c.getAttribute("data-cat") === f;
+      c.style.display = show ? "" : "none";
+      if (show) c.classList.add("is-visible"); // don't leave filtered-in cards hidden by the reveal
+    });
+    if (updateURL && window.history && history.replaceState) {
+      history.replaceState(null, "", f === "all" ? location.pathname : location.pathname + "?filter=" + encodeURIComponent(f));
+    }
+  }
+
+  btns.forEach(function (b) {
+    b.addEventListener("click", function () { apply(b.getAttribute("data-filter"), true); });
+  });
+
+  // Deep-link: /projects/?filter=<category> (e.g. from a project breadcrumb).
+  var initial = new URLSearchParams(location.search).get("filter");
+  if (initial) apply(initial, false);
+})();
+</script>
+
+{{/* Shared operator motion (cursor, progress line, scramble, reveal). */}}
+{{ if hugo.IsServer }}
+  {{ $op := resources.Get "js/operator.js" }}
+  <script src="{{ $op.RelPermalink }}" defer></script>
+{{ else }}
+  {{ $op := resources.Get "js/operator.js" | minify | fingerprint }}
+  <script src="{{ $op.RelPermalink }}" integrity="{{ $op.Data.Integrity }}" defer></script>
+{{ end }}
+{{ end }}

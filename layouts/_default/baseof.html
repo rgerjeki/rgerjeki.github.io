@@ -46,10 +46,10 @@
   {{ errorf "Invalid configuration. Default JS scripts are disabled, but 'hideColorSchemeToggle' is false." }}
   {{end}}
   {{ else if hugo.IsServer }}
-  {{ $script := resources.Get "js/coder.js" }}
+  {{ $script := resources.Get "js/theme.js" }}
   <script src="{{ $script.RelPermalink }}"></script>
   {{ else }}
-  {{ $script := resources.Get "js/coder.js" | minify | fingerprint }}
+  {{ $script := resources.Get "js/theme.js" | minify | fingerprint }}
   <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
   {{ end }}
 

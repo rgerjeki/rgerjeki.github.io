@@ -6,9 +6,9 @@
 <link rel="canonical" href="{{ .Permalink }}">
 {{ end }}
 
+{{/* Single token-driven stylesheet handles light + dark (see _tokens.scss).
+     The legacy second "coder-dark" stylesheet was removed in the de-coder pass. */}}
 {{ partialCached "head/theme-styles.html" . }}
-
-{{ partialCached "head/color-scheme.html" . }}
 
 {{ partialCached "head/custom-styles.html" . }}
 
