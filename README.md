@@ -26,8 +26,9 @@ theme), deployed to GitHub Pages, with automatic cross-posting of blog posts to
 ## Local development
 
 You need **Hugo Extended** (the theme compiles SCSS via the built-in libsass, so
-the *extended* build is required). The GitHub Pages deploy pins `0.121.0`; any
-recent extended release works locally.
+the *extended* build is required). Both CI workflows pin `0.164.0`; use the same
+release locally so the config keys (`[pagination]`, `locale`, `label`,
+`hugo.Sites`) resolve the same way as in CI.
 
 ```bash
 # macOS

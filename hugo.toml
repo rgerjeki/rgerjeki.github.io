@@ -1,8 +1,7 @@
 baseURL = "https://rgerjeki.github.io/"
 title = "Reese Gerjekian"
-languageCode = "en"
+locale = "en"
 defaultContentLanguage = "en"
-paginate = 6
 enableEmoji = true
 # Enable Disqus comments
 # disqusShortname = "yourdiscussshortname"
@@ -21,6 +20,9 @@ text = "AWS Cloud Support Engineer"
 institution = "Amazon Web Services"
 logo = "images/aws-logo.png"
 url = "https://aws.amazon.com/"
+
+[pagination]
+pagerSize = 6
 
 [permalinks]
 posts = "/blog/:slug/"
@@ -171,7 +173,7 @@ rel = "alternate"
 type = "application/rss+xml"
 
 [languages.en]
-languageName = ":en:"
+label = ":en:"
 
 [[languages.en.menu.main]]
 name = "Blog"

@@ -22,7 +22,7 @@
             </li>
           {{ end }}
         {{ end }}
-        {{ if gt (len .Site.Languages) 1 }}
+        {{ if gt (len hugo.Sites) 1 }}
           {{ $node := . }}
           {{ .Scratch.Set "separator" true }}
           {{ range (default .Site.Home.AllTranslations .Translations) }}
