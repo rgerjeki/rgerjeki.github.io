@@ -1,51 +1,7 @@
+// Dark mode for content, lists, tags, and the about block is handled by CSS
+// custom properties (_tokens.scss) consumed in _content.scss. Intentionally
+// empty so legacy static-color rules no longer override the token system.
 @mixin content_dark {
-  .content {
-    .post {
-      .tags {
-        .tag {
-          background-color: $alt-bg-color-dark;
-
-          a {
-            color: $fg-color-dark;
-          }
-          a:active {
-            color: $fg-color-dark;
-          }
-        }
-      }
-    }
-    .list {
-      ul {
-        li {
-          .title {
-            color: $fg-color-dark;
-
-            &:hover,
-            &:focus {
-              color: $link-color-dark;
-            }
-          }
-        }
-      }
-    }
-
-    .centered {
-      .about {
-        ul {
-          li {
-            a {
-              color: $fg-color-dark;
-
-              &:hover,
-              &:focus {
-                color: $link-color-dark;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
 }
 
 body.colorscheme-dark {

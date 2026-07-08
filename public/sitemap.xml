@@ -23,10 +23,31 @@
     <loc>http://localhost:1313/tools/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tools/home-affordability/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/blog/securing-s3-buckets/</loc>
+    <lastmod>2026-07-07T09:00:00-07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/aws/</loc>
+    <lastmod>2026-07-07T09:00:00-07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/</loc>
+    <lastmod>2026-07-07T09:00:00-07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/cloud/</loc>
+    <lastmod>2026-07-07T09:00:00-07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
+    <lastmod>2026-07-07T09:00:00-07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/s3/</loc>
+    <lastmod>2026-07-07T09:00:00-07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/security/</loc>
+    <lastmod>2026-07-07T09:00:00-07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2026-07-07T09:00:00-07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tools/home-affordability/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/authors/</loc>
@@ -80,8 +101,6 @@
     <loc>http://localhost:1313/web-developments/seattle-routes/</loc>
   </url><url>
     <loc>http://localhost:1313/series/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
   </url><url>
     <loc>http://localhost:1313/web-developments/university-of-michigan-dearborn-chess-club/</loc>
   </url><url>

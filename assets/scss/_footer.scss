@@ -1,11 +1,26 @@
 .footer {
   width: 100%;
   text-align: center;
-  font-size: 1.6rem;
-  line-height: 2rem;
-  margin-bottom: 1rem;
+  font-family: var(--font-mono);
+  font-size: 1.35rem;
+  line-height: 1.6;
+  color: var(--fg-muted);
+  border-top: 1px solid var(--border);
+  padding: 2.4rem 0;
+  margin-top: 4rem;
+
+  .container {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 
   a {
-    color: $link-color;
+    color: var(--fg-muted);
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: var(--accent);
+    }
   }
 }

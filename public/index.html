@@ -12,7 +12,7 @@
 
 <meta name="author" content="Reese Gerjekian">
 <meta name="description" content="Reese Gerjekian&#39;s personal website">
-<meta name="keywords" content="blog,developer,personal">
+<meta name="keywords" content="blog,developer,personal,cybersecurity,aws,cloud,security">
 
 
   <meta name="twitter:card" content="summary">
@@ -32,6 +32,8 @@
 <link rel="canonical" href="http://localhost:1313/">
 
 
+<link rel="preload" href="/fonts/source-serif-4-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
@@ -114,6 +116,12 @@
           
             <li class="navigation-item">
               
+                <a class="navigation-link" href="/blog/">Blog</a>
+              
+            </li>
+          
+            <li class="navigation-item">
+              
                 <a class="navigation-link" href="/projects/">Projects</a>
               
             </li>
@@ -127,54 +135,52 @@
 
     <div class="content">
       
-  <section class="container centered">
-  <div class="about">
-    
   
-    <div class="avatar"><img src="/images/avatar.JPG" alt="avatar"></div>
-  
+<div class="home">
+<section class="hero">
+  <div class="hero-grid container">
+    <div class="hero-main">
+      <p class="hero-kicker">// cybersecurity · aws cloud</p>
+      <h1 class="hero-name">Reese Gerjekian</h1>
 
-
-
-
-    <h1>Reese Gerjekian</h1>
-
-
-  <h2>
-    
       
-        
-          
-          
-          
-          
-          
-            B.A.S in Cyber Operations 
-            <a href="https://www.arizona.edu/degree-search/majors/cyber-operations-defense-and-forensics-emphasis?_gl=1*fwswf9*_gcl_au*MTA4NjYwNjY1MC4xNzU1MzE5Mjk5*_ga*MTIxMTU0NjU4MC4xNzU1MzE5Mjk5*_ga_7PV3540XS3*czE3NTUzMTkyOTkkbzEkZzEkdDE3NTUzMTk0NDQkajYwJGwwJGgxNjY1NzQxOTAz" target="_blank" rel="noopener">
-              <img src="images/ua-logo.png" alt="University of Arizona" style="height:20px; vertical-align:middle; margin-left:6px;" />
-            </a><br>
-          
-        
+        <p class="hero-tagline">Security engineering and AWS cloud — field notes, write-ups, and the projects behind them.</p>
       
-        
-          
-          
-          
-          
-          
-            AWS Cloud Support Engineer 
-            <a href="https://aws.amazon.com/" target="_blank" rel="noopener">
-              <img src="images/aws-logo.png" alt="Amazon Web Services" style="height:20px; vertical-align:middle; margin-left:6px;" />
-            </a><br>
-          
-        
+
       
-    
-  </h2>
+      
+        <ul class="hero-creds">
+          
+            
+              <li class="cred">
+                <img class="cred-logo" src="/images/ua-logo.png" alt="University of Arizona" loading="lazy">
+                <span class="cred-text">
+                  B.A.S in Cyber Operations
+                  <span class="cred-inst"><a href="https://www.arizona.edu/degree-search/majors/cyber-operations-defense-and-forensics-emphasis?_gl=1*fwswf9*_gcl_au*MTA4NjYwNjY1MC4xNzU1MzE5Mjk5*_ga*MTIxMTU0NjU4MC4xNzU1MzE5Mjk5*_ga_7PV3540XS3*czE3NTUzMTkyOTkkbzEkZzEkdDE3NTUzMTk0NDQkajYwJGwwJGgxNjY1NzQxOTAz" target="_blank" rel="noopener">University of Arizona</a></span>
+                </span>
+              </li>
+            
+          
+            
+              <li class="cred">
+                <img class="cred-logo" src="/images/aws-logo.png" alt="Amazon Web Services" loading="lazy">
+                <span class="cred-text">
+                  AWS Cloud Support Engineer
+                  <span class="cred-inst"><a href="https://aws.amazon.com/" target="_blank" rel="noopener">Amazon Web Services</a></span>
+                </span>
+              </li>
+            
+          
+        </ul>
+      
 
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/blog/">Read the blog</a>
+        <a class="btn" href="/projects/">View projects</a>
+      </div>
 
-
-    
+      <nav class="hero-social" aria-label="Social links">
+        
 <ul>
   
     
@@ -203,11 +209,59 @@
   
 </ul>
 
-  </div>
+      </nav>
+    </div>
 
+    <div class="hero-aside">
+      
+  
+    <div class="avatar"><img src="/images/avatar.JPG" alt="avatar"></div>
   
 
+
+
+    </div>
+  </div>
 </section>
+
+
+
+
+
+  <section class="home-writing container">
+    <div class="section-head">
+      <h2>Latest writing</h2>
+      <a class="section-more" href="/blog/">All posts →</a>
+    </div>
+    <ul class="post-cards">
+      
+        
+<li class="post-card">
+  <a class="post-card-link" href="/blog/securing-s3-buckets/">
+    
+    <div class="post-card-body">
+      <div class="post-card-meta">
+        <time datetime="2026-07-07">July 7, 2026</time>
+        <span class="dot">·</span><span>3 min read</span>
+      </div>
+      <h3 class="post-card-title">A Practical Baseline for Locking Down Amazon S3</h3>
+      
+        <p class="post-card-desc">A no-nonsense starting checklist for keeping S3 data private: block public access, default encryption, least-privilege bucket policies, and a way to prove it …</p>
+      
+      
+        <div class="post-card-tags">
+          <span class="mini-tag">aws</span><span class="mini-tag">s3</span><span class="mini-tag">security</span><span class="mini-tag">cloud</span>
+        </div>
+      
+    </div>
+  </a>
+</li>
+
+      
+    </ul>
+  </section>
+
+</div>
 
 
     </div>
@@ -219,6 +273,12 @@
   
   
   <script src="/js/coder.js"></script>
+  
+
+  
+  
+  
+  <script src="/js/copy-code.js" defer></script>
   
 
   

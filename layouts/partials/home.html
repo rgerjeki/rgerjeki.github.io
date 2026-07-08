@@ -1,11 +1,63 @@
-<section class="container centered">
-  <div class="about">
-    {{ partialCached "home/avatar.html" . }}
+{{/* Home page — hero (identity, credentials, social) + latest writing.
+     Wrapped so the flex `.content` row treats the whole home as one column. */}}
+<div class="home">
+<section class="hero">
+  <div class="hero-grid container">
+    <div class="hero-main">
+      <p class="hero-kicker">{{ .Site.Params.kicker | default "// cybersecurity · aws cloud" }}</p>
+      <h1 class="hero-name">{{ .Site.Params.author }}</h1>
 
-    {{ partialCached "home/author.html" . }}
+      {{ with .Site.Params.tagline }}
+        <p class="hero-tagline">{{ . | markdownify }}</p>
+      {{ end }}
 
-    {{ partialCached "home/social.html" . }}
+      {{ $info := .Site.Params.info }}
+      {{ if and $info (reflect.IsSlice $info) }}
+        <ul class="hero-creds">
+          {{ range $item := $info }}
+            {{ if reflect.IsMap $item }}
+              <li class="cred">
+                {{ with $item.logo }}<img class="cred-logo" src="{{ . | relURL }}" alt="{{ $item.institution }}" loading="lazy">{{ end }}
+                <span class="cred-text">
+                  {{ with $item.text }}{{ . | markdownify }}{{ end }}
+                  {{ with $item.institution }}<span class="cred-inst">{{ if $item.url }}<a href="{{ $item.url }}" target="_blank" rel="noopener">{{ . }}</a>{{ else }}{{ . }}{{ end }}</span>{{ end }}
+                </span>
+              </li>
+            {{ end }}
+          {{ end }}
+        </ul>
+      {{ end }}
+
+      <div class="hero-actions">
+        {{ with .Site.GetPage "/posts" }}<a class="btn btn-primary" href="{{ .RelPermalink }}">Read the blog</a>{{ end }}
+        {{ with .Site.GetPage "/projects" }}<a class="btn" href="{{ .RelPermalink }}">View projects</a>{{ end }}
+      </div>
+
+      <nav class="hero-social" aria-label="Social links">
+        {{ partial "home/social.html" . }}
+      </nav>
+    </div>
+
+    <div class="hero-aside">
+      {{ partial "home/avatar.html" . }}
+    </div>
   </div>
-
-  {{ partialCached "home/extensions.html" . }}
 </section>
+
+{{/* Latest writing — only renders once posts exist. */}}
+{{ $posts := where site.RegularPages "Section" "posts" }}
+{{ $posts = where $posts "Params.hidden" "!=" true }}
+{{ with $posts }}
+  <section class="home-writing container">
+    <div class="section-head">
+      <h2>Latest writing</h2>
+      {{ with site.GetPage "/posts" }}<a class="section-more" href="{{ .RelPermalink }}">All posts →</a>{{ end }}
+    </div>
+    <ul class="post-cards">
+      {{ range first 3 . }}
+        {{ partial "post-card.html" . }}
+      {{ end }}
+    </ul>
+  </section>
+{{ end }}
+</div>{{/* .home */}}

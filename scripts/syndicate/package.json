@@ -1,0 +1,14 @@
+{
+  "name": "syndicate",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Cross-post Hugo blog posts to external platforms (Dev.to today; pluggable adapters for more).",
+  "scripts": {
+    "sync": "node sync.mjs",
+    "dry-run": "DRY_RUN=1 node sync.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

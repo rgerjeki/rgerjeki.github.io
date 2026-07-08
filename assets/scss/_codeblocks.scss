@@ -1,0 +1,50 @@
+// Code blocks — copy button + language affordances.
+// JS (assets/js/copy-code.js) wraps each <pre> so the button can anchor to it.
+.highlight,
+.highlight-wrap {
+  position: relative;
+
+  &:hover .copy-code-button,
+  &:focus-within .copy-code-button {
+    opacity: 1;
+  }
+}
+
+.copy-code-button {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  line-height: 1;
+  font-weight: 500;
+  color: var(--fg-muted);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--accent);
+    border-color: var(--accent-line);
+    opacity: 1;
+  }
+
+  &.copied {
+    color: var(--accent);
+    border-color: var(--accent-line);
+  }
+
+  // Keep it reachable on touch devices where there is no hover.
+  @media (hover: none) {
+    opacity: 1;
+  }
+}

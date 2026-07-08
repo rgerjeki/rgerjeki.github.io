@@ -1,0 +1,61 @@
+name: Syndicate posts to Dev.to
+
+# Runs independently of the GitHub Pages deploy (.github/workflows/hugo.yaml).
+# It never deploys the site — it only reads the posts and pushes them to Dev.to.
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "content/posts/**"
+      - "scripts/syndicate/**"
+      - "layouts/index.syndication.json"
+      - ".github/workflows/syndicate.yml"
+  workflow_dispatch: {}
+
+# Do not cancel an in-flight syndication; let each run finish.
+concurrency:
+  group: "syndicate"
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  syndicate:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.121.0
+    steps:
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Build syndication manifest
+        env:
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        run: hugo --gc --minify
+
+      - name: Push posts to Dev.to
+        env:
+          DEV_TO_TOKEN: ${{ secrets.DEV_TO_TOKEN }}
+          SYNDICATION_FILE: public/syndication.json
+        run: |
+          if [ -z "$DEV_TO_TOKEN" ]; then
+            echo "::warning::DEV_TO_TOKEN secret is not set — skipping syndication."
+            echo "Add it under Settings → Secrets and variables → Actions → New repository secret."
+            exit 0
+          fi
+          node scripts/syndicate/sync.mjs

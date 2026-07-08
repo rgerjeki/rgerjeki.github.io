@@ -1,43 +1,42 @@
-// Fonts
-$font-family: -apple-system,
-BlinkMacSystemFont,
-"Segoe UI",
-Roboto,
-Oxygen-Sans,
-Ubuntu,
-Cantarell,
-"Helvetica Neue",
-Helvetica,
-"游ゴシック",
-"PingFang SC",
-STXihei,"华文细黑",
-"Microsoft YaHei","微软雅黑",
-SimSun,"宋体",
-Heiti,"黑体",
-sans-serif;
-$code-font-family: SFMono-Regular,
-Consolas,
-Liberation Mono,
-Menlo,
-monospace;
+// =============================================================================
+// Design tokens — "Field Notes" (editorial) × "Engineering Log" (terminal)
+// Hybrid direction: serif reading column + monospace metadata/code vocabulary.
+// Accent: deep teal. Light-first, warm-charcoal dark mode. Tuned for WCAG AA.
+// These SCSS variables feed the legacy theme components (notices, tabs, tools,
+// shortcodes) so they harmonize; redesigned components use the CSS custom
+// properties in _tokens.scss so they adapt to light/dark at runtime.
+// =============================================================================
 
-// Colors
-$bg-color: #fafafa !default;
-$fg-color: #212121 !default;
-$alt-bg-color: #e0e0e0 !default;
-$alt-fg-color: #000 !default;
-$darker-alt-bg-color: #ccc !default;
-$link-color: #8b1c40 !default;
+// -- Font stacks -------------------------------------------------------------
+// Long-form body: serif (readability first). Headings/UI: Inter. Meta/code: mono.
+$font-serif: "Source Serif 4", Georgia, Cambria, "Times New Roman", Times, serif;
+$font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo,
+  Consolas, "Liberation Mono", monospace;
 
-// Dark colors
-$bg-color-dark: #212121 !default;
-$fg-color-dark: #dadada !default;
-$alt-bg-color-dark: #424242 !default;
-$alt-fg-color-dark: #dadada !default;
-$lighter-alt-bg-color-dark: #4f4f4f !default;
-$link-color-dark: #2a7195 !default;
+// `$font-family` is referenced widely by the upstream theme — point it at the
+// serif reading face. `$code-font-family` drives inline code + pre.
+$font-family: $font-serif;
+$code-font-family: $font-mono;
 
-// Notice colors
+// -- Light palette (warm paper) ----------------------------------------------
+$bg-color: #fcfcfa !default; // warm off-white paper
+$fg-color: #23262b !default; // near-black ink (slightly warm)
+$alt-bg-color: #eceae4 !default; // subtle surface / hairline fills
+$alt-fg-color: #14161a !default; // strong ink (headings)
+$darker-alt-bg-color: #e7e5df !default; // inline code background
+$link-color: #0f766e !default; // deep teal (AA on paper)
+
+// -- Dark palette (warm charcoal, not pure black) ----------------------------
+$bg-color-dark: #15181c !default; // warm charcoal canvas
+$fg-color-dark: #e6e7e4 !default; // soft off-white
+$alt-bg-color-dark: #232830 !default; // surfaces
+$alt-fg-color-dark: #f2f3f0 !default; // strong headings
+$lighter-alt-bg-color-dark: #2a3039 !default; // inline code background
+$link-color-dark: #2dd4bf !default; // bright teal (AA on charcoal)
+
+// -- Notice colors (unchanged from upstream; already accessible) -------------
 $fg-color-notice-note-icon: #5e35b1 !default;
 $bg-color-notice-note-title: #673ab71a !default;
 $bg-color-notice-note-content: #7e57c21a !default;

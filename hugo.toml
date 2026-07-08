@@ -22,11 +22,28 @@ institution = "Amazon Web Services"
 logo = "images/aws-logo.png"
 url = "https://aws.amazon.com/"
 
+[permalinks]
+posts = "/blog/:slug/"
+
+# Machine-readable feed of posts to syndicate (consumed by the Dev.to sync
+# workflow). Emitted at /syndication.json via layouts/index.syndication.json.
+[outputFormats.syndication]
+mediaType = "application/json"
+baseName = "syndication"
+isPlainText = true
+notAlternative = true
+
+[outputs]
+home = ["HTML", "RSS", "syndication"]
+
 [params]
 author = "Reese Gerjekian"
 # license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
 description = "Reese Gerjekian's personal website"
-keywords = "blog,developer,personal"
+keywords = "blog,developer,personal,cybersecurity,aws,cloud,security"
+# Home hero copy — edit these freely, they drive layouts/partials/home.html
+kicker = "// cybersecurity · aws cloud"
+tagline = "Security engineering and AWS cloud — field notes, write-ups, and the projects behind them."
 avatarURL = "images/avatar.JPG"
 #gravatar = "john.doe@example.com"
 dateFormat = "January 2, 2006"
@@ -155,6 +172,11 @@ type = "application/rss+xml"
 
 [languages.en]
 languageName = ":en:"
+
+[[languages.en.menu.main]]
+name = "Blog"
+weight = 1
+url = "blog/"
 
 [[languages.en.menu.main]]
 name = "Projects"

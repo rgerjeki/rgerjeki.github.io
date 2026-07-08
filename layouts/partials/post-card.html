@@ -1,0 +1,25 @@
+{{/* Reusable post card — used on the home page and the blog index. */}}
+<li class="post-card">
+  <a class="post-card-link" href="{{ .RelPermalink }}">
+    {{ with .Params.cover | default .Params.cover_image }}
+      <div class="post-card-cover">
+        <img src="{{ . | relURL }}" alt="" loading="lazy">
+      </div>
+    {{ end }}
+    <div class="post-card-body">
+      <div class="post-card-meta">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format (.Site.Params.dateFormat | default "Jan 2, 2006") }}</time>
+        {{ with .ReadingTime }}<span class="dot">·</span><span>{{ . }} min read</span>{{ end }}
+      </div>
+      <h3 class="post-card-title">{{ .Title }}</h3>
+      {{ with .Params.description | default .Summary }}
+        <p class="post-card-desc">{{ . | plainify | truncate 160 }}</p>
+      {{ end }}
+      {{ with .Params.tags }}
+        <div class="post-card-tags">
+          {{ range first 4 . }}<span class="mini-tag">{{ . }}</span>{{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </a>
+</li>

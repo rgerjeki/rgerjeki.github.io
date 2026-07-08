@@ -1,21 +1,20 @@
 .content {
   flex: 1;
   display: flex;
-  margin-top: 1.6rem;
+  margin-top: 2.4rem;
   margin-bottom: 3.2rem;
 
   header {
-    margin-top: 6.4rem;
-    margin-bottom: 3.2rem;
+    margin-top: 3.2rem;
+    margin-bottom: 2.4rem;
 
     h1 {
-      font-size: 4.2rem;
-      line-height: 4.6rem;
+      font-size: 3.8rem;
+      line-height: 1.12;
       margin: 0;
 
       @media only screen and (max-width: 768px) {
-        font-size: 4rem;
-        line-height: 4.4rem;
+        font-size: 3rem;
       }
     }
   }
@@ -26,12 +25,24 @@
       @extend .fa-solid;
       content: fa-content($fa-var-external-link);
       padding-left: 0.5em;
-      font-size: 0.75em;
+      font-size: 0.7em;
+      color: var(--fg-muted);
+      vertical-align: baseline;
     }
 
     details {
       summary {
         cursor: pointer;
+      }
+    }
+
+    // Long-form prose lists breathe a little more.
+    ul,
+    ol {
+      padding-left: 2.4rem;
+
+      li {
+        margin: 0.5rem 0;
       }
     }
 
@@ -46,25 +57,41 @@
         }
       }
     }
-
-    p {
-      text-align: justify;
-      text-justify: auto;
-      hyphens: auto;
-    }
   }
 
   .post {
     .post-title {
-      margin-bottom: 0.75em;
+      margin-bottom: 0.4em;
+      font-size: 3.8rem;
+      line-height: 1.1;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 3rem;
+      }
     }
 
+    // Metadata rail — monospace "engineering log" voice.
     .post-meta {
+      font-family: var(--font-mono);
+      font-size: 1.35rem;
+      color: var(--fg-muted);
+      letter-spacing: 0.01em;
+
+      a {
+        color: var(--fg-muted);
+
+        &:hover,
+        &:focus {
+          color: var(--accent);
+        }
+      }
+
       i {
         text-align: center;
         width: 1.6rem;
         margin-left: 0;
         margin-right: 0.5rem;
+        color: var(--accent);
       }
 
       .date {
@@ -73,53 +100,65 @@
           margin-right: 1.5rem;
         }
       }
+    }
 
-      .tags {
-        .tag {
-          display: inline-block;
-          padding: 0.3rem 0.6rem;
-          background-color: $alt-bg-color;
-          border-radius: 0.6rem;
-          line-height: 1.4em;
-
-          a {
-            color: $fg-color;
-          }
-
-          a:active {
-            color: $fg-color;
-          }
-        }
-      }
+    figcaption p {
+      text-align: center;
+      font-style: italic;
+      font-size: 1.5rem;
+      color: var(--fg-muted);
+      margin: 0.6rem 0 0;
     }
   }
 
-  figure {
-    margin: 0;
-    padding: 0;
-  }
+  // Tag chips.
+  .tags {
+    a {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 1.3rem;
+      color: var(--fg-muted);
+      background-color: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.2rem 1rem;
+      margin: 0.3rem 0.4rem 0.3rem 0;
+      transition: color 0.18s ease, border-color 0.18s ease, background-color 0.18s ease;
 
-  figcaption p {
-    text-align: center;
-    font-style: italic;
-    font-size: 1.6rem;
-    margin: 0;
+      &::before {
+        content: "#";
+        color: var(--accent);
+        margin-right: 0.15em;
+      }
+
+      &:hover,
+      &:focus {
+        color: var(--accent);
+        border-color: var(--accent-line);
+        background-color: var(--accent-wash);
+        text-decoration: none;
+      }
+    }
   }
 }
 
 .avatar img {
-  width: 20rem;
+  width: 18rem;
   height: auto;
   border-radius: 50%;
+  border: 1px solid var(--border);
 
   @media only screen and (max-width: 768px) {
-    width: 10rem;
+    width: 11rem;
   }
 }
 
+// Generic list pages (sections, taxonomies).
 .list {
+  width: 100%;
+
   ul {
-    margin: 3.2rem 0 3.2rem 0;
+    margin: 3.2rem 0;
     list-style: none;
     padding: 0;
 
@@ -127,15 +166,18 @@
       font-size: 1.8rem;
 
       @media only screen and (max-width: 768px) {
-        margin: 1.6rem 0 1.6rem 0;
+        margin: 1.6rem 0;
       }
 
       .date {
         display: inline-block;
         flex: 1;
-        width: 20rem;
+        width: 16rem;
         text-align: right;
         margin-right: 3rem;
+        font-family: var(--font-mono);
+        font-size: 1.4rem;
+        color: var(--fg-muted);
 
         @media only screen and (max-width: 768px) {
           display: block;
@@ -144,15 +186,15 @@
       }
 
       .title {
-        font-size: 1.8rem;
+        font-size: 1.9rem;
         flex: 2;
-        color: $fg-color;
-        font-family: $font-family;
-        font-weight: 700;
+        color: var(--fg-strong);
+        font-family: var(--font-sans);
+        font-weight: 600;
 
         &:hover,
         &:focus {
-          color: $link-color;
+          color: var(--accent);
         }
       }
     }
@@ -183,10 +225,13 @@
     h2 {
       margin-top: 1rem;
       margin-bottom: 0.5rem;
-      font-size: 2.4rem;
+      font-size: 2.2rem;
+      font-weight: 500;
+      color: var(--fg-muted);
+      font-family: var(--font-sans);
 
       @media only screen and (max-width: 768px) {
-        font-size: 2rem;
+        font-size: 1.9rem;
       }
     }
 
@@ -200,19 +245,20 @@
         position: relative;
 
         a {
-          color: $fg-color;
+          color: var(--fg-muted);
+          font-family: var(--font-mono);
           text-transform: uppercase;
-          margin-left: 1rem;
-          margin-right: 1rem;
-          font-size: 1.6rem;
+          letter-spacing: 0.06em;
+          margin: 0 1rem;
+          font-size: 1.4rem;
 
           &:hover,
           &:focus {
-            color: $link-color;
+            color: var(--accent);
           }
 
           @media only screen and (max-width: 768px) {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
           }
         }
       }

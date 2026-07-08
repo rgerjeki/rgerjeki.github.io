@@ -1,0 +1,83 @@
+{{ define "title" }}{{ .Title }} · {{ .Site.Title }}{{ end }}
+{{ define "content" }}
+  <article class="post-single">
+    <header class="post-header container">
+      {{ with .Params.tags }}
+        <div class="tags post-header-tags">
+          {{ range . }}<a href="{{ (printf "/tags/%s/" (. | urlize)) | relLangURL }}">{{ . }}</a>{{ end }}
+        </div>
+      {{ end }}
+
+      <h1 class="post-title">
+        <a class="title-link" href="{{ .Permalink | safeURL }}">{{ .Title }}</a>
+      </h1>
+
+      {{ with .Params.description }}
+        <p class="post-lead">{{ . | markdownify }}</p>
+      {{ end }}
+
+      <div class="post-meta">
+        <i class="fa fa-calendar" aria-hidden="true"></i>
+        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+          {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") }}
+        </time>
+        {{ with .ReadingTime }}<span class="dot">·</span><span>{{ . }} min read</span>{{ end }}
+        {{ if gt .Lastmod.Unix (add .Date.Unix 86400) }}
+          <span class="dot">·</span><span>updated {{ .Lastmod.Format (.Site.Params.dateFormat | default "January 2, 2006") }}</span>
+        {{ end }}
+      </div>
+
+      {{ with .Params.cover }}
+        <figure class="post-cover">
+          <img src="{{ . | relURL }}" alt="{{ $.Title }} — cover image" loading="lazy">
+        </figure>
+      {{ end }}
+    </header>
+
+    <div class="post-layout container">
+      {{ $showToc := and (ne .Params.toc false) (gt (len .TableOfContents) 60) }}
+      {{ if $showToc }}
+        <aside class="post-toc" aria-label="Table of contents">
+          <p class="post-toc-title">Contents</p>
+          {{ .TableOfContents }}
+        </aside>
+      {{ end }}
+
+      <div class="post-body">
+        {{ .Content }}
+
+        <footer class="post-footer">
+          {{ if .Params.devto }}
+            <p class="syndication-note">
+              Cross-posted to Dev.to{{ with .Params.devto_url }} at <a href="{{ . }}" target="_blank" rel="noopener">{{ . }}</a>{{ end }}. This page is the canonical source.
+            </p>
+          {{ end }}
+
+          {{ with .Params.tags }}
+            <div class="tags post-footer-tags">
+              {{ range . }}<a href="{{ (printf "/tags/%s/" (. | urlize)) | relLangURL }}">{{ . }}</a>{{ end }}
+            </div>
+          {{ end }}
+
+          {{ if or .PrevInSection .NextInSection }}
+            <nav class="post-nav" aria-label="More posts">
+              {{ with .NextInSection }}
+                <a class="post-nav-prev" href="{{ .RelPermalink }}">
+                  <span class="post-nav-label">← Newer</span>
+                  <span>{{ .Title }}</span>
+                </a>
+              {{ else }}<span></span>{{ end }}
+              {{ with .PrevInSection }}
+                <a class="post-nav-next" href="{{ .RelPermalink }}">
+                  <span class="post-nav-label">Older →</span>
+                  <span>{{ .Title }}</span>
+                </a>
+              {{ else }}<span></span>{{ end }}
+            </nav>
+          {{ end }}
+        </footer>
+      </div>
+    </div>
+  </article>
+  {{ partial "posts/math.html" . }}
+{{ end }}

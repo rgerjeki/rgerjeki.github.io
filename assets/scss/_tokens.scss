@@ -1,0 +1,92 @@
+// =============================================================================
+// Runtime design tokens (CSS custom properties).
+// Redesigned components read these so light/dark is a single variable swap
+// rather than a duplicated ruleset. Dark applies when the user explicitly
+// selects it (.colorscheme-dark) OR under `auto` following the OS preference.
+// =============================================================================
+
+:root {
+  // Type
+  --font-serif: #{$font-serif};
+  --font-sans: #{$font-sans};
+  --font-mono: #{$font-mono};
+
+  // Surfaces & ink (light / warm paper)
+  --bg: #{$bg-color};
+  --nav-bg: rgba(252, 252, 250, 0.85); // translucent sticky nav
+  --bg-subtle: #f5f4ef; // stat/hero wash
+  --surface: #ffffff; // raised cards
+  --surface-2: #f1efe9; // code chrome, tags
+  --fg: #{$fg-color};
+  --fg-strong: #{$alt-fg-color};
+  --fg-muted: #5c636b; // metadata, captions (AA on paper)
+  --border: #e4e2da; // hairlines
+  --border-strong: #d5d3ca;
+
+  // Accent (deep teal)
+  --accent: #{$link-color};
+  --accent-hover: #0b5d56;
+  --accent-contrast: #ffffff; // text on an accent fill
+  --accent-wash: rgba(15, 118, 110, 0.08); // tinted backgrounds
+  --accent-line: rgba(15, 118, 110, 0.35);
+
+  // Code
+  --code-bg: #f6f8f7;
+  --code-border: #e2e6e3;
+  --code-inline-bg: #{$darker-alt-bg-color};
+
+  // Focus ring
+  --focus-ring: rgba(15, 118, 110, 0.55);
+
+  // Shape & motion
+  --radius: 10px;
+  --radius-sm: 6px;
+  --radius-lg: 16px;
+  --shadow: 0 1px 2px rgba(20, 22, 26, 0.04), 0 6px 20px rgba(20, 22, 26, 0.06);
+  --shadow-hover: 0 2px 4px rgba(20, 22, 26, 0.06), 0 12px 32px rgba(20, 22, 26, 0.10);
+
+  // Reading measure
+  --measure: 68ch;
+  --content-width: 76rem;
+}
+
+// -- Dark palette ------------------------------------------------------------
+@mixin dark-tokens {
+  --bg: #{$bg-color-dark};
+  --nav-bg: rgba(21, 24, 28, 0.82);
+  --bg-subtle: #191d22;
+  --surface: #1b1f25;
+  --surface-2: #232830;
+  --fg: #{$fg-color-dark};
+  --fg-strong: #{$alt-fg-color-dark};
+  --fg-muted: #9aa1a9;
+  --border: #2a2f37;
+  --border-strong: #363c45;
+
+  --accent: #{$link-color-dark};
+  --accent-hover: #5eead4;
+  --accent-contrast: #06231f;
+  --accent-wash: rgba(45, 212, 191, 0.10);
+  --accent-line: rgba(45, 212, 191, 0.35);
+
+  --code-bg: #12161a;
+  --code-border: #262c34;
+  --code-inline-bg: #{$lighter-alt-bg-color-dark};
+
+  --focus-ring: rgba(45, 212, 191, 0.6);
+
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.36);
+  --shadow-hover: 0 2px 4px rgba(0, 0, 0, 0.5), 0 14px 36px rgba(0, 0, 0, 0.5);
+}
+
+html.colorscheme-dark,
+body.colorscheme-dark {
+  @include dark-tokens;
+}
+
+html.colorscheme-auto,
+body.colorscheme-auto {
+  @media (prefers-color-scheme: dark) {
+    @include dark-tokens;
+  }
+}

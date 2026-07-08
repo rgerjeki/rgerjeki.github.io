@@ -1,0 +1,37 @@
+{{- /*
+  Machine-readable manifest of posts to syndicate to external platforms.
+  Hugo does the authoritative work here: front-matter parsing and canonical
+  URL computation. The Node sync script (scripts/syndicate) is pure API glue.
+
+  A post is included only if it opts in to at least one target (e.g. devto=true).
+  Tags are normalized to Dev.to's rules (lowercase alphanumerics, max 4).
+*/ -}}
+{{- $posts := where site.RegularPages "Section" "posts" -}}
+{{- $out := slice -}}
+{{- range $posts -}}
+  {{- $targets := slice -}}
+  {{- if .Params.devto -}}{{- $targets = $targets | append "devto" -}}{{- end -}}
+  {{- if gt (len $targets) 0 -}}
+    {{- $tags := slice -}}
+    {{- range .Params.tags -}}
+      {{- $t := lower (replaceRE "[^a-zA-Z0-9]" "" .) -}}
+      {{- if $t -}}{{- $tags = $tags | append $t -}}{{- end -}}
+    {{- end -}}
+    {{- $cover := "" -}}
+    {{- with .Params.cover -}}{{- $cover = (absURL .) -}}{{- end -}}
+    {{- $item := dict
+        "path" .File.Path
+        "targets" $targets
+        "title" .Title
+        "canonical_url" .Permalink
+        "description" (.Params.description | default "")
+        "tags" (first 4 $tags)
+        "cover_image" $cover
+        "series" (.Params.series | default "")
+        "published" true
+        "body_markdown" .RawContent
+    -}}
+    {{- $out = $out | append $item -}}
+  {{- end -}}
+{{- end -}}
+{{- dict "generated_by" "hugo" "site" site.BaseURL "posts" $out | jsonify (dict "indent" "  ") -}}

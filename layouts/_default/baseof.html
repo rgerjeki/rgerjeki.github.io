@@ -53,6 +53,15 @@
   <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
   {{ end }}
 
+  {{/* Copy-to-clipboard buttons for code blocks */}}
+  {{ if hugo.IsServer }}
+  {{ $copy := resources.Get "js/copy-code.js" }}
+  <script src="{{ $copy.RelPermalink }}" defer></script>
+  {{ else }}
+  {{ $copy := resources.Get "js/copy-code.js" | minify | fingerprint }}
+  <script src="{{ $copy.RelPermalink }}" integrity="{{ $copy.Data.Integrity }}" defer></script>
+  {{ end }}
+
   {{ range .Site.Params.customJS }}
   {{ if hugo.IsServer }}
   {{ $script := resources.Get . }}

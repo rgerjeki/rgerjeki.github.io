@@ -1,0 +1,23 @@
+# Hugo build output
+/public/
+/resources/_gen/
+/.hugo_build.lock
+
+# Hugo modules / cache
+/.hugo_cache/
+
+# Dev.to sync state (published article IDs live in each post's front matter)
+# nothing to ignore here
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.history/
+.vscode/
+.idea/
+
+# Node (used only for the Dev.to sync workflow)
+node_modules/
+npm-debug.log*

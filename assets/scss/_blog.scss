@@ -1,0 +1,270 @@
+// =============================================================================
+// Blog — index header + single-post reading layout with sticky TOC.
+// =============================================================================
+
+// The .content wrapper is a flex row; let blog views claim the full width.
+.blog-index,
+.post-single {
+  width: 100%;
+}
+
+// -- Blog index --------------------------------------------------------------
+.blog-index {
+  .blog-index-head {
+    padding: 3.2rem 0 0.8rem;
+
+    h1 {
+      font-size: 3.8rem;
+      margin: 0 0 0.8rem;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 3rem;
+      }
+    }
+
+    .blog-index-desc {
+      font-size: 1.9rem;
+      color: var(--fg-muted);
+      max-width: 60ch;
+      margin: 0;
+    }
+  }
+
+  .post-cards {
+    margin-top: 3.2rem;
+  }
+}
+
+// -- Single post -------------------------------------------------------------
+.post-single {
+  .post-header {
+    padding-top: 3.2rem;
+    max-width: var(--measure);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .post-header-tags {
+    margin-bottom: 1.2rem;
+  }
+
+  .post-title {
+    font-size: 4rem;
+    line-height: 1.08;
+    letter-spacing: -0.022em;
+    margin: 0 0 1.2rem;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 3rem;
+    }
+
+    .title-link {
+      color: var(--fg-strong);
+    }
+  }
+
+  .post-lead {
+    font-family: var(--font-serif);
+    font-size: 2.1rem;
+    line-height: 1.5;
+    color: var(--fg-muted);
+    margin: 0 0 1.6rem;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 1.9rem;
+    }
+  }
+
+  .post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .post-cover {
+    margin: 2.8rem 0 0;
+
+    img {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+    }
+  }
+}
+
+.post-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  max-width: var(--measure);
+  margin: 2.8rem auto 0;
+
+  @media only screen and (min-width: 1180px) {
+    max-width: calc(var(--measure) + 26rem);
+    grid-template-columns: minmax(0, 1fr) 22rem;
+    column-gap: 4rem;
+
+    .post-body {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .post-toc {
+      grid-column: 2;
+      grid-row: 1;
+      position: sticky;
+      top: 8rem;
+      align-self: start;
+    }
+  }
+}
+
+// Article prose — the reading column.
+.post-body {
+  font-size: 1.9rem;
+  line-height: 1.75;
+
+  h2,
+  h3,
+  h4 {
+    scroll-margin-top: 8rem; // clear the sticky nav on anchor jumps
+  }
+
+  img {
+    border-radius: var(--radius);
+  }
+}
+
+// Table of contents.
+.post-toc {
+  font-family: var(--font-sans);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.6rem 1.8rem;
+  background-color: var(--surface);
+  margin-bottom: 2.4rem;
+
+  @media only screen and (min-width: 1180px) {
+    margin-bottom: 0;
+    background-color: transparent;
+    border: 0;
+    border-left: 1px solid var(--border);
+    border-radius: 0;
+    padding: 0.4rem 0 0.4rem 1.8rem;
+  }
+
+  .post-toc-title {
+    font-family: var(--font-mono);
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--fg-muted);
+    margin: 0 0 0.8rem;
+  }
+
+  #TableOfContents {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding-left: 1.4rem;
+
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+
+    li {
+      margin: 0.5rem 0;
+      font-size: 1.4rem;
+      line-height: 1.35;
+    }
+
+    a {
+      color: var(--fg-muted);
+      font-weight: 400;
+
+      &:hover,
+      &:focus {
+        color: var(--accent);
+      }
+    }
+  }
+}
+
+// Post footer — syndication note, tags, prev/next.
+.post-footer {
+  margin-top: 4rem;
+  padding-top: 2.4rem;
+  border-top: 1px solid var(--border);
+
+  .post-footer-tags {
+    margin-bottom: 2rem;
+  }
+}
+
+.syndication-note {
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  color: var(--fg-muted);
+  background-color: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.4rem;
+  margin: 2rem 0;
+
+  a {
+    color: var(--fg-muted);
+    text-decoration: underline;
+    text-decoration-color: var(--accent-line);
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
+}
+
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.6rem;
+  margin-top: 2.4rem;
+
+  a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1.4rem 1.6rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--fg-strong);
+    font-family: var(--font-sans);
+    transition: border-color 0.16s ease, box-shadow 0.16s ease;
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: none;
+      border-color: var(--accent-line);
+      box-shadow: var(--shadow);
+    }
+  }
+
+  .post-nav-label {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--fg-muted);
+  }
+
+  .post-nav-next {
+    text-align: right;
+    align-items: flex-end;
+  }
+
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+  }
+}

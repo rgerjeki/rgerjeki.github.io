@@ -1,0 +1,26 @@
+{{ define "title" }}{{ .Title }} · {{ .Site.Title }}{{ end }}
+{{ define "content" }}
+  <section class="blog-index">
+    <div class="container">
+      <div class="blog-index-head">
+        <h1>{{ .Title }}</h1>
+        {{ with .Description | default .Params.description }}
+          <p class="blog-index-desc">{{ . | markdownify }}</p>
+        {{ end }}
+      </div>
+
+      {{ $posts := where .RegularPages "Params.hidden" "!=" true }}
+      {{ $paginator := .Paginate $posts }}
+      {{ if $paginator.Pages }}
+        <ul class="post-cards">
+          {{ range $paginator.Pages }}
+            {{ partial "post-card.html" . }}
+          {{ end }}
+        </ul>
+        {{ partial "pagination.html" . }}
+      {{ else }}
+        <p class="blog-index-desc">No posts yet — check back soon.</p>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

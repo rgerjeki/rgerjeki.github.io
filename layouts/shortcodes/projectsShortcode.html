@@ -17,6 +17,7 @@
 {{ end }}
 
 {{ range .Site.Sections.ByWeight }}
+{{ if ne .Section "posts" }}{{/* the blog has its own nav; keep it out of the projects tree */}}
 <details open>
   <summary style="font-size: 1.25em; font-weight: bold;">{{ .Title }}</summary>
   <ul>
@@ -47,6 +48,7 @@
     {{ end }}
   </ul>
 </details>
+{{ end }}{{/* if ne .Section "posts" */}}
 {{ end }}
 
 <style>
