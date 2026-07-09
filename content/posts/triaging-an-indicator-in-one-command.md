@@ -1,14 +1,14 @@
 +++
 title = "Triaging a Suspicious Indicator in One Command"
 date = 2026-07-08T00:00:00-07:00
-draft = true
+draft = false
 slug = "triaging-an-indicator-in-one-command"
 description = "A tool I built that takes one IP, domain, hash, or URL, checks it against a stack of OSINT sources at once, and hands back a single report with a verdict and the reasons behind it. It works with no keys, and better with two free ones."
 tags = ["osint", "security", "python"]
 
 cover = ""
 
-devto = false
+devto = true
 +++
 
 A lot of security work starts the same way. Something hands you an indicator: an IP
