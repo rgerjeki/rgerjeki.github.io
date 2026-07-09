@@ -1,6 +1,6 @@
 +++
 title = "A Cursor-Reactive Constellation Background in Plain Canvas"
-date = 2026-07-08T00:00:00-07:00
+date = 2026-07-07T00:00:00-07:00
 draft = false
 slug = "canvas-node-field"
 description = "Those animated node fields (drifting points, thin lines between neighbors, the whole web nudged by your cursor) don't need a library. A small HTML and CSS shell, then a walk through the JavaScript that does the work."
