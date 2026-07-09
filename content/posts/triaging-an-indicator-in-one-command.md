@@ -6,7 +6,7 @@ slug = "triaging-an-indicator-in-one-command"
 description = "A tool I built that takes one IP, domain, hash, or URL, checks it against a stack of OSINT sources at once, and hands back a single report with a verdict and the reasons behind it. It works with no keys, and better with two free ones."
 tags = ["osint", "cybersecurity", "security", "python"]
 
-cover = ""
+cover = "images/indict.webp"
 
 devto = true
 +++
