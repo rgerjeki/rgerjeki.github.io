@@ -17,6 +17,7 @@ Thumbs.db
 .history/
 .vscode/
 .idea/
+.claude/
 
 # Node (used only for the Dev.to sync workflow)
 node_modules/
