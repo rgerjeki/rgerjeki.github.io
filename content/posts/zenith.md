@@ -6,7 +6,7 @@ slug = "zenith"
 description = "A browser tab that lowers you from orbit onto your exact spot on Earth and shows your real sky for this exact minute: real stars, computed Sun, Moon, and planets, the live ISS overhead, and AI briefings read aloud. My submission for the Dev.to Weekend Challenge."
 tags = ["devchallenge", "weekendchallenge", "googleai", "elevenlabs"]
 
-cover = "images/zenith.gif"
+cover = "images/zenith.png"
 
 # Published to Dev.to manually (it is a challenge submission with Forem embeds and a
 # cover set in the DEV editor), so the syndication pipeline is OFF for this one to
