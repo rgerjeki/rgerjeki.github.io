@@ -7,4 +7,6 @@ authors = ["Reese Gerjekian"]
 weight = 1
 +++
 
-{{< iampoex-shortcode >}}
+{{< livesite url="https://iampoex.github.io" >}}
+
+{{< githubcard repo="iampoex/iampoex.github.io" >}}

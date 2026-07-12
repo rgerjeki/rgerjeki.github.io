@@ -1,0 +1,38 @@
+{{- /* GitHub repo card, Dev.to-style: a header, a faded preview of the repo's
+       README, and a "View on GitHub" button. The README is fetched at BUILD
+       time. Images, links, and raw HTML are stripped so the preview is clean
+       text (no broken relative paths). If the fetch fails, the card degrades to
+       just the header and the button.
+       Usage: {{< githubcard repo="owner/name" >}} */ -}}
+{{- $repo := .Get "repo" | default (.Get 0) -}}
+{{- $parts := split $repo "/" -}}
+{{- $owner := index $parts 0 -}}
+{{- $name := index $parts 1 -}}
+{{- $md := "" -}}
+{{- with try (resources.GetRemote (printf "https://api.github.com/repos/%s/readme" $repo)) -}}
+  {{- with .Err -}}
+    {{- warnf "githubcard: could not fetch README for %q: %s" $repo . -}}
+  {{- else with .Value -}}
+    {{- $meta := .Content | transform.Unmarshal -}}
+    {{- with $meta.download_url -}}
+      {{- with try (resources.GetRemote .) -}}
+        {{- with .Err -}}{{- warnf "githubcard: README body for %q: %s" $repo . -}}
+        {{- else with .Value -}}{{- $md = .Content -}}{{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $md = $md | replaceRE `!\[[^\]]*\]\([^)]*\)` "" | replaceRE `\[([^\]]+)\]\([^)]+\)` "$1" | replaceRE `(?s)<[^>]*>` "" -}}
+<div class="op-gh">
+  <a class="op-gh-head" href="https://github.com/{{ $repo }}" target="_blank" rel="noopener">
+    <i class="fa fa-github" aria-hidden="true"></i>
+    <span class="op-gh-slug"><span class="op-gh-owner">{{ $owner }}</span> / <span class="op-gh-repo">{{ $name }}</span></span>
+  </a>
+  {{- with $md -}}
+    {{- $html := replaceRE `(?s)<a class="heading-link"[^>]*>.*?</a>` "" (string (markdownify .)) -}}
+    <div class="op-gh-readme">{{ $html | safeHTML }}</div>
+  {{- end -}}
+  <div class="op-gh-foot">
+    <a class="op-gh-btn" href="https://github.com/{{ $repo }}" target="_blank" rel="noopener">View on GitHub</a>
+  </div>
+</div>

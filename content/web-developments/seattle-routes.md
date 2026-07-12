@@ -7,4 +7,6 @@ authors = ["Reese Gerjekian"]
 
 +++
 
-{{< seattleRoutesShortcode >}}
+{{< livesite url="https://seattleroutes.github.io" >}}
+
+{{< githubcard repo="SeattleRoutes/SeattleRoutes.github.io" >}}

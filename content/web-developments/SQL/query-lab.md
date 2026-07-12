@@ -6,4 +6,6 @@ description = ""
 authors = ["Reese Gerjekian"]
 +++
 
-{{< querylabShortcode >}}
+{{< livesite url="https://querylab-reg.github.io" >}}
+
+{{< githubcard repo="QueryLab-reg/QueryLab-reg.github.io" >}}

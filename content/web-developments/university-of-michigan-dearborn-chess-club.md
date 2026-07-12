@@ -6,4 +6,6 @@ description = ""
 authors = ["Reese Gerjekian"]
 +++
 
-{{< uofmShortcode >}}
+{{< livesite url="https://uofmdcc.github.io" >}}
+
+{{< githubcard repo="UofMDCC/UofMDCC.github.io" >}}

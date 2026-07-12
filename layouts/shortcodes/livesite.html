@@ -1,0 +1,9 @@
+{{- /* Live-site embed: a framed iframe with a semi-transparent "open" button
+       in the lower-left corner. Usage: {{< livesite url="https://..." >}} */ -}}
+{{- $url := .Get "url" | default (.Get 0) -}}
+<div class="op-live">
+  <iframe src="{{ $url }}" width="100%" height="500" loading="lazy" title="Live site preview" allowfullscreen></iframe>
+  <a class="op-live-open" href="{{ $url }}" target="_blank" rel="noopener">
+    <i class="fa fa-external-link" aria-hidden="true"></i> Open live site
+  </a>
+</div>

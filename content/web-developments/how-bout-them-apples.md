@@ -6,4 +6,6 @@ description = ""
 authors = ["Reese Gerjekian"]
 +++
 
-{{< applesShortcode >}}
+{{< livesite url="https://howboutthemapples.github.io" >}}
+
+{{< githubcard repo="HowBoutThemApples/HowBoutThemApples.github.io" >}}
