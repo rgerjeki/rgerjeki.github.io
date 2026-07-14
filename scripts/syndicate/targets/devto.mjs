@@ -69,6 +69,14 @@ async function listAll(pathname) {
 // on Dev.to, and strip Hugo's summary marker.
 function normalizeBody(markdown, siteBase) {
   let body = (markdown || "").replace(/<!--\s*more\s*-->/g, "");
+
+  // Translate the site's embed shortcodes into Dev.to (Forem) liquid tags, so a
+  // single Markdown body renders on the site and embeds correctly on Dev.to.
+  body = body
+    .replace(/\{\{<\s*youtube\s+([\w-]+)\s*>\}\}/g, "{% embed https://youtu.be/$1 %}")
+    .replace(/\{\{<\s*githubcard\s+repo="([^"]+)"\s*>\}\}/g, "{% embed https://github.com/$1 %}")
+    .replace(/\{\{<\s*livesite\s+url="([^"]+)"\s*>\}\}/g, "{% embed $1 %}");
+
   if (siteBase) {
     // ](/path...  and  src="/path..." / href="/path..."  (skip protocol-relative //)
     body = body
