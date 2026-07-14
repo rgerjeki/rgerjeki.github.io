@@ -6,7 +6,7 @@ slug = "dossier"
 description = "Most OSINT tooling nails collection but leaves you to assemble a cited report by hand. Dossier is an offline desktop workbench that runs one investigation from collection through curation to a finished, cited PDF or Word document."
 tags = ["osint", "python", "security", "forensics"]
 
-cover = ""
+cover = "images/dossier.png"
 
 devto = true
 +++
