@@ -126,7 +126,7 @@
       {{ with site.GetPage "/posts" }}<a class="section-more" href="{{ .RelPermalink }}">All posts →</a>{{ end }}
     </div>
     <ul class="post-cards">
-      {{ range first 3 . }}
+      {{ range first 4 . }}
         {{ partial "post-card.html" . }}
       {{ end }}
     </ul>
